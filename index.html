@@ -434,6 +434,22 @@ details.spd summary{cursor:pointer;font-weight:800;color:var(--gold2);font-size:
 .hero .wrap>div:not(.slot)>.kicker,.hero .wrap>div:not(.slot)>h1{grid-column:1/-1}
 .hero h1 br{display:none}.hero h1 em{margin-left:.2em}
 @media (max-width:900px){.hero .wrap>div:not(.slot){grid-template-columns:1fr}}
+
+.cal{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+.mcard{display:block;text-decoration:none;color:inherit;border-radius:20px;padding:16px;border:1px solid color-mix(in srgb,var(--acc) 55%,transparent);background:linear-gradient(140deg,color-mix(in srgb,var(--acc) 16%,transparent),rgba(255,255,255,.02) 70%);transition:transform .2s}
+.mcard:hover{transform:translateY(-4px)}
+.m-top{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.m-no{width:30px;height:30px;border-radius:50%;background:var(--acc);color:#111;display:grid;place-items:center;font-weight:900;font-size:14px}
+.m-name{font-family:var(--serif);font-size:28px;font-weight:700;color:#fff}
+.m-ev{font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--gold2)}
+.m-body{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center}
+.m-body img{width:96px;height:96px;object-fit:cover;border-radius:12px}
+.m-val{font-size:15px;font-weight:800;color:var(--acc)}
+.m-book{font-family:var(--serif);font-size:22px;color:#fff;margin:2px 0 4px}
+.m-task{font-size:13.5px;color:#d3d9e6}.m-task b{color:var(--gold2)}
+.valbar{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+.valbar span{font-size:13px;font-weight:700;padding:8px 14px;border-radius:999px;background:color-mix(in srgb,var(--acc) 18%,transparent);border:1px solid color-mix(in srgb,var(--acc) 50%,transparent)}
+.act-month{font-size:12px;font-weight:800;color:var(--acc);margin-bottom:2px}
 </style>
 </head>
 <body>
@@ -449,7 +465,7 @@ details.spd summary{cursor:pointer;font-weight:800;color:var(--gold2);font-size:
     <h1>Он екі есік —<br><em>бір шыңырау</em></h1>
     <p class="slogan">Шыңыраудың тереңі — жер астында,<br>Әбіш мұрасының тереңі — ұлт жадында.</p>
     <p class="lead">Әбіш Кекілбайұлының он екі шығармасы — он екі инфографика: сандар, карталар, сюжет графиктері, кейіпкерлер желісі, символдар және бүгінгі оқырманға айтар ой.</p>
-    <div class="hero-nums"><div><b>12</b><span>шығарма</span></div><div><b>12</b><span>инфографика</span></div><div><b>7′</b><span>қорғау регламенті</span></div></div>
+    <div class="hero-nums"><div><b>12</b><span>ай</span></div><div><b>12</b><span>кітап</span></div><div><b>12</b><span>ұлттық құндылық</span></div></div>
     <div class="hero-actions"><a class="btn" href="#sore">Кітаптарды ашу ↓</a><button class="btn ghost" onclick="openShow()">▶ 7 минуттық қорғау</button></div>
   </div>
   <div class="slot" data-slot="hero"><img src="poster.jpg" alt="Әбіш Кекілбайұлының шығармалары" data-default="1"><button class="rm">✕</button><label class="up">🖼 Сурет ауыстыру<input type="file" accept="image/*"></label></div>
@@ -518,31 +534,37 @@ details.spd summary{cursor:pointer;font-weight:800;color:var(--gold2);font-size:
 
 <div class="orn home-only"></div>
 <section class="home-only block" id="tujyrymdama"><div class="wrap">
-  <div class="sh"><div class="kicker">Насихат концепциясы</div><h2>12 шығарма — 12 есік</h2><p>Әбіш Кекілбайұлының мұрасын оқушыға жаңа, цифрлық және шығармашылық форматта жеткізу жоспары.</p></div>
+  <div class="sh"><div class="kicker">Насихат концепциясы</div><h2>12 ай — 12 кітап — 12 ұлттық құндылық</h2><p>Оқу жылының әр айында бала Әбіштің бір шығармасын оқиды, сол арқылы бір ұлттық құндылықты меңгеріп, бір тапсырма орындайды.</p></div>
   <div class="concept">
     <div class="cc wide"><div class="idea-big">«Шыңыраудың тереңі — жер астында, Әбіш мұрасының тереңі — ұлт жадында»</div>
-      <div class="doors"><div class="door"><b>Шыңырау</b><span>дарын мен адалдық</span></div><div class="door"><b>Аңыздың ақыры</b><span>махаббат пен адамгершілік</span></div><div class="door"><b>Үркер</b><span>бірлік</span></div><div class="door"><b>Елең-алаң</b><span>үміт</span></div><div class="door"><b>Құс қанаты</b><span>ана мейірімі</span></div><div class="door"><b>Алтын шуақ</b><span>арман мен шабыт</span></div><div class="door"><b>Бір шөкім бұлт</b><span>қайсарлық</span></div><div class="door"><b>Күй</b><span>өнер құдіреті</span></div><div class="door"><b>Ханша-Дария</b><span>намыс</span></div><div class="door"><b>Бәйгеторы</b><span>дарын мен мейірім</span></div><div class="door"><b>Бір шоқ жиде</b><span>аманат</span></div><div class="door"><b>Шеткері үй</b><span>дұрыс таңдау</span></div></div></div>
-    <div class="cc"><div class="ci">🎯</div><h3>Мақсаты</h3><p>Жазушы мұрасын кеңінен таныту, оқушыларды Әбіш шығармаларын оқуға ынталандыру, әр кітаптың бүгінгі мәнін ашу.</p></div>
+      <div class="doors" id="doors"></div></div></div>
+    <div class="cc"><div class="ci">🎯</div><h3>Мақсаты</h3><p>Жазушы мұрасын кеңінен таныту, Әбіш шығармалары арқылы оқушыларды ұлттық құндылықтарға тәрбиелеу, жыл бойы кітап оқуға баулу.</p></div>
     <div class="cc"><div class="ci">👥</div><h3>Кімге арналған</h3><ul><li>5–11 сынып оқушылары</li><li>қазақ тілі мен әдебиеті мұғалімдері</li><li>ата-аналар мен кітапханашылар</li></ul></div>
-    <div class="cc"><div class="ci">💡</div><h3>Жаңалығы</h3><ul><li>әр кітапқа — жеке инфографика</li><li>3D көріністер мен анимация</li><li>QR арқылы қағаз бен сайт байланысы</li><li>әр кітапқа — мектептік акция</li></ul></div>
+    <div class="cc"><div class="ci">💡</div><h3>Жаңалығы</h3><ul><li>әр кітапқа — жеке инфографика</li><li>3D көріністер мен анимация</li><li>QR арқылы қағаз бен сайт байланысы</li><li>әр айға — бір кітап, бір құндылық, бір тапсырма</li></ul></div>
   </div>
   <h3 class="kicker" style="text-align:center;margin:44px 0 16px">Насихат арналары</h3>
   <div class="channels">
     <div class="ch"><i>🌐</i><b>Веб-сайт</b><span>3D сөре, инфографика, тест</span></div>
     <div class="ch"><i>🖼️</i><b>А3 постер + QR</b><span>мектеп дәлізінде, кітапханада</span></div>
-    <div class="ch"><i>✍️</i><b>Мектеп акциялары</b><span>12 шығарма — 12 акция</span></div>
+    <div class="ch"><i>✍️</i><b>Мектеп акциялары</b><span>12 ай — 12 тапсырма</span></div>
     <div class="ch"><i>📱</i><b>Әлеуметтік желі</b><span>хэштегтер, Reels</span></div>
     <div class="ch"><i>📚</i><b>«Әбіш оқулары»</b><span>мектептік апталық</span></div>
   </div>
-  <h3 class="kicker" style="text-align:center;margin:44px 0 16px">Жүзеге асыру кезеңдері · 4 апта</h3>
+  <h3 class="kicker" style="text-align:center;margin:44px 0 16px">Жүзеге асыру · бір оқу жылы</h3>
   <div class="weeks">
-    <div class="wk"><small>1-АПТА</small><b>Таныстыру</b><p>Постер ілу, сайтты көрсету, викторина</p></div>
-    <div class="wk"><small>2-АПТА</small><b>Оқу</b><p>«Қай кітап саған сай?» тесті, оқу топтары</p></div>
-    <div class="wk"><small>3-АПТА</small><b>Акциялар</b><p>Эссе, мұнара, Үркер, диптих, анама хат</p></div>
-    <div class="wk"><small>4-АПТА</small><b>Қорытынды кеш</b><p>Оқушы еңбектерінің көрмесі, үздіктерді марапаттау</p></div>
+    <div class="wk"><small>АЙДЫҢ 1-АПТАСЫ</small><b>Таныстыру</b><p>Ай кітабы мен ұлттық құндылықты сайт, постер арқылы таныстыру</p></div>
+    <div class="wk"><small>2–3-АПТА</small><b>Оқу</b><p>Шығарманы оқу, сыныпта талқылау, кейіпкерлерді талдау</p></div>
+    <div class="wk"><small>4-АПТА</small><b>Тапсырма</b><p>Құндылыққа негізделген шығармашылық тапсырма орындау</p></div>
+    <div class="wk"><small>ЖЫЛ СОҢЫ</small><b>Қорытынды кеш</b><p>12 айдың жұмыстарынан көрме, үздіктерді марапаттау</p></div>
   </div>
   <h3 class="kicker" style="text-align:center;margin:44px 0 16px">Күтілетін нәтиже</h3>
-  <div class="concept"><div class="cc"><div class="ci">📖</div><h3>Оқу</h3><p>Әр сынып кемінде бір кітапты оқып, талқылайды.</p></div><div class="cc"><div class="ci">🎨</div><h3>Шығармашылық</h3><p>5 акция бойынша оқушылардың эссе, сурет, хат көрмесі жасалады.</p></div><div class="cc"><div class="ci">🔁</div><h3>Жалғасы</h3><p>Сайт пен постер келесі жылдары да мектепте қолданылады.</p></div></div>
+  <div class="concept"><div class="cc"><div class="ci">📖</div><h3>Оқу</h3><p>Оқушылар жыл бойы 12 кітапты оқып, 12 ұлттық құндылықпен танысады.</p></div><div class="cc"><div class="ci">🎨</div><h3>Шығармашылық</h3><p>12 тапсырма бойынша оқушылардың эссе, сурет, хат, шежіре көрмесі жасалады.</p></div><div class="cc"><div class="ci">🔁</div><h3>Жалғасы</h3><p>Сайт пен постер келесі жылдары да мектепте қолданылады.</p></div></div>
+</div></section>
+
+<div class="orn home-only"></div>
+<section class="home-only block" id="kuntizbe"><div class="wrap">
+  <div class="sh"><div class="kicker">Оқу күнтізбесі</div><h2>12 ай — 12 кітап</h2><p>Қыркүйектен тамызға дейін: әр айға бір шығарма, бір ұлттық құндылық және бір тапсырма.</p></div>
+  <div class="cal" id="cal"></div>
 </div></section>
 
 <div class="orn home-only"></div>
@@ -564,7 +586,7 @@ details.spd summary{cursor:pointer;font-weight:800;color:var(--gold2);font-size:
 
 <div class="orn home-only"></div>
 <section class="home-only block" id="aksiyalar"><div class="wrap">
-  <div class="sh"><div class="kicker">Мектептік акциялар</div><h2>12 шығарма — 12 акция</h2><p>Әр кітапты оқығаннан кейін өткізілетін шығармашылық іс-шаралар.</p></div>
+  <div class="sh"><div class="kicker">Мектептік акциялар</div><h2>12 ай — 12 тапсырма</h2><p>Әр айдың кітабын оқығаннан кейін орындалатын, ұлттық құндылыққа негізделген шығармашылық тапсырмалар.</p></div>
   <div class="acts" id="acts"></div>
 </div></section>
 
@@ -833,7 +855,7 @@ function renderFit(){const box=document.getElementById('fit');if(!box)return;
 
 /* --- Қорғау сөзі (суфлер) --- */
 const SPEECH=[
- 'Құрметті әділқазылар! Біздің ұранымыз — «Шыңыраудың тереңі — жер астында, Әбіш мұрасының тереңі — ұлт жадында». Әбіш Кекілбайұлы — Маңғыстаудың Оңды ауылында туған жазушы, аудармашы, мемлекет қайраткері. Біз оның он екі шығармасын он екі есік ретінде ұсынамыз: әрқайсысына — инфографика, 3D әлем және мектептік акция.',
+ 'Құрметті әділқазылар! Біздің ұранымыз — «Шыңыраудың тереңі — жер астында, Әбіш мұрасының тереңі — ұлт жадында». Әбіш Кекілбайұлы — Маңғыстаудың Оңды ауылында туған жазушы, аудармашы, мемлекет қайраткері. Біз оның он екі шығармасын оқу жылының он екі айына бөлдік: әр айда бала бір кітап оқиды, сол арқылы бір ұлттық құндылықты меңгеріп, бір тапсырма орындайды.',
  '«Шыңырау» повесінде даланың үздік құдықшысы Еңсеп даңқын қайтару үшін ешкім жетпеген тереңдікке түсіп, сол құдықта қаза табады; құдық «Еңсеп өлген» атанады. Тереңдік шкаласы осы жолды көрсетеді: шеберлік, даңқ, бәсеке, қызғаныш, тәкаппарлық, трагедия. Түйіні: ең терең шыңырау — адамның өз жүрегінде.',
  '«Аңыздың ақыры» алғаш «Махаббат мұнарасы» деген атпен жарияланған. Жас шебер махаббатын мұнараға айналдырады, ал Әмірші мұны теріс түсініп, оқиға қайғылы аяқталады. Мұнара — арман мен сұлулық, құртты алма — биліктің алдамшылығы. Роман «Бір ел — бір кітап» акциясында оқырман бағасын алған.',
  '«Үркер» романы, 1981 жыл — Абылқайыр хан дәуірі: 1726 жылғы Ордабасы құрылтайы, 1728 жылғы Бұланты, 1729 жылғы Аңырақай. Жазушы романға материал жинап, Толыбай ауылына барған; бүгін онда «Хан моласы» кешені тұр. Үркер — жеті жұлдыз, бірліктің белгісі.',
@@ -846,12 +868,12 @@ const SPEECH=[
  '«Бәйгеторы» — атбегілік өнеріне ескерткіш. Оқиға бәйгенің алдын бермеген торы аттың көзімен баяндалады. Ол — дарын мен бәсеке туралы ой.',
  '«Бір шоқ жиде» — Тілеу ақсақал мен Күдерінің адал достығы, ата қоныс пен баба аманаты туралы. Жиде — тамырды ұмытпау белгісі. Акциямыз — «Менің шежірем».',
  '«Шеткері үй», 1978 жыл: сұлу әрі ақылды Зуһра таңдаудағы жеңілтектіктің кесірінен қартайғанда жалғыз қалады. Түйіні: жалғыздықтан сұлулық емес, сыйластық сақтайды.',
- 'Он екі шығарма — үш арна: адам жанының тереңі, ел тағдыры, ана мен туған жер. Насихат жолымыз: 3D сайт, QR-кодты постер, әр шығармаға мектептік акция және «Әбіш оқулары» апталығы. Мұра оқылғанда ғана тірі. Назарларыңызға рахмет!'
+ 'Он екі шығарма — үш арна: адам жанының тереңі, ел тағдыры, ана мен туған жер. Он екі ай бойы бала Әбіш шығармалары арқылы ана тілін, үлкенді құрметтеуді, ел бірлігін, анаға деген сүйіспеншілікті, ар-намыс пен адалдықты бойына сіңіреді. Құралдарымыз: 3D сайт, QR-кодты постер және айлық тапсырмалар. Мұра оқылғанда ғана тірі. Назарларыңызға рахмет!'
 ];
 function renderExtras(){
  const g=document.getElementById('gloss');if(g){g.innerHTML=GLOSS.map(([t,d,id])=>{const b=BOOKS.find(x=>x.id===id);return `<div class="gl"><b>${t}</b><span>${d}</span>${b?`<a href="#${b.id}" style="color:${b.color[0]}">«${b.title}»</a>`:''}</div>`}).join('')}
  const s=document.getElementById('srcs');if(s)s.innerHTML=SRC.map((x,i)=>`<li><span>${i+1}</span><a href="${x[1]}" target="_blank" rel="noopener">${x[0]}</a></li>`).join('');
- const a=document.getElementById('acts');if(a)a.innerHTML=BOOKS.map(b=>{const x=ACTS[b.id];return `<div class="act" style="--acc:${b.color[0]}">${COVERS.includes(b.id)?`<img src="${img('covers/'+b.id+'.jpg')}" alt="">`:`<div class="act-art">${art(b.id)}</div>`}<div class="act-in"><div class="act-tag">${b.tag}</div><div class="act-book">«${b.title}»</div><p class="act-goal">${x.goal}</p><ol>${x.steps.map(t=>`<li>${t}</li>`).join('')}</ol><div class="act-meta"><span>🎯 ${x.prod}</span><span>👥 ${x.who}</span><span>⏱ ${x.time}</span></div></div></div>`}).join('');
+ const a=document.getElementById('acts');if(a)a.innerHTML=byMonth().map(b=>{const x=ACTS[b.id];return `<div class="act" style="--acc:${b.color[0]}">${COVERS.includes(b.id)?`<img src="${img('covers/'+b.id+'.jpg')}" alt="">`:`<div class="act-art">${art(b.id)}</div>`}<div class="act-in"><div class="act-month">📅 ${VAL[b.id][0]} · ${VAL[b.id][1]}</div><div class="act-tag">${b.tag}</div><div class="act-book">«${b.title}»</div><p class="act-goal">${x.goal}</p><ol>${x.steps.map(t=>`<li>${t}</li>`).join('')}</ol><div class="act-meta"><span>🎯 ${x.prod}</span><span>👥 ${x.who}</span><span>⏱ ${x.time}</span></div></div></div>`}).join('');
  const sp=document.getElementById('speech');if(sp){const tl=PLAN.map(p=>p[0]);
   sp.innerHTML=SPEECH.map((t,i)=>`<div class="sp"><div class="sp-h"><b>${tl[i]}</b><span>${PLAN[i][1]} сек</span></div><p>${t}</p></div>`).join('')}
  renderFit()}
@@ -1117,6 +1139,28 @@ const EMO3D={alt:['☀️',['✍️','📜','🌾','⭐'],'#2a1d05','242,193,78'
 GLOSS.push(['Атбегі','жылқы баптайтын, тұлпарды танитын шебер','baige'],['Сейіс','бәйге атын баптаушы','baige'],['Күйші','домбырамен күй шығаратын, тартатын өнерпаз','kui'],['Жиде','күміс жапырақты, тәтті-қышқыл жемісті бұта ағаш','jide'],['Аманат','сеніп тапсырылған дүние, өсиет','jide'],['Хикаят','повесть жанрының қазақша атауы','hansha']);
 SRC.push(['Әбіш Кекілбаевты жұрты қалай бағалады? — Tengrinews','https://tengrinews.kz/books/sirkin-ai-osyndai-qazaq-kobirek-bolsa-eken-abis-kekilbaevty-385873/'],['Бүгін – Әбіш Кекілбайұлының туған күні — inbusiness.kz','https://www.inbusiness.kz/kz/last/bugin-abish-kekilbajulynyn-tugan-kuni'],['Ә. Кекілбаев. Бір шөкім бұлт — massaget.kz','https://massaget.kz/uy_tapsyirmasyi/a-keklbaev-br-shokm-bult-37990/'],['Әбіш Кекілбаев хикаялары (Ханша-дария, Бәйгеторы) — massaget.kz','https://massaget.kz/debiet/absh-keklbaev-hikayalaryi-66862/'],['«Ханша-Дария хикаясы» — ҚазҰУ Хабаршысы','https://ojs.egi.kz/BULLETIN/article/download/627/273/3143'],['Әбіш шығармаларындағы мифо-поэтикалық сарын — adebiportal.kz','https://adebiportal.kz/kz/news/view/abis-sygarmalaryndagy-mifo-poetikalyq-saryn__24184'],['«Күй» спектаклі — Казахстанская правда','https://kazpravda.kz/n/melodii-kyuya-spektakl-po-motivam-povesti-abisha-kekilbaeva-pokazali-v-astane/'],['Кекілбаев библиографиясы — Тараз университеті','http://lib.dulaty.kz/kaz/images/Kekilbaev.pdf'],['«Шеткері үй» — kitap.kz','https://kitap.kz/books/shetkeri-uj'],['Әбіш Кекілбаев — el.kz','https://el.kz/content-1451_1809/'],['«Бәйгеторы» — kitap.kz','https://kitap.kz/books/bajgetory'],['Бәйгеторының көз жасы — Egemen Qazaqstan','https://egemen.kz/article/239414-baygetorynynh-koz-dgasy'],['«Бір шоқ жиде» повесіндегі ұлттық тәрбие — ust.kz','https://ust.kz/word/akekilbaevtyng_bir_soq_jide_povesindegi_ulttyq_tarbie_kozderi-306408.html']);
 
+/* ===== 12 ай — 12 кітап — 12 ұлттық құндылық ===== */
+const VAL={
+ alt:['Қыркүйек','Ана тілі мен сөз өнері','🗣️','22 қыркүйек — Тілдер күні','Туған тіл мен туған жер туралы өз өлеңін жазу'],
+ jide:['Қазан','Үлкенді құрметтеу, ата-баба аманаты','👴','1 қазан — Қарттар күні','Ата-әжесінен жеті ата шежіресін жазып алу'],
+ baige:['Қараша','Ұлттық дәстүр: атбегілік','🐎','','Қазақтың атақты тұлпарлары туралы шағын жоба жасау'],
+ urker:['Желтоқсан','Ел бірлігі мен Тәуелсіздік','✨','16 желтоқсан — Тәуелсіздік күні','Сынып «Үркерін» құру: 7 оқушы бірлік туралы 7 дәйек айтады'],
+ elen:['Қаңтар','Тарихи жад пен үміт','📜','','«Менің елең-алаң сәтім» тақырыбында эссе жазу'],
+ kui:['Ақпан','Ұлттық өнер: күй мен домбыра','🎵','','Бір күйдің тарихын зерттеп, сыныпқа таныстыру'],
+ qus:['Наурыз','Анаға құрмет, отбасы','🕊️','8 наурыз, Наурыз мейрамы','Анасына қолмен хат жазу'],
+ shynyrau:['Сәуір','Адалдық пен еңбекқорлық','⛏️','','«Менің ішкі шыңырауым» тақырыбында эссе жазу'],
+ bult:['Мамыр','Ерлік және ардагерлерді құрметтеу','🎖️','9 мамыр — Жеңіс күні','Отбасынан соғыс жылдары туралы естелік жинау'],
+ anyz:['Маусым','Адамгершілік пен ізгілік','🕌','','Арман мұнарасын салып, әр қабатына бір құндылық жазу'],
+ hansha:['Шілде','Ар-намыс','👑','Жазғы оқу','«Билік пе, намыс па?» тақырыбында ой толғау жазу'],
+ shetkeri:['Тамыз','Сыйластық пен дұрыс таңдау','🏠','Жазғы оқу','Әжелерден өмірлік өсиет жинап, «Өсиет кітабын» құрастыру']
+};
+const MONTHS=['Қыркүйек','Қазан','Қараша','Желтоқсан','Қаңтар','Ақпан','Наурыз','Сәуір','Мамыр','Маусым','Шілде','Тамыз'];
+function byMonth(){return BOOKS.slice().sort((a,b)=>MONTHS.indexOf(VAL[a.id][0])-MONTHS.indexOf(VAL[b.id][0]))}
+function renderCal(){const box=document.getElementById('cal');if(!box)return;
+ box.innerHTML=byMonth().map((b,i)=>{const v=VAL[b.id];return `<a class="mcard" href="#${b.id}" style="--acc:${b.color[0]}">
+ <div class="m-top"><span class="m-no">${i+1}</span><span class="m-name">${v[0]}</span>${v[3]?`<span class="m-ev">${v[3]}</span>`:''}</div>
+ <div class="m-body"><img src="${img('covers/sm/'+b.id+'.jpg')}" alt=""><div><div class="m-val">${v[2]} ${v[1]}</div><div class="m-book">«${b.title}»</div><div class="m-task"><b>Тапсырма:</b> ${v[4]}</div></div></div></a>`}).join('')}
+
 /* ---------- render ---------- */
 const shelf=document.getElementById('shelf'),wrapP=document.getElementById('posters'),nav=document.getElementById('navlinks');
 BOOKS.forEach(b=>{
@@ -1133,7 +1177,7 @@ BOOKS.forEach(b=>{
 <article class="poster" id="${b.id}"><div class="frame"></div><div class="p-in">
   <div class="p-top">
     <div><div class="p-tag"><i></i>Инфографика ${b.n} · ${b.genre}</div><div class="p-title">${b.title}</div><div class="p-sub">${b.sub}</div>
-      <div class="idea"><b>Негізгі идея</b>${b.idea}</div></div>
+      <div class="idea"><b>Негізгі идея</b>${b.idea}</div><div class="valbar"><span>📅 ${VAL[b.id][0]}</span><span>${VAL[b.id][2]} ${VAL[b.id][1]}</span><span>✍️ ${VAL[b.id][4]}</span></div></div>
     <div class="slot" data-slot="${b.id}">${COVERS.includes(b.id)?`<img src="${img('covers/'+b.id+'.jpg')}" alt="«${b.title}» мұқабасы">`:art(b.id)}<button class="rm">✕</button><label class="up">🖼 Сурет қою<input type="file" accept="image/*"></label></div>
   </div>
   <div class="nums rv">${b.nums.map(n=>`<div class="num"><b style="${n[0].length>6?'font-size:24px;line-height:1.15':''}">${n[0]}</b><span>${n[1]}</span></div>`).join('')}</div>
@@ -1390,7 +1434,7 @@ function route(){const h=location.hash.slice(1);const isBook=BOOKS.some(b=>b.id=
  document.querySelectorAll('#navlinks a').forEach(a=>a.style.background=a.getAttribute('href')==='#'+h?'rgba(216,169,74,.18)':'');
  const b=BOOKS.find(x=>x.id===h);document.title=b?`«${b.title}» — Әбіш әлемі`:'Әбіш әлемі: 12 шығарма';
  if(isBook||h==='top'||!h)window.scrollTo(0,0);else{const el=document.getElementById(h);if(el)setTimeout(()=>el.scrollIntoView({behavior:'smooth'}),60)}}
-nav.insertAdjacentHTML('beforeend',`<a href="#tujyrymdama">Тұжырымдама</a><a href="#test">Тест</a><a href="#aksiyalar">Акциялар</a><a href="#sozdik">Сөздік</a><a href="#qorgau">Қорғау</a>`);
+nav.insertAdjacentHTML('beforeend',`<a href="#tujyrymdama">Тұжырымдама</a><a href="#kuntizbe">12 ай</a><a href="#test">Тест</a><a href="#aksiyalar">Акциялар</a><a href="#sozdik">Сөздік</a><a href="#qorgau">Қорғау</a>`);
 window.addEventListener('hashchange',route);route();
 (function load3D(){const go=()=>{const after=()=>{HAS3D=detect3D();if(!HAS3D)return;const h3=document.getElementById('shelf3d');h3.style.display='block';
   buildShelf().then(ok=>{if(!ok){h3.style.display='none';return}document.getElementById('shelf').style.display='none';requestAnimationFrame(()=>h3.style.opacity=1);if(!document.body.classList.contains('book'))shelfCtx.start()}).catch(()=>{h3.style.display='none'});
@@ -1435,9 +1479,9 @@ let acc=0;document.getElementById('plist').innerHTML=PLAN.map(p=>{const a=acc;ac
 /* ---------- slideshow ---------- */
 const gv=(id,v)=>getComputedStyle(document.getElementById(id)).getPropertyValue(v).trim();
 function slides(){return[
- {k:'«Әбіш шығармашылығын насихаттау»',h:'Он екі есік — бір шыңырау',i:'Шыңыраудың тереңі — жер астында, Әбіш мұрасының тереңі — ұлт жадында.',li:['Әбіш Кекілбайұлы (1939–2015) — жазушы, аудармашы, мемлекет қайраткері','Маңғыстау, Оңды ауылының түлегі','Біздің идея: әр кітапқа — жеке инфографика'],t:'#ӘбішӘлемі',img:'portrait',bg:'#0d1526',fg:'#f7efdc',acc:'#d8a94a'},
+ {k:'«Әбіш шығармашылығын насихаттау»',h:'Он екі есік — бір шыңырау',i:'Шыңыраудың тереңі — жер астында, Әбіш мұрасының тереңі — ұлт жадында.',li:['Әбіш Кекілбайұлы (1939–2015) — жазушы, аудармашы, мемлекет қайраткері','Маңғыстау, Оңды ауылының түлегі','Біздің идея: 12 ай — 12 кітап — 12 ұлттық құндылық'],t:'#ӘбішӘлемі',img:'portrait',bg:'#0d1526',fg:'#f7efdc',acc:'#d8a94a'},
  ...BOOKS.map(b=>({k:`Кітап ${b.n} · ${b.genre}`,h:b.title,i:b.sub,li:[b.nums[0][0]+' — '+b.nums[0][1],b.syms.map(s=>s[1]).join(' · '),...b.now.slice(0,2)],t:b.tag,img:b.id,bg:gv(b.id,'--bg'),fg:gv(b.id,'--fg'),acc:b.color[0]})),
- {k:'Қорытынды',h:'Мұра — оқылғанда тірі',i:'Үш арна: адам жаны · ел тағдыры · ана мен туған жер.',li:['12 шығарма — 12 инфографика, 12 акция','Әр кітапқа — 3D әлем мен кейіпкер монологы','Ұсыныс: мектепте «Әбіш оқулары» апталығы'],t:'Назарларыңызға рахмет!',img:'qr',bg:'#0d1526',fg:'#f7efdc',acc:'#d8a94a'}]}
+ {k:'Қорытынды',h:'Мұра — оқылғанда тірі',i:'Үш арна: адам жаны · ел тағдыры · ана мен туған жер.',li:['12 ай — 12 кітап — 12 ұлттық құндылық','Әр айда бала бір кітап оқып, бір тапсырма орындайды','Ұсыныс: мектепте «Әбіш оқулары» апталығы'],t:'Назарларыңызға рахмет!',img:'qr',bg:'#0d1526',fg:'#f7efdc',acc:'#d8a94a'}]}
 let SL=[],cur=0,sec=0,tick=null,paused=false;
 function renderSlide(){const s=SL[cur],el=document.getElementById('slide');el.style.setProperty('--bg',s.bg);el.style.setProperty('--fg',s.fg);el.style.setProperty('--acc',s.acc);
  el.innerHTML=`<div class="sl-l"><div class="sl-k">${s.k}</div><h2>${s.h}</h2><div class="sl-i">${s.i}</div><ul>${s.li.map(x=>`<li>${x}</li>`).join('')}</ul><div class="sl-t">${s.t}</div></div><div class="sl-r">${slotHTML(s.img)}</div>`;
@@ -1464,7 +1508,7 @@ function renderQ(){const box=document.getElementById('quiz');
  const[q,opts,ok]=QUIZ[qi];box.innerHTML=`<div class="qq">${q}</div><div class="qo">${shuffle(opts.map((o,i)=>[o,i])).map(([o,i])=>`<button data-i="${i}">${o}</button>`).join('')}</div><div class="qmeta"><span>Сұрақ ${qi+1} / ${QUIZ.length}</span><span>Ұпай: ${score}</span></div>`;
  box.querySelectorAll('.qo button').forEach(btn=>btn.onclick=()=>{const i=+btn.dataset.i;box.querySelectorAll('.qo button').forEach(b=>{b.disabled=true;if(+b.dataset.i===ok)b.classList.add('ok')});if(i===ok)score++;else btn.classList.add('no');setTimeout(()=>{qi++;renderQ()},1100)})}
 renderQ();
-try{renderExtras()}catch(e){console.error(e)}
+try{renderExtras();renderCal();document.getElementById('doors').innerHTML=byMonth().map(b=>`<div class="door"><small style="color:var(--gold);font-weight:800;font-size:11px;letter-spacing:.1em">${VAL[b.id][0].toUpperCase()}</small><b>${b.title}</b><span>${VAL[b.id][1]}</span></div>`).join('')}catch(e){console.error(e)}
 </script>
 </body>
 </html>
