@@ -452,10 +452,12 @@ details.spd summary{cursor:pointer;font-weight:800;color:var(--gold2);font-size:
 .act-month{font-size:12px;font-weight:800;color:var(--acc);margin-bottom:2px}
 
 .slcal{display:grid;grid-template-columns:repeat(3,1fr);gap:1vh .8vw;width:100%;height:100%;align-content:center}
-.slcal div{border-radius:10px;padding:.9vh .7vw;border:1px solid color-mix(in srgb,var(--a) 60%,transparent);background:color-mix(in srgb,var(--a) 14%,transparent)}
+.slcal>div{display:grid;grid-template-columns:3.6vw 1fr;gap:.6vw;align-items:center;border-radius:10px;padding:.7vh .5vw;border:1px solid color-mix(in srgb,var(--a) 60%,transparent);background:color-mix(in srgb,var(--a) 14%,transparent)}
 .slcal small{display:block;font-size:clamp(8px,.75vw,11px);font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--a)}
 .slcal b{display:block;font-family:var(--serif);font-size:clamp(11px,1.15vw,17px);line-height:1.1;color:#fff}
 .slcal span{display:block;font-size:clamp(8px,.72vw,11px);opacity:.85;line-height:1.25;margin-top:2px}
+.slide .sl-r .slcal img{width:3.6vw;height:3.6vw;object-fit:cover;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+.slcal p{margin:0;min-width:0}
 </style>
 </head>
 <body>
@@ -1469,7 +1471,7 @@ document.querySelectorAll('.slot').forEach(el=>{
   el.querySelector('.rm').addEventListener('click',()=>resetSlot(el));
 });
 idb().then(d=>{if(!d)return;document.querySelectorAll('.slot').forEach(el=>{try{const q=d.transaction('img').objectStore('img').get(el.dataset.slot);q.onsuccess=()=>{if(q.result)setSlot(el,q.result)}}catch(e){}})});
-function slotHTML(id){if(id==='cal')return '<div class="slcal">'+byMonth().map(b=>`<div style="--a:${b.color[0]}"><small>${VAL[b.id][0]}</small><b>${b.title}</b><span>${VAL[b.id][2]} ${VAL[b.id][1]}</span></div>`).join('')+'</div>';if(id==='qr')return '<img src="'+img('qr/main.png')+'" alt="" style="object-fit:contain;background:#fff;padding:4%;max-width:70%;max-height:70%;border-radius:20px">';if(id==='portrait')return '<img src="abish.jpg" alt="" style="object-fit:contain">';const el=document.querySelector(`.slot[data-slot="${id}"]`);if(!el)return '';const k='s'+(++__u);return el.querySelector('svg,img').outerHTML.replace(/id="([^"]+)"/g,(m,a)=>`id="${a}${k}"`).replace(/url\(#([^)]+)\)/g,(m,a)=>`url(#${a}${k})`)}
+function slotHTML(id){if(id==='cal')return '<div class="slcal">'+byMonth().map(b=>`<div style="--a:${b.color[0]}"><img src="${img('covers/sm/'+b.id+'.jpg')}" alt=""><p><small>${VAL[b.id][0]}</small><b>${b.title}</b><span>${VAL[b.id][2]} ${VAL[b.id][1]}</span></p></div>`).join('')+'</div>';if(id==='qr')return '<img src="'+img('qr/main.png')+'" alt="" style="object-fit:contain;background:#fff;padding:4%;max-width:70%;max-height:70%;border-radius:20px">';if(id==='portrait')return '<img src="abish.jpg" alt="" style="object-fit:contain">';const el=document.querySelector(`.slot[data-slot="${id}"]`);if(!el)return '';const k='s'+(++__u);return el.querySelector('svg,img').outerHTML.replace(/id="([^"]+)"/g,(m,a)=>`id="${a}${k}"`).replace(/url\(#([^)]+)\)/g,(m,a)=>`url(#${a}${k})`)}
 
 /* ---------- plan ---------- */
 const PLAN=[['Кіріспе: жазушы, ұран',30,'#f3d48b'],...BOOKS.map((b,i)=>[b.title,i<5?40:22,b.color[0]]),['Қорытынды',36,'#d8a94a']];
