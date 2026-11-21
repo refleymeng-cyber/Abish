@@ -1137,16 +1137,11 @@ BOOKS.forEach(b=>{
     <div class="slot" data-slot="${b.id}">${COVERS.includes(b.id)?`<img src="${img('covers/'+b.id+'.jpg')}" alt="«${b.title}» мұқабасы">`:art(b.id)}<button class="rm">✕</button><label class="up">🖼 Сурет қою<input type="file" accept="image/*"></label></div>
   </div>
   <div class="nums rv">${b.nums.map(n=>`<div class="num"><b style="${n[0].length>6?'font-size:24px;line-height:1.15':''}">${n[0]}</b><span>${n[1]}</span></div>`).join('')}</div>
-  <div class="box rv" style="margin-top:16px"><h4>Сюжет кадрлары</h4><div class="story">${b.curve.map((c,i)=>`<div class="frame-c"><div class="no">0${i+1}</div><div class="em">${STORY[b.id][i]}</div><p>${c[0]}</p></div>`).join('')}</div></div>
   <div class="pull rv"><p>${PULL[b.id]}</p><small>Шығарманың түйіні</small></div>
   <div class="mono rv"><div class="who"><i>${b.syms[0][0]}</i><b>${MONO[b.id][0]}</b></div><div><div class="kicker" style="color:var(--acc)">Кейіпкер сөйлейді</div><p>«${MONO[b.id][1]}»</p><small>Шығарма желісі бойынша жазылған монолог (түпнұсқа мәтін емес)</small></div></div>
   <div class="g2">
     <div class="box wide big rv"><h4>Кейіпкерлер желісі</h4>${netHTML(b.net)}</div>
     <div class="box wide big rv"><h4>${b.extra.t}</h4>${EXTRA[b.id](a,fg)}</div>
-    <div class="box wide big rv"><h4>${b.curveT||'Сюжет графигі: шиеленістің өсуі'}</h4>${curveSVG(b.curve,a,fg)}</div>
-    <div class="box wide big rv"><h4>Тақырыптық салмақ</h4>${donutHTML(b.donut,a)}<div class="note">Пайыздар — талдау бойынша берілген баға</div></div>
-    <div class="box wide rv"><h4>Символдар</h4><div class="syms">${b.syms.map(s=>`<div class="sym"><div class="ic">${s[0]}</div><b>${s[1]}</b><span>${s[2]}</span></div>`).join('')}</div></div>
-    <div class="box wide rv"><h4>Қарама-қарсылық</h4><div class="vs"><div class="side"><b>${b.vs[0][0]}</b><span>${b.vs[0][1]}</span></div><div class="mid">⇄</div><div class="side"><b>${b.vs[1][0]}</b><span>${b.vs[1][1]}</span></div></div></div>
     <div class="box rv"><h4>Білесің бе?</h4><div class="dyk">${b.dyk.map((d,i)=>`<div><i>${i+1}</i><span>${d}</span></div>`).join('')}</div></div>
     <div class="box rv"><h4>Бүгінгі оқырманға</h4><ul class="list">${b.now.map(x=>`<li>${x}</li>`).join('')}</ul></div>
   </div>
