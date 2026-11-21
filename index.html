@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Әбіш әлемі: 12 шығарма</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0d1526;--gold:#d8a94a;--gold2:#f3d48b;--cream:#f7efdc;--muted:#8c96ab;--line:rgba(216,169,74,.35);
+--serif:'Cormorant Garamond',Georgia,serif;--sans:'Montserrat',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--ink);color:var(--cream);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.orn{height:26px;background-repeat:repeat-x;background-size:52px 26px;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 26'%3E%3Cpath d='M26 22c0-6-4-9-8-9s-6 3-6 5 2 3 3 3 2-1 2-2M26 22c0-6 4-9 8-9s6 3 6 5-2 3-3 3-2-1-2-2M26 22V6M26 6c-3 0-5 2-5 4M26 6c3 0 5 2 5 4M0 24h52' fill='none' stroke='%23d8a94a' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E")}
+nav.top{position:sticky;top:0;z-index:40;background:rgba(13,21,38,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;gap:16px;height:60px}
+.brand{font-family:var(--serif);font-size:24px;font-weight:700;color:var(--gold2);white-space:nowrap;text-decoration:none}
+.navlinks{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1}
+.navlinks::-webkit-scrollbar{display:none}
+.navlinks a{font-size:13px;font-weight:600;padding:8px 11px;border-radius:999px;text-decoration:none;color:#cfd6e4;white-space:nowrap}
+.navlinks a:hover{background:rgba(216,169,74,.15);color:var(--gold2)}
+.btn{font-family:var(--sans);font-weight:700;font-size:13px;border:0;cursor:pointer;border-radius:999px;padding:10px 18px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#2a1a00;white-space:nowrap;text-decoration:none;display:inline-block}
+.btn.ghost{background:transparent;color:var(--gold2);border:1.5px solid var(--gold)}
+.kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:800}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:54px 0 44px}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 500px at 78% 20%,rgba(216,169,74,.2),transparent 60%),radial-gradient(700px 500px at 0% 100%,rgba(60,90,160,.25),transparent 60%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1fr;gap:44px;align-items:center}
+.hero h1{font-family:var(--serif);font-size:clamp(42px,6vw,76px);line-height:1;margin:14px 0 18px;color:#fff}
+.hero h1 em{color:var(--gold2)}
+.slogan{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.3vw,28px);line-height:1.35;color:var(--gold2);border-left:3px solid var(--gold);padding-left:18px;margin-bottom:20px}
+.lead{color:#c7cfdf;max-width:540px}
+.hero-actions{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.hero-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px;max-width:520px}
+.hero-nums div{border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center;background:rgba(255,255,255,.03)}
+.hero-nums b{font-family:var(--serif);font-size:34px;color:var(--gold2);display:block;line-height:1}
+.hero-nums span{font-size:11px;color:#b9c2d4}
+
+/* image slots */
+.slot{position:relative;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04)}
+.slot>svg,.slot>img{width:100%;height:100%;object-fit:cover;display:block}
+.slot .up{position:absolute;right:10px;bottom:10px;font-size:12px;font-weight:700;padding:8px 12px;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;cursor:pointer;backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25)}
+.slot .up input{display:none}
+.slot .rm{position:absolute;right:10px;top:10px;font-size:12px;font-weight:700;padding:6px 10px;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;border:0;cursor:pointer;display:none}
+.slot.has .rm{display:block}
+.hero .slot{aspect-ratio:1671/941;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+
+section.block{padding:70px 0}
+.sh{text-align:center;max-width:780px;margin:0 auto 40px}
+.sh h2{font-family:var(--serif);font-size:clamp(32px,4vw,52px);line-height:1.08;color:#fff;margin:10px 0 12px}
+.sh p{color:#b9c2d4}
+
+/* bio infographic */
+.bio{display:grid;grid-template-columns:1.1fr 1fr;gap:22px}
+.card{border:1px solid var(--line);border-radius:22px;padding:24px;background:rgba(255,255,255,.03)}
+.card h3{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:800;margin-bottom:14px}
+.vt{position:relative;padding-left:26px}
+.vt::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--gold),transparent)}
+.vt div{position:relative;margin-bottom:14px}
+.vt div::before{content:"";position:absolute;left:-25px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--ink);border:3px solid var(--gold)}
+.vt b{font-family:var(--serif);font-size:22px;color:var(--gold2);margin-right:8px}
+.vt span{font-size:14px;color:#d3d9e6}
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.role{text-align:center;padding:14px 8px;border-radius:14px;background:rgba(216,169,74,.08)}
+.role i{font-style:normal;font-size:26px;display:block}
+.role b{font-size:13px;display:block;margin-top:4px}
+.genre-bars .gb{display:grid;grid-template-columns:110px 1fr 36px;gap:10px;align-items:center;font-size:13px;margin-bottom:9px}
+.gb .tr{height:12px;border-radius:9px;background:rgba(255,255,255,.07);overflow:hidden}
+.gb .tr div{height:100%;border-radius:9px;background:linear-gradient(90deg,var(--gold2),var(--gold))}
+.gb em{font-style:normal;font-weight:800;color:var(--gold2);text-align:right}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.fact{border-radius:18px;padding:20px;background:linear-gradient(150deg,rgba(216,169,74,.16),rgba(255,255,255,.02));border:1px solid var(--line)}
+.fact .q{font-size:11px;font-weight:800;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.fact p{margin-top:8px;font-size:14px;color:#e3e7ef}
+.mapcard svg{width:100%;height:auto}
+
+/* shelf */
+.shelf{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.spine{position:relative;text-decoration:none;border-radius:16px;padding:20px 16px 18px;min-height:250px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;border:1px solid rgba(255,255,255,.12);transition:transform .25s}
+.spine:hover{transform:translateY(-6px)}
+.spine .n{font-size:11px;font-weight:800;letter-spacing:.2em}
+.spine h3{font-family:var(--serif);font-size:30px;line-height:1.05;margin-top:6px}
+.spine .g{font-size:12px;font-weight:600;opacity:.85}
+.spine svg{position:absolute;right:-14px;bottom:30px;width:120px;height:120px;opacity:.3}
+.spine .go{font-size:12px;font-weight:700}
+
+/* POSTER = vertical infographic */
+.poster{--bg:#1a1410;--fg:#f6ead2;--acc:#e0a54a;--card:rgba(255,255,255,.05);--bd:rgba(255,255,255,.09);
+position:relative;max-width:1080px;margin:0 auto 90px;border-radius:30px;overflow:hidden;background:var(--bg);color:var(--fg);box-shadow:0 40px 100px rgba(0,0,0,.5)}
+.poster .frame{position:absolute;inset:12px;border:1.5px solid color-mix(in srgb,var(--acc) 50%,transparent);border-radius:22px;pointer-events:none;z-index:2}
+.p-in{position:relative;padding:44px 46px 36px}
+.p-top{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:stretch}
+.p-tag{display:inline-flex;gap:8px;align-items:center;font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--acc)}
+.p-tag i{width:28px;height:2px;background:var(--acc)}
+.p-title{font-family:var(--serif);font-weight:700;font-size:clamp(54px,7.6vw,100px);line-height:.92;margin:12px 0 12px}
+.p-sub{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.2vw,26px);line-height:1.3;opacity:.95}
+.p-top .slot{aspect-ratio:1/1}
+.idea{margin-top:20px;padding:18px 20px;border-radius:16px;background:var(--card);border-left:4px solid var(--acc);font-size:15px;line-height:1.55}
+.idea b{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--acc);margin-bottom:6px}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:28px 0 6px;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+.num{padding:18px 14px;text-align:center;border-right:1px solid var(--bd)}
+.num:last-child{border-right:0}
+.num b{font-family:var(--serif);font-size:44px;line-height:1;color:var(--acc);display:block}
+.num span{font-size:12px;opacity:.85;display:block;margin-top:4px;line-height:1.35}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.box{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:18px 20px}
+.box.wide{grid-column:1/-1}
+.box h4{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--acc);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.box h4::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--acc);transform:rotate(45deg)}
+.box svg{width:100%;height:auto;display:block}
+.box .note{font-size:11px;opacity:.6;margin-top:8px}
+.syms{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.sym{text-align:center;padding:12px 8px;border-radius:14px;background:rgba(0,0,0,.18)}
+.sym .ic{font-size:30px;line-height:1;margin-bottom:6px}
+.sym b{display:block;font-size:14px}
+.sym span{font-size:12px;opacity:.85;line-height:1.35;display:block}
+.list{list-style:none;display:grid;gap:8px}
+.list li{position:relative;padding-left:22px;font-size:14px}
+.list li::before{content:"✦";position:absolute;left:0;color:var(--acc);font-size:12px;top:2px}
+.dyk{display:grid;gap:10px}
+.dyk div{display:flex;gap:12px;align-items:flex-start;font-size:14px}
+.dyk div i{font-style:normal;flex:none;width:30px;height:30px;border-radius:50%;background:var(--acc);color:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px}
+.vs{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:stretch}
+.vs .side{border-radius:14px;padding:14px;background:rgba(0,0,0,.18)}
+.vs .side b{display:block;color:var(--acc);margin-bottom:6px;font-size:14px}
+.vs .side span{font-size:13px;display:block;line-height:1.5}
+.vs .mid{display:grid;place-items:center;font-family:var(--serif);font-size:28px;color:var(--acc)}
+.promo{display:flex;gap:16px;align-items:center;margin-top:16px;padding:18px 22px;border-radius:18px;background:linear-gradient(120deg,color-mix(in srgb,var(--acc) 25%,transparent),transparent);border:1px dashed color-mix(in srgb,var(--acc) 70%,transparent)}
+.promo .tag{font-family:var(--serif);font-weight:700;font-size:26px;color:var(--acc);white-space:nowrap}
+.promo p{font-size:14px}
+.qline{margin-top:14px;text-align:center;font-family:var(--serif);font-style:italic;font-size:20px}
+.p-foot{display:flex;justify-content:space-between;gap:10px;margin-top:20px;padding-top:14px;border-top:1px solid var(--bd);font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.7;font-weight:600}
+
+#shynyrau{--bg:#1b130d;--fg:#f4e6cc;--acc:#e3a24c;--card:rgba(227,162,76,.07)}
+#anyz{--bg:#0b2330;--fg:#e8f4f2;--acc:#3fc1b5;--card:rgba(63,193,181,.08)}
+#urker{--bg:#0c1030;--fg:#e9ecff;--acc:#a8b8ff;--card:rgba(168,184,255,.08)}
+#elen{--bg:#2a1220;--fg:#ffeee4;--acc:#ff9a62;--card:rgba(255,154,98,.08)}
+#qus{--bg:#f5ecd9;--fg:#2e2a20;--acc:#4f7a4a;--card:rgba(79,122,74,.08);--bd:rgba(0,0,0,.1)}
+#qus .sym,#qus .vs .side{background:rgba(79,122,74,.09)}
+#qus .dyk div i{color:#fff}
+
+.scheme{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.sc{border:1px solid var(--line);border-radius:18px;padding:22px;background:rgba(255,255,255,.03)}
+.sc h3{font-family:var(--serif);font-size:26px;color:var(--gold2);margin-bottom:8px}
+.sc p{font-size:14px;color:#c7cfdf}
+.sc .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.sc .tags span{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:rgba(216,169,74,.14);color:var(--gold2)}
+.plan{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}
+.bar{display:flex;height:46px;border-radius:12px;overflow:hidden;margin-bottom:14px}
+.bar div{display:grid;place-items:center;font-size:11px;font-weight:800;color:#1a1306;overflow:hidden}
+.plist{list-style:none;display:grid;gap:8px}
+.plist li{display:flex;justify-content:space-between;gap:10px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,.04);font-size:14px}
+.plist li b{color:var(--gold2);font-variant-numeric:tabular-nums}
+.crit{display:grid;gap:10px}
+.cr{padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.cr b{display:block;color:#fff;font-size:14px}
+.cr span{font-size:13px;color:#b9c2d4}
+.quiz{max-width:760px;margin:0 auto;border:1px solid var(--line);border-radius:22px;padding:28px;background:rgba(255,255,255,.03)}
+.qq{font-family:var(--serif);font-size:26px;color:#fff;margin-bottom:16px;line-height:1.25}
+.qo{display:grid;gap:10px}
+.qo button{text-align:left;font-family:var(--sans);font-size:15px;padding:13px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.04);color:var(--cream);cursor:pointer}
+.qo button.ok{background:rgba(70,180,110,.25);border-color:#4cc27a}
+.qo button.no{background:rgba(220,80,80,.2);border-color:#e06060}
+.qmeta{display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-size:13px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:34px 0 50px;text-align:center;color:#9aa4b8;font-size:14px}
+footer b{color:var(--gold2);font-family:var(--serif);font-size:22px}
+
+#show{position:fixed;inset:0;z-index:100;background:#070b16;display:none;flex-direction:column}
+#show.on{display:flex}
+.s-top{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;border-bottom:1px solid var(--line);gap:12px}
+.timer{font-variant-numeric:tabular-nums;font-weight:800;font-size:22px;color:var(--gold2)}
+.timer.warn{color:#ffb35c}.timer.over{color:#ff6b6b}
+.s-prog{flex:1;height:6px;background:rgba(255,255,255,.08);border-radius:9px;overflow:hidden;max-width:420px}
+.s-prog div{height:100%;background:linear-gradient(90deg,var(--gold2),var(--gold));width:0;transition:width .4s}
+.s-stage{flex:1;display:grid;place-items:center;padding:24px;overflow:hidden}
+.slide{width:min(1200px,100%);aspect-ratio:16/9;max-height:100%;border-radius:22px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;background:var(--bg);color:var(--fg)}
+.slide .sl-l{padding:5%;display:flex;flex-direction:column;justify-content:center;gap:2vh}
+.slide .sl-r{display:grid;place-items:center;padding:4%}
+.slide .sl-r svg,.slide .sl-r img{width:100%;height:100%;object-fit:contain;border-radius:16px}
+.slide h2{font-family:var(--serif);font-size:clamp(34px,5.4vw,78px);line-height:.95}
+.slide .sl-k{font-size:clamp(10px,1vw,13px);font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--acc)}
+.slide .sl-i{font-family:var(--serif);font-style:italic;font-size:clamp(16px,1.9vw,26px);line-height:1.3}
+.slide ul{list-style:none;display:grid;gap:1vh}
+.slide li{font-size:clamp(12px,1.25vw,17px);padding-left:20px;position:relative}
+.slide li::before{content:"✦";position:absolute;left:0;color:var(--acc)}
+.slide .sl-t{font-size:clamp(11px,1vw,14px);opacity:.75;font-weight:700;color:var(--acc)}
+.s-bot{display:flex;justify-content:center;gap:10px;padding:12px}
+
+@media (max-width:900px){
+.hero .wrap,.p-top,.plan,.bio{grid-template-columns:1fr}
+.shelf{grid-template-columns:repeat(2,1fr)}
+.nums{grid-template-columns:repeat(2,1fr)}.num:nth-child(2){border-right:0}
+.g2,.g3,.scheme,.facts{grid-template-columns:1fr}
+.p-in{padding:30px 22px}
+.vs{grid-template-columns:1fr}.vs .mid{display:none}
+.slide{grid-template-columns:1fr;aspect-ratio:auto}.slide .sl-r{display:none}
+}
+@media print{nav.top,.hero-actions,#show,.quiz-wrap,.no-print,.slot .up,.slot .rm{display:none!important}body{background:#fff}.poster{break-before:page;box-shadow:none}}
+
+.poster{display:none}
+body.book .poster.active{display:block}
+body.book .home-only{display:none!important}
+body.book #posters{padding-top:36px}
+.pnav{display:flex;justify-content:space-between;align-items:center;gap:10px;max-width:1080px;margin:-60px auto 70px;flex-wrap:wrap}
+.pnav a{text-decoration:none}
+.crumb{max-width:1080px;margin:0 auto 18px;display:flex;align-items:center;gap:10px;font-size:13px;color:#b9c2d4}
+.crumb a{color:var(--gold2);text-decoration:none;font-weight:700}
+@media print{.pnav,.crumb{display:none!important}}
+
+/* ---- life ---- */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.bucket{animation:bucket 6s ease-in-out infinite}
+@keyframes bucket{0%,100%{transform:translateY(-150px)}50%{transform:translateY(20px)}}
+.pulse{animation:pulse 4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pulse{50%{transform:scale(1.12);opacity:1}}
+.glow{animation:glow 3.5s ease-in-out infinite}
+@keyframes glow{50%{filter:drop-shadow(0 0 14px #5fe0d0) brightness(1.15)}}
+.tw,.twg circle{animation:tw 2.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.twg circle:nth-child(2n){animation-delay:1.1s}
+@keyframes tw{50%{opacity:.35;transform:scale(.75)}}
+.sunrise{animation:sun 9s ease-in-out infinite alternate}
+@keyframes sun{from{transform:translateY(40px)}to{transform:translateY(-14px)}}
+.flap{animation:flap 3.2s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 100%}
+@keyframes flap{50%{transform:scaleY(.9) scaleX(1.04)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.bhero{display:none;position:relative;min-height:calc(100vh - 60px);overflow:hidden;align-items:center;background:var(--hb);color:var(--hf)}
+body.book .bhero.active{display:flex}
+.bhero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.bhero .bh-in{position:relative;z-index:1;width:100%;max-width:1180px;margin:0 auto;padding:40px 22px;display:grid;grid-template-columns:1.05fr 1fr;gap:46px;align-items:center}
+.bh-k{font-size:12px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--ha)}
+.bh-t{font-family:var(--serif);font-weight:700;font-size:clamp(60px,9vw,128px);line-height:.9;margin:16px 0 18px}
+.bh-t span{display:inline-block;opacity:0;transform:translateY(40px) rotate(4deg);animation:letter .8s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes letter{to{opacity:1;transform:none}}
+.bh-s{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.6vw,32px);line-height:1.3;opacity:0;animation:fadeup 1s .8s forwards}
+.bh-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;opacity:0;animation:fadeup 1s 1.1s forwards}
+.bh-chips span{font-size:13px;font-weight:700;padding:8px 14px;border-radius:999px;border:1px solid color-mix(in srgb,var(--ha) 60%,transparent);background:color-mix(in srgb,var(--ha) 12%,transparent)}
+.bh-go{margin-top:30px;opacity:0;animation:fadeup 1s 1.4s forwards}
+.bh-go a{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:14px;text-decoration:none;color:var(--hb);background:var(--ha);padding:14px 22px;border-radius:999px}
+@keyframes fadeup{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.bh-art{position:relative;aspect-ratio:1/1;border-radius:32px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.55),0 0 0 1px color-mix(in srgb,var(--ha) 40%,transparent);animation:float 7s ease-in-out infinite,fadeup 1.2s .3s both}
+.bh-art svg,.bh-art img{width:100%;height:100%;object-fit:cover;display:block}
+@keyframes float{50%{transform:translateY(-12px)}}
+.bh-art::after{content:"";position:absolute;inset:0;border-radius:32px;box-shadow:inset 0 0 0 10px rgba(255,255,255,.04)}
+.scroll-cue{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:1;font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.7;text-align:center}
+.scroll-cue i{display:block;width:2px;height:34px;margin:8px auto 0;background:linear-gradient(var(--ha),transparent);animation:cue 1.8s infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+.story{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.frame-c{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:3/4;padding:16px 14px;display:flex;flex-direction:column;justify-content:flex-end;
+ background:radial-gradient(120% 80% at 50% 0%,color-mix(in srgb,var(--acc) 38%,transparent),transparent 70%),linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.35));border:1px solid var(--bd)}
+#qus .frame-c{background:radial-gradient(120% 80% at 50% 0%,rgba(79,122,74,.3),transparent 70%),rgba(255,255,255,.4)}
+.frame-c .em{position:absolute;top:16%;left:0;right:0;text-align:center;font-size:58px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.35));transition:transform .4s}
+.frame-c:hover .em{transform:scale(1.15) rotate(-4deg)}
+.frame-c .no{position:absolute;top:12px;left:14px;font-family:var(--serif);font-size:30px;font-weight:700;color:var(--acc);opacity:.85}
+.frame-c p{font-size:13px;font-weight:600;line-height:1.4}
+.pull{margin:18px 0 0;padding:34px 30px;border-radius:22px;text-align:center;position:relative;background:linear-gradient(135deg,color-mix(in srgb,var(--acc) 20%,transparent),transparent 70%);border:1px solid var(--bd)}
+.pull::before{content:"“";position:absolute;top:-18px;left:24px;font-family:var(--serif);font-size:120px;line-height:1;color:var(--acc);opacity:.5}
+.pull p{font-family:var(--serif);font-style:italic;font-size:clamp(24px,3vw,38px);line-height:1.25}
+.pull small{display:block;margin-top:10px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--acc);font-weight:800}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.cline{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.2s ease}
+.in .cline{stroke-dashoffset:0}
+@media (max-width:900px){.bhero .bh-in{grid-template-columns:1fr}.story{grid-template-columns:repeat(2,1fr)}}
+@media print{.bhero{display:none!important}.rv{opacity:1;transform:none}}
+
+/* ---- big readable infographics ---- */
+.box h4{font-size:13px}
+.big{padding:26px 28px}
+.net{display:grid;grid-template-columns:1fr auto 1fr;gap:20px 40px;align-items:center}
+.net .col{display:grid;gap:22px}
+.nd{position:relative;border:1.5px solid var(--acc);border-radius:18px;padding:18px 20px;background:color-mix(in srgb,var(--acc) 10%,transparent)}
+.nd b{display:block;font-size:21px;line-height:1.2}
+.nd span{font-size:15px;opacity:.8}
+.nd em{position:absolute;top:-13px;font-style:normal;font-size:12.5px;font-weight:800;padding:3px 11px;border-radius:999px;background:var(--acc);color:var(--bg)}
+#qus .nd em{color:#fff}
+.col.l .nd em{right:16px}.col.r .nd em{left:16px}
+.col.l .nd::after,.col.r .nd::before{content:"";position:absolute;top:50%;width:40px;height:2px;background:var(--acc);opacity:.7}
+.col.l .nd::after{right:-42px}.col.r .nd::before{left:-42px}
+.hub{width:210px;height:210px;border-radius:50%;background:var(--acc);color:#111;display:grid;place-content:center;text-align:center;padding:16px;box-shadow:0 0 0 12px color-mix(in srgb,var(--acc) 22%,transparent),0 0 70px color-mix(in srgb,var(--acc) 50%,transparent)}
+#qus .hub{color:#fff}
+.hub b{font-family:var(--serif);font-size:30px;line-height:1}
+.hub span{font-size:14px;font-weight:600;opacity:.8;margin-top:6px}
+.depth{display:grid;gap:8px}
+.dr{display:grid;grid-template-columns:110px 1fr;align-items:center;gap:18px;padding:14px 18px;border-radius:14px}
+.dr .m{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--acc);text-align:center}
+.dr b{font-size:20px;display:block}.dr span{font-size:15px;opacity:.85}
+.worlds{display:grid;grid-template-columns:1fr 150px 1fr;gap:24px;align-items:stretch}
+.wd{border-radius:18px;padding:22px}
+.wd h5{font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);margin-bottom:12px}
+.wd li{font-size:18px;list-style:none;padding:6px 0;border-bottom:1px solid var(--bd)}
+.wd li:last-child{border:0}
+.yrs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.yr{border-radius:16px;padding:16px;text-align:center;background:color-mix(in srgb,var(--acc) 10%,transparent);border:1px solid var(--bd)}
+.yr b{font-family:var(--serif);font-size:38px;color:var(--acc);display:block;line-height:1}
+.yr strong{display:block;font-size:17px;margin-top:6px}.yr span{font-size:14px;opacity:.8}
+.dawn{height:80px;border-radius:40px;background:linear-gradient(90deg,#140c2a,#8a3a6a 50%,#ff8a5c 80%,#ffd38a);position:relative;box-shadow:0 10px 40px rgba(255,140,90,.25)}
+.dawn i{position:absolute;top:-16px;left:70%;transform:translateX(-50%);width:34px;height:34px;border-radius:50%;background:var(--acc);border:4px solid var(--bg);box-shadow:0 0 30px var(--acc)}
+.dawn-l{display:grid;grid-template-columns:repeat(4,1fr);margin-top:14px;text-align:center}
+.dawn-l b{font-size:20px;display:block}.dawn-l span{font-size:14px;opacity:.8}
+.dawn-l div.on b{color:var(--acc)}
+.lpath{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;position:relative}
+.lpath::before{content:"";position:absolute;left:8%;right:8%;top:30px;height:4px;border-radius:4px;background:repeating-linear-gradient(90deg,var(--acc) 0 10px,transparent 10px 18px)}
+.lp{text-align:center;position:relative}
+.lp i{width:60px;height:60px;margin:0 auto 12px;border-radius:50%;background:var(--acc);display:grid;place-items:center;font-style:normal;font-size:26px;box-shadow:0 0 0 8px color-mix(in srgb,var(--acc) 18%,transparent)}
+.lp b{font-size:19px;display:block}.lp span{font-size:14px;opacity:.8}
+.dn{display:grid;grid-template-columns:240px 1fr;gap:30px;align-items:center}
+.lg{display:grid;gap:14px}
+.lg div{display:grid;grid-template-columns:1fr 64px;gap:4px 10px;align-items:center}
+.lg span{font-size:17px;font-weight:600}
+.lg em{font-style:normal;font-family:var(--serif);font-size:28px;font-weight:700;color:var(--acc);text-align:right;grid-row:span 2}
+.lg u{display:block;height:10px;border-radius:9px;background:var(--bd);overflow:hidden;text-decoration:none}
+.lg u s{display:block;height:100%;background:var(--acc);border-radius:9px;width:0;transition:width 1.4s ease}
+.in .lg u s{width:var(--w)}
+.sym .ic{font-size:40px}.sym b{font-size:17px}.sym span{font-size:14px}
+.vs .side b{font-size:19px}.vs .side span{font-size:16px}
+.dyk div{font-size:16px}.list li{font-size:16px}
+@media (max-width:900px){.net{grid-template-columns:1fr}.hub{margin:0 auto;width:170px;height:170px}.col.l .nd::after,.col.r .nd::before{display:none}
+.worlds,.dn{grid-template-columns:1fr}.yrs,.dawn-l{grid-template-columns:repeat(2,1fr)}.lpath{grid-template-columns:1fr}.lpath::before{display:none}}
+
+.shelf3d{display:none;opacity:0;transition:opacity .6s;position:relative;height:580px;border-radius:28px;overflow:hidden;background:radial-gradient(800px 420px at 50% 35%,rgba(216,169,74,.2),transparent 70%),linear-gradient(#0f1a30,#0a1020);border:1px solid var(--line)}
+.shelf3d canvas{display:block;width:100%!important;height:100%!important;touch-action:none}
+.shelf-tip{position:absolute;pointer-events:none;transform:translate(-50%,-100%);background:rgba(13,21,38,.92);border:1px solid var(--gold);border-radius:12px;padding:8px 14px;opacity:0;transition:opacity .2s;white-space:nowrap;z-index:2}
+.shelf-tip.on{opacity:1}.shelf-tip b{display:block;font-family:var(--serif);font-size:24px;color:var(--gold2)}.shelf-tip span{font-size:12px;color:#c7cfdf}
+.hint3d{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);font-size:13px;font-weight:600;color:#e3e7ef;background:rgba(0,0,0,.4);padding:7px 16px;border-radius:999px;pointer-events:none;white-space:nowrap}
+.bh-art canvas{display:block;touch-action:none;cursor:grab}
+.bh-art::after{pointer-events:none}
+.hud-depth{position:absolute;top:18px;left:18px;background:rgba(0,0,0,.5);border:1px solid rgba(227,162,76,.6);border-radius:14px;padding:10px 16px;color:#f4e6cc;pointer-events:none}
+.hud-depth b{font-family:var(--serif);font-size:42px;display:block;line-height:1;color:#e3a24c}.hud-depth span{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.hud-hint{position:absolute;bottom:14px;left:14px;font-size:12.5px;font-weight:700;padding:7px 13px;border-radius:999px;background:rgba(0,0,0,.45);color:#fff;pointer-events:none}
+.artsw{position:absolute;top:14px;right:14px;display:flex;gap:4px;background:rgba(0,0,0,.5);padding:4px;border-radius:999px;z-index:3}
+.artsw button{border:0;background:transparent;color:#fff;font:700 12px var(--sans);padding:6px 12px;border-radius:999px;cursor:pointer}.artsw button.on{background:var(--ha);color:#111}
+@media (max-width:900px){.shelf3d{height:440px}}
+
+.author-band{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:center;margin-bottom:28px;padding:28px;border-radius:28px;border:1px solid var(--line);background:radial-gradient(600px 300px at 20% 30%,rgba(216,169,74,.16),transparent 70%),rgba(255,255,255,.02)}
+.portrait{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:540/632;box-shadow:0 0 0 2px var(--gold),0 0 0 10px rgba(216,169,74,.12),0 30px 70px rgba(0,0,0,.5)}
+.portrait img{width:100%;height:100%;object-fit:cover;filter:sepia(.25) contrast(1.05)}
+.portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(13,21,38,.85))}
+.portrait span{position:absolute;left:0;right:0;bottom:14px;text-align:center;z-index:1;font-family:var(--serif);font-size:22px;color:var(--gold2);font-weight:700}
+.ab-name{font-family:var(--serif);font-size:clamp(40px,5vw,64px);line-height:1;color:#fff}
+.ab-dates{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--gold2);margin:8px 0 16px}
+.ab-roles{display:flex;flex-wrap:wrap;gap:8px}
+.ab-roles span{font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px;background:rgba(216,169,74,.14);color:var(--gold2)}
+.ab-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.ab-stats div{border:1px solid var(--line);border-radius:16px;padding:14px;text-align:center}
+.ab-stats b{font-family:var(--serif);font-size:36px;color:var(--gold2);display:block;line-height:1}
+.ab-stats span{font-size:12.5px;color:#c7cfdf}
+.bh-who{display:flex;align-items:center;gap:12px}
+.bh-av{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:50% 25%;border:2px solid var(--ha);box-shadow:0 0 0 5px color-mix(in srgb,var(--ha) 20%,transparent)}
+@media (max-width:900px){.author-band{grid-template-columns:1fr}.portrait{max-width:280px;margin:0 auto}.ab-stats{grid-template-columns:1fr}}
+
+/* ---- extra sections ---- */
+.concept{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cc{border:1px solid var(--line);border-radius:20px;padding:22px;background:rgba(255,255,255,.03)}
+.cc .ci{font-size:30px}.cc h3{font-family:var(--serif);font-size:26px;color:var(--gold2);margin:6px 0 8px}.cc p,.cc li{font-size:15px;color:#d3d9e6}
+.cc ul{list-style:none;display:grid;gap:6px}.cc li::before{content:"✦ ";color:var(--gold)}
+.cc.wide{grid-column:span 3}
+.idea-big{font-family:var(--serif);font-style:italic;font-size:clamp(24px,3vw,36px);color:#fff;text-align:center;line-height:1.3}
+.doors{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:18px}
+.door{border-radius:16px 16px 6px 6px;padding:18px 12px;text-align:center;border:1px solid var(--line);background:linear-gradient(180deg,rgba(216,169,74,.18),transparent)}
+.door b{display:block;font-family:var(--serif);font-size:22px;color:#fff}.door span{font-size:13px;color:var(--gold2);font-weight:700}
+.channels{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.ch{text-align:center;padding:18px 10px;border-radius:16px;background:rgba(216,169,74,.08);border:1px solid var(--line)}
+.ch i{font-style:normal;font-size:32px;display:block}.ch b{display:block;font-size:15px;margin:6px 0 4px;color:#fff}.ch span{font-size:13px;color:#b9c2d4}
+.weeks{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.wk{padding:18px 14px;border-left:3px solid var(--gold);background:rgba(255,255,255,.03)}
+.wk:first-child{border-radius:14px 0 0 14px}.wk:last-child{border-radius:0 14px 14px 0}
+.wk small{font-size:11px;font-weight:800;letter-spacing:.18em;color:var(--gold)}.wk b{display:block;font-size:18px;color:#fff;margin:4px 0}.wk p{font-size:14px;color:#c7cfdf}
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.wy{border-radius:18px;padding:20px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(216,169,74,.12),transparent)}
+.wy i{font-style:normal;font-size:30px}.wy b{display:block;font-size:17px;color:#fff;margin:8px 0 6px}.wy p{font-size:14px;color:#c7cfdf}.wy a{font-size:13px;font-weight:700;color:var(--gold2)}
+.fitbox{max-width:860px;margin:0 auto;border:1px solid var(--line);border-radius:24px;padding:30px;background:rgba(255,255,255,.03)}
+.fit-prog{display:flex;gap:6px;margin-bottom:18px}.fit-prog i{flex:1;height:6px;border-radius:6px;background:rgba(255,255,255,.1)}.fit-prog i.on{background:var(--gold)}
+.fit-o{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.fit-o button{font:600 16px var(--sans);text-align:left;padding:16px 18px;border-radius:14px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.04);color:var(--cream);cursor:pointer;transition:.2s}
+.fit-o button:hover{border-color:var(--gold);background:rgba(216,169,74,.12);transform:translateY(-2px)}
+.fit-res{display:grid;grid-template-columns:240px 1fr;gap:28px;align-items:center}
+.fit-res img{border-radius:18px;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.fit-res h3{font-family:var(--serif);font-size:48px;color:#fff;line-height:1;margin:6px 0}.fit-sub{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--gold2);margin-bottom:8px}
+.fit-res p{color:#d3d9e6}.fit-act{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.acts{display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:18px}
+.act{display:grid;grid-template-columns:130px 1fr;gap:16px;border-radius:20px;padding:16px;border:1px solid color-mix(in srgb,var(--acc) 50%,transparent);background:linear-gradient(140deg,color-mix(in srgb,var(--acc) 14%,transparent),transparent 70%)}
+.act img{border-radius:12px;width:130px;height:130px;object-fit:cover}
+.act>*{min-width:0}
+@media (max-width:560px){.acts{grid-template-columns:1fr}}
+.act-tag{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--acc);overflow-wrap:anywhere}.act-book{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#b9c2d4}
+.act-goal{font-size:14px;color:#e3e7ef;margin:6px 0}.act ol{padding-left:18px;font-size:14px;color:#d3d9e6;display:grid;gap:4px}
+.act-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.act-meta span{font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.07)}
+.gloss{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.gl{border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:rgba(255,255,255,.03)}
+.gl b{font-family:var(--serif);font-size:24px;color:var(--gold2);display:block}.gl span{font-size:14.5px;color:#d3d9e6;display:block;margin:4px 0 8px}.gl a{font-size:12px;font-weight:800;text-decoration:none}
+.srcs{list-style:none;display:grid;gap:8px;max-width:900px;margin:0 auto}
+.srcs li{display:flex;gap:12px;align-items:center;padding:12px 16px;border-radius:12px;background:rgba(255,255,255,.04)}
+.srcs li span{flex:none;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#1a1306;display:grid;place-items:center;font-weight:800;font-size:13px}
+.srcs a{color:#e3e7ef;font-size:14.5px}
+.speech{display:grid;gap:10px;margin-top:22px}
+.sp{border:1px solid var(--line);border-radius:14px;padding:14px 18px;background:rgba(255,255,255,.03)}
+.sp-h{display:flex;justify-content:space-between;margin-bottom:6px}.sp-h b{color:var(--gold2)}.sp-h span{font-size:12px;color:var(--muted);font-weight:700}
+.sp p{font-size:15px;color:#e3e7ef}
+details.spd summary{cursor:pointer;font-weight:800;color:var(--gold2);font-size:16px;margin-top:26px}
+.mono{display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:center;margin-top:18px;padding:24px;border-radius:22px;background:var(--card);border:1px solid var(--bd)}
+.mono .who{text-align:center}.mono .who i{font-style:normal;display:grid;place-items:center;width:96px;height:96px;margin:0 auto;border-radius:50%;background:var(--acc);font-size:44px;box-shadow:0 0 0 8px color-mix(in srgb,var(--acc) 20%,transparent)}
+.mono .who b{display:block;margin-top:10px;font-size:16px}
+.mono p{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2vw,24px);line-height:1.45}
+.mono small{display:block;margin-top:10px;font-size:11px;opacity:.6;letter-spacing:.06em}
+.mono .say{margin-top:12px;font:700 13px var(--sans);border:1px solid var(--acc);color:var(--acc);background:transparent;border-radius:999px;padding:8px 14px;cursor:pointer}
+.s-notes{display:none;max-width:1200px;margin:0 auto;width:calc(100% - 48px);padding:14px 20px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid var(--line);font-size:18px;line-height:1.5;color:#f7efdc;max-height:22vh;overflow:auto}
+#show.notes .s-notes{display:block}
+.qrbox{display:flex;align-items:center;gap:20px;justify-content:center;margin-top:20px}
+.qrbox img{width:150px;height:150px;border-radius:12px;background:#fff;padding:8px}
+@media (max-width:900px){.concept,.channels,.why,.weeks,.doors{grid-template-columns:1fr 1fr}.cc.wide{grid-column:span 2}.fit-res,.mono,.act{grid-template-columns:1fr}.act img{width:100%;height:180px}}
+
+#alt{--bg:#2a1d05;--fg:#fff4dc;--acc:#f2c14e;--card:rgba(242,193,78,.08)}
+#bult{--bg:#142235;--fg:#eaf3fb;--acc:#9ec5e8;--card:rgba(158,197,232,.08)}
+#kui{--bg:#24130c;--fg:#f8e8dc;--acc:#d98c5f;--card:rgba(217,140,95,.08)}
+#hansha{--bg:#1f0a14;--fg:#fde8ec;--acc:#e05a6b;--card:rgba(224,90,107,.08)}
+#baige{--bg:#1a2414;--fg:#f4f0de;--acc:#e0b25a;--card:rgba(224,178,90,.08)}
+#jide{--bg:#1c2216;--fg:#eef2e6;--acc:#b5c99a;--card:rgba(181,201,154,.08)}
+#shetkeri{--bg:#1a1426;--fg:#f3eafa;--acc:#c9a0dc;--card:rgba(201,160,220,.08)}
+.act-art{width:130px;height:130px;border-radius:12px;overflow:hidden}.act-art svg{width:100%;height:100%;display:block}
+.shelf{grid-template-columns:repeat(6,1fr)!important}
+.doors{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))!important}
+.shelf3d{height:760px}
+@media (max-width:900px){.shelf{grid-template-columns:repeat(2,1fr)!important}.shelf3d{height:560px}}
+
+.hero .slot{order:-1;box-shadow:0 0 0 2px rgba(216,169,74,.6),0 30px 90px rgba(0,0,0,.55)}
+.hero .wrap>div:not(.slot){display:grid;grid-template-columns:1.1fr 1fr;column-gap:40px;align-items:start}
+.hero .wrap>div:not(.slot)>.kicker,.hero .wrap>div:not(.slot)>h1{grid-column:1/-1}
+.hero h1 br{display:none}.hero h1 em{margin-left:.2em}
+@media (max-width:900px){.hero .wrap>div:not(.slot){grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="top"><div class="wrap">
+  <a class="brand" href="#top">Әбіш әлемі</a>
+  <div class="navlinks" id="navlinks"><a href="#top">Басты бет</a></div>
+  <button class="btn" onclick="openShow()">▶ Қорғау режимі</button>
+</div></nav>
+
+<header class="home-only hero" id="top"><div class="wrap">
+  <div>
+    <div class="kicker">«Әбіш шығармашылығын насихаттау» · инфографика</div>
+    <h1>Он екі есік —<br><em>бір шыңырау</em></h1>
+    <p class="slogan">Шыңыраудың тереңі — жер астында,<br>Әбіш мұрасының тереңі — ұлт жадында.</p>
+    <p class="lead">Әбіш Кекілбайұлының он екі шығармасы — он екі инфографика: сандар, карталар, сюжет графиктері, кейіпкерлер желісі, символдар және бүгінгі оқырманға айтар ой.</p>
+    <div class="hero-nums"><div><b>12</b><span>шығарма</span></div><div><b>12</b><span>инфографика</span></div><div><b>7′</b><span>қорғау регламенті</span></div></div>
+    <div class="hero-actions"><a class="btn" href="#sore">Кітаптарды ашу ↓</a><button class="btn ghost" onclick="openShow()">▶ 7 минуттық қорғау</button></div>
+  </div>
+  <div class="slot" data-slot="hero"><img src="poster.jpg" alt="Әбіш Кекілбайұлының шығармалары" data-default="1"><button class="rm">✕</button><label class="up">🖼 Сурет ауыстыру<input type="file" accept="image/*"></label></div>
+</div></header>
+<div class="orn home-only"></div>
+
+<section class="home-only block" id="sore"><div class="wrap">
+  <div class="sh"><div class="kicker">Кітап сөресі</div><h2>Бір кітап — бір инфографика</h2><p>Он екі шығарма сөреде тұр. Кітапты таңдасаңыз, ол сөреден шығып, өз әлеміне апарады.</p></div>
+  <div class="shelf3d" id="shelf3d"><div class="shelf-tip" id="shelfTip"></div><div class="hint3d">🖱 Кітапты таңда — сөреден шығып ашылады</div></div>
+  <div class="shelf" id="shelf"></div>
+</div></section>
+<div class="orn home-only"></div>
+<section class="home-only block" id="omir"><div class="wrap">
+  <div class="sh"><div class="kicker">Инфографика · Жазушы</div><h2>Әбіш Кекілбайұлы (1939–2015)</h2><p>Маңғыстаудан шыққан жазушы, аудармашы, драматург, мемлекет және қоғам қайраткері.</p></div>
+  <div class="author-band">
+    <div class="portrait"><img src="abish.jpg" alt="Әбіш Кекілбайұлы"><span>Әбіш Кекілбайұлы</span></div>
+    <div><div class="ab-name">Әбіш Кекілбайұлы</div><div class="ab-dates">6 желтоқсан 1939 — 11 желтоқсан 2015</div>
+      <div class="ab-roles"><span>✍️ Жазушы</span><span>🎭 Драматург</span><span>🌐 Аудармашы</span><span>📰 Публицист</span><span>🏛️ Мемлекет қайраткері</span></div>
+      <div class="ab-stats"><div><b>10+</b><span>тілге аударылған шығармалары</span></div><div><b>12</b><span>томдық шығармалар жинағы</span></div><div><b>1996–2002</b><span>ҚР Мемлекеттік хатшысы</span></div></div>
+    </div>
+  </div>
+  <div class="bio">
+    <div class="card"><h3>Өмір жолы</h3><div class="vt">
+      <div><b>1939</b><span>6 желтоқсан — Маңғыстау облысы, Оңды ауылында туған</span></div>
+      <div><b>1962</b><span>Қазақ мемлекеттік университетін бітірді</span></div>
+      <div><b>1970–75</b><span>«Қазақфильм» киностудиясының бас редакторы</span></div>
+      <div><b>1981</b><span>«Үркер» романы жарық көрді</span></div>
+      <div><b>1984</b><span>«Елең-алаң» романы жарық көрді</span></div>
+      <div><b>1994–95</b><span>Жоғарғы Кеңес төрағасы</span></div>
+      <div><b>1996–2002</b><span>ҚР Мемлекеттік хатшысы</span></div>
+      <div><b>1999</b><span>12 томдық шығармалар жинағы</span></div>
+      <div><b>2015</b><span>11 желтоқсан — Астанада дүниеден өтті</span></div>
+    </div></div>
+    <div style="display:grid;gap:22px">
+      <div class="card mapcard"><h3>Туған жері және «Үркер» іздері</h3><div id="bioMap"></div></div>
+      <div class="card"><h3>Бір тұлға — көп қыры</h3><div class="roles">
+        <div class="role"><i>✍️</i><b>Жазушы</b></div><div class="role"><i>🎭</i><b>Драматург</b></div><div class="role"><i>🌐</i><b>Аудармашы</b></div>
+        <div class="role"><i>📰</i><b>Публицист</b></div><div class="role"><i>🎬</i><b>Кино редакторы</b></div><div class="role"><i>🏛️</i><b>Мемлекет қайраткері</b></div>
+      </div></div>
+    </div>
+  </div>
+  <div class="facts">
+    <div class="fact"><div class="q">Білесің бе?</div><p>Кекілбаев Лев Толстойдың «Соғыс және бейбітшілік» роман-эпопеясын, Иван Бунин шығармаларын қазақ тіліне аударған.</p></div>
+    <div class="fact"><div class="q">Білесің бе?</div><p>«Үркерге» материал жинау кезінде Ақтөбе өңіріндегі Толыбай ауылына келіп, ақсақалдар Абылқайыр ханның жерленген жерін көрсеткен. Бүгінде онда «Хан моласы» кешені тұр.</p></div>
+    <div class="fact"><div class="q">Білесің бе?</div><p>«Аңыздың ақыры» романы «Бір ел — бір кітап» республикалық акциясында оқырмандардың ерекше бағасына ие болған.</p></div>
+  </div>
+</div></section>
+<div class="orn home-only"></div>
+
+
+
+<div id="heroes"></div>
+<main id="posters" class="wrap"></main>
+
+<div class="orn home-only"></div>
+<section class="home-only block" id="sxema"><div class="wrap">
+  <div class="sh"><div class="kicker">Жүйелі схема</div><h2>Әбіш әлемінің үш арнасы</h2><p>Он екі шығарма — үш үлкен арнаға тоғысады.</p></div>
+  <div class="scheme">
+    <div class="sc"><h3>Адам жанының тереңі</h3><p>Дарын, қызғаныш, даңққұмарлық, билік пен махаббат — адамның ішкі әлеміндегі тартыс.</p><div class="tags"><span>Шыңырау</span><span>Аңыздың ақыры</span><span>Күй</span><span>Бәйгеторы</span><span>Шеткері үй</span></div></div>
+    <div class="sc"><h3>Ел тағдыры, тарих</h3><p>XVIII ғасырдағы қазақ даласы, хан мен халық, бірлік пен ел болашағы.</p><div class="tags"><span>Үркер</span><span>Елең-алаң</span><span>Ханша-Дария хикаясы</span></div></div>
+    <div class="sc"><h3>Ана, отбасы, туған жер</h3><p>Соғыс жылдарының ауыртпалығы, ананың қайсарлығы мен мейірімі.</p><div class="tags"><span>Құс қанаты</span><span>Бір шөкім бұлт</span><span>Бір шоқ жиде</span><span>Алтын шуақ</span></div></div>
+  </div>
+  <div class="card" style="margin-top:22px"><h3>12 шығарманың тақырыптық картасы</h3><div id="heat"></div></div>
+</div></section>
+
+
+<div class="orn home-only"></div>
+<section class="home-only block" id="tujyrymdama"><div class="wrap">
+  <div class="sh"><div class="kicker">Насихат концепциясы</div><h2>12 шығарма — 12 есік</h2><p>Әбіш Кекілбайұлының мұрасын оқушыға жаңа, цифрлық және шығармашылық форматта жеткізу жоспары.</p></div>
+  <div class="concept">
+    <div class="cc wide"><div class="idea-big">«Шыңыраудың тереңі — жер астында, Әбіш мұрасының тереңі — ұлт жадында»</div>
+      <div class="doors"><div class="door"><b>Шыңырау</b><span>дарын мен адалдық</span></div><div class="door"><b>Аңыздың ақыры</b><span>махаббат пен адамгершілік</span></div><div class="door"><b>Үркер</b><span>бірлік</span></div><div class="door"><b>Елең-алаң</b><span>үміт</span></div><div class="door"><b>Құс қанаты</b><span>ана мейірімі</span></div><div class="door"><b>Алтын шуақ</b><span>арман мен шабыт</span></div><div class="door"><b>Бір шөкім бұлт</b><span>қайсарлық</span></div><div class="door"><b>Күй</b><span>өнер құдіреті</span></div><div class="door"><b>Ханша-Дария</b><span>намыс</span></div><div class="door"><b>Бәйгеторы</b><span>дарын мен мейірім</span></div><div class="door"><b>Бір шоқ жиде</b><span>аманат</span></div><div class="door"><b>Шеткері үй</b><span>дұрыс таңдау</span></div></div></div>
+    <div class="cc"><div class="ci">🎯</div><h3>Мақсаты</h3><p>Жазушы мұрасын кеңінен таныту, оқушыларды Әбіш шығармаларын оқуға ынталандыру, әр кітаптың бүгінгі мәнін ашу.</p></div>
+    <div class="cc"><div class="ci">👥</div><h3>Кімге арналған</h3><ul><li>5–11 сынып оқушылары</li><li>қазақ тілі мен әдебиеті мұғалімдері</li><li>ата-аналар мен кітапханашылар</li></ul></div>
+    <div class="cc"><div class="ci">💡</div><h3>Жаңалығы</h3><ul><li>әр кітапқа — жеке инфографика</li><li>3D көріністер мен анимация</li><li>QR арқылы қағаз бен сайт байланысы</li><li>әр кітапқа — мектептік акция</li></ul></div>
+  </div>
+  <h3 class="kicker" style="text-align:center;margin:44px 0 16px">Насихат арналары</h3>
+  <div class="channels">
+    <div class="ch"><i>🌐</i><b>Веб-сайт</b><span>3D сөре, инфографика, тест</span></div>
+    <div class="ch"><i>🖼️</i><b>А3 постер + QR</b><span>мектеп дәлізінде, кітапханада</span></div>
+    <div class="ch"><i>✍️</i><b>Мектеп акциялары</b><span>12 шығарма — 12 акция</span></div>
+    <div class="ch"><i>📱</i><b>Әлеуметтік желі</b><span>хэштегтер, Reels</span></div>
+    <div class="ch"><i>📚</i><b>«Әбіш оқулары»</b><span>мектептік апталық</span></div>
+  </div>
+  <h3 class="kicker" style="text-align:center;margin:44px 0 16px">Жүзеге асыру кезеңдері · 4 апта</h3>
+  <div class="weeks">
+    <div class="wk"><small>1-АПТА</small><b>Таныстыру</b><p>Постер ілу, сайтты көрсету, викторина</p></div>
+    <div class="wk"><small>2-АПТА</small><b>Оқу</b><p>«Қай кітап саған сай?» тесті, оқу топтары</p></div>
+    <div class="wk"><small>3-АПТА</small><b>Акциялар</b><p>Эссе, мұнара, Үркер, диптих, анама хат</p></div>
+    <div class="wk"><small>4-АПТА</small><b>Қорытынды кеш</b><p>Оқушы еңбектерінің көрмесі, үздіктерді марапаттау</p></div>
+  </div>
+  <h3 class="kicker" style="text-align:center;margin:44px 0 16px">Күтілетін нәтиже</h3>
+  <div class="concept"><div class="cc"><div class="ci">📖</div><h3>Оқу</h3><p>Әр сынып кемінде бір кітапты оқып, талқылайды.</p></div><div class="cc"><div class="ci">🎨</div><h3>Шығармашылық</h3><p>5 акция бойынша оқушылардың эссе, сурет, хат көрмесі жасалады.</p></div><div class="cc"><div class="ci">🔁</div><h3>Жалғасы</h3><p>Сайт пен постер келесі жылдары да мектепте қолданылады.</p></div></div>
+</div></section>
+
+<div class="orn home-only"></div>
+<section class="home-only block" id="nege"><div class="wrap">
+  <div class="sh"><div class="kicker">Өзектілігі</div><h2>Неге Әбіш бүгін керек?</h2><p>Жарты ғасыр бұрын жазылған кітаптар бүгінгі жасөспірімнің сұрақтарына жауап береді.</p></div>
+  <div class="why">
+    <div class="wy"><i>📱</i><b>Бәсеке мен қызғаныш</b><p>Әлеуметтік желіде «лайк» пен атақ қуған заманда Еңсептің тағдыры — нақты ескерту.</p><a href="#shynyrau">«Шыңырау» →</a></div>
+    <div class="wy"><i>👑</i><b>Билік пен адамгершілік</b><p>Күш пен билік адамды бақытты етпей ме? Әміршінің тағдыры осыны ойлатады.</p><a href="#anyz">«Аңыздың ақыры» →</a></div>
+    <div class="wy"><i>✨</i><b>Бірлік пен тарихи жад</b><p>Ел болашағы бірлікке байланысты екенін XVIII ғасыр тарихы арқылы ұғынамыз.</p><a href="#urker">«Үркер», «Елең-алаң» →</a></div>
+    <div class="wy"><i>🕊️</i><b>Ана мен отбасы</b><p>Ата-ана еңбегін бағалау, отбасы татулығы — әр ұрпаққа керек құндылық.</p><a href="#qus">«Құс қанаты» →</a></div>
+  </div>
+</div></section>
+
+<div class="orn home-only"></div>
+<section class="home-only block" id="test"><div class="wrap">
+  <div class="sh"><div class="kicker">Интерактив тест</div><h2>Қай кітап саған сай?</h2><p>5 сұраққа жауап бер — Әбіштің қай кітабынан бастау керегін білесің.</p></div>
+  <div class="fitbox" id="fit"></div>
+</div></section>
+
+<div class="orn home-only"></div>
+<section class="home-only block" id="aksiyalar"><div class="wrap">
+  <div class="sh"><div class="kicker">Мектептік акциялар</div><h2>12 шығарма — 12 акция</h2><p>Әр кітапты оқығаннан кейін өткізілетін шығармашылық іс-шаралар.</p></div>
+  <div class="acts" id="acts"></div>
+</div></section>
+
+<div class="orn home-only"></div>
+<section class="home-only block" id="sozdik"><div class="wrap">
+  <div class="sh"><div class="kicker">Сөздік</div><h2>Әбіш әлемінің сөздері</h2><p>Кітаптарды оқығанда кездесетін ұғымдар.</p></div>
+  <div class="gloss" id="gloss"></div>
+</div></section>
+<div class="orn home-only"></div>
+<section class="home-only block no-print" id="qorgau"><div class="wrap">
+  <div class="sh"><div class="kicker">Регламент · 5–7 минут</div><h2>Қорғау жоспары</h2><p>«Қорғау режимі» слайдтарды толық экранда ашып, уақытты өзі санайды. «📝 Суфлер» батырмасы қорғау сөзін экранның төменгі жағына шығарады.</p></div>
+  <div class="plan">
+    <div><div class="bar" id="bar"></div><ul class="plist" id="plist"></ul>
+      <div class="qrbox"><img src="qr/main.png" alt="QR"><div><b style="color:#fff">Сайтқа QR-код</b><br><span style="color:#b9c2d4;font-size:14px">Қорытынды слайдта да көрсетіледі</span></div></div></div>
+    <div class="crit">
+      <div class="cr"><b>Идеяның өзектілігі</b><span>Ұран: «мұраның тереңі — ұлт жадында». Әр постерде «Бүгінгі оқырманға» бөлімі.</span></div>
+      <div class="cr"><b>Шығармашылық, креативтілік</b><span>Әр кітапқа өз символы, түсі, хэштегі және мектептік насихат акциясы.</span></div>
+      <div class="cr"><b>Мазмұнның жүйелілігі</b><span>Бірдей құрылым: идея → сандар → кейіпкерлер → сюжет графигі → символ → өзектілік.</span></div>
+      <div class="cr"><b>Визуалдық дизайн</b><span>Қошқар мүйіз өрнегі, жеке палитралар, карта, график, шкала, желі сызбалары.</span></div>
+      <div class="cr"><b>Техникалық деңгей</b><span>Веб-сайт, толық экранды қорғау режимі, таймер, викторина.</span></div>
+    </div>
+  </div>
+<details class="spd"><summary>📝 Қорғау сөзінің толық мәтіні (7 минут)</summary><div class="speech" id="speech"></div></details>
+</div></section>
+
+<div class="orn home-only"></div>
+<section class="home-only block quiz-wrap" id="viktorina"><div class="wrap">
+  <div class="sh"><div class="kicker">Интерактив</div><h2>Әбіш әлемін қаншалықты білесің?</h2></div>
+  <div class="quiz" id="quiz"></div>
+</div></section>
+<div class="orn home-only"></div>
+<section class="home-only block" id="derekkozder"><div class="wrap">
+  <div class="sh"><div class="kicker">Дереккөздер</div><h2>Деректер қайдан алынды?</h2><p>Сайттағы деректер мына ғылыми мақалалар мен басылымдарға сүйенеді.</p></div>
+  <ol class="srcs" id="srcs"></ol>
+</div></section>
+
+<footer><div class="wrap"><b>Шыңыраудың тереңі — жер астында, Әбіш мұрасының тереңі — ұлт жадында</b></div></footer>
+
+<div id="show"><div class="s-top"><div class="timer" id="timer">00:00</div><div class="s-prog"><div id="sprog"></div></div><div style="font-size:13px;color:#9aa4b8" id="scount"></div><button class="btn ghost" onclick="closeShow()">✕ Жабу</button></div>
+<div class="s-stage"><div class="slide" id="slide"></div></div><div class="s-notes" id="snotes"></div>
+<div class="s-bot"><button class="btn ghost" onclick="go(-1)">← Алдыңғы</button><button class="btn ghost" id="pauseBtn" onclick="togglePause()">❚❚ Тоқтату</button><button class="btn ghost" onclick="document.getElementById('show').classList.toggle('notes')">📝 Суфлер</button><button class="btn" onclick="go(1)">Келесі →</button></div></div>
+
+<script>
+const ART = {
+shynyrau:`<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="sk1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3b860"/><stop offset="1" stop-color="#7a3f17"/></linearGradient>
+<linearGradient id="dp1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2414"/><stop offset="1" stop-color="#000"/></linearGradient>
+<radialGradient id="gl1" cx=".5" cy="0" r=".7"><stop offset="0" stop-color="#ffd27a" stop-opacity=".9"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient></defs>
+<rect width="400" height="160" fill="url(#sk1)"/><circle class="pulse" cx="300" cy="70" r="30" fill="#ffe2a0" opacity=".9"/>
+<path d="M0 150 Q100 130 200 148 T400 140 V170 H0Z" fill="#9c5a28"/>
+<rect y="160" width="400" height="240" fill="#2a1a0f"/>
+<g stroke="#4a2f1a" stroke-width="2" opacity=".6">${[190,220,250,280,310,340,370].map(y=>`<line x1="0" y1="${y}" x2="400" y2="${y}"/>`).join('')}</g>
+<path d="M150 150 L250 150 L232 392 L168 392Z" fill="url(#dp1)"/>
+<path d="M150 150 L250 150 L232 392 L168 392Z" fill="url(#gl1)" opacity=".5"/>
+<g fill="#8b6a4a" stroke="#3a2414" stroke-width="2"><rect x="138" y="128" width="30" height="24" rx="4"/><rect x="168" y="124" width="32" height="28" rx="4"/><rect x="200" y="124" width="32" height="28" rx="4"/><rect x="232" y="128" width="30" height="24" rx="4"/></g>
+
+<g class="bucket"><line x1="200" y1="96" x2="200" y2="330" stroke="#e3c08a" stroke-width="2"/><rect x="186" y="330" width="28" height="22" rx="3" fill="#a4723c"/></g>
+<g font-family="Montserrat" font-size="12" font-weight="700" fill="#e3a24c"><text x="270" y="200">— 10 м</text><text x="262" y="260">— 30 м</text><text x="252" y="320">— 50 м</text><text x="244" y="380">— ? </text></g>
+<g fill="#fff" opacity=".85"><circle cx="200" cy="360" r="2"/><circle cx="196" cy="372" r="1.5"/></g>
+</svg>`,
+anyz:`<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="sk2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d4f63"/><stop offset="1" stop-color="#e9c37a"/></linearGradient>
+<linearGradient id="mn2" x1="0" x2="1"><stop offset="0" stop-color="#1f8f9a"/><stop offset=".5" stop-color="#5fe0d0"/><stop offset="1" stop-color="#16707a"/></linearGradient></defs>
+<rect width="400" height="400" fill="url(#sk2)"/>
+<g fill="#fff" opacity=".7" class="twg"><circle cx="60" cy="50" r="1.5"/><circle cx="120" cy="80" r="1"/><circle cx="330" cy="40" r="1.6"/><circle cx="360" cy="110" r="1"/></g>
+<path d="M300 70 a30 30 0 1 0 22 50 a24 24 0 1 1 -22 -50z" fill="#f6dfa0"/>
+<path d="M0 330 h400 v70 H0z" fill="#3d2a17"/>
+<g fill="#1a4b56"><rect x="20" y="270" width="90" height="62"/><path d="M30 270 q35 -55 70 0z"/><rect x="290" y="280" width="100" height="52"/><path d="M300 280 q40 -50 80 0z"/></g>
+<path class="glow" d="M176 332 L184 120 L216 120 L224 332Z" fill="url(#mn2)"/>
+<g stroke="#e9c37a" stroke-width="3" fill="none"><path d="M180 290 h40"/><path d="M181 240 h38"/><path d="M182 190 h36"/></g>
+<rect x="174" y="104" width="52" height="18" rx="3" fill="#e9c37a"/>
+<path d="M186 104 Q200 70 214 104z" fill="#1f8f9a"/><line x1="200" y1="78" x2="200" y2="58" stroke="#e9c37a" stroke-width="3"/><circle cx="200" cy="55" r="4" fill="#e9c37a"/>
+<g transform="translate(300 300)"><circle r="26" fill="#c9272d"/><path d="M0 -26 q4 -14 14 -16" stroke="#3b2a12" stroke-width="3" fill="none"/><path d="M4 -30 q14 -8 22 0 q-12 6 -22 0z" fill="#4c9a4a"/><circle cx="-8" cy="4" r="5" fill="#3b1a0c"/><path d="M-8 4 q8 6 12 14" stroke="#3b1a0c" stroke-width="2" fill="none"/></g>
+</svg>`,
+urker:`<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<defs><radialGradient id="sk3" cx=".5" cy=".35" r=".8"><stop offset="0" stop-color="#2a3480"/><stop offset="1" stop-color="#060820"/></radialGradient>
+<radialGradient id="st3"><stop offset="0" stop-color="#fff"/><stop offset=".3" stop-color="#cfe0ff"/><stop offset="1" stop-color="#9bb3ff" stop-opacity="0"/></radialGradient></defs>
+<rect width="400" height="400" fill="url(#sk3)"/>
+<g fill="#fff">${Array.from({length:60},(_,i)=>`<circle cx="${(i*67)%400}" cy="${(i*131)%300}" r="${(i%3)*0.5+0.5}" opacity="${0.3+(i%5)*0.12}"/>`).join('')}</g>
+<g stroke="#a8b8ff" stroke-width="1" opacity=".55" fill="none"><path d="M150 120 L196 98 L244 116 L262 160 L222 186 L172 176 L150 120 L222 186"/><path d="M196 98 L172 176"/></g>
+<g>${[[150,120,16],[196,98,20],[244,116,17],[262,160,15],[222,186,19],[172,176,16],[205,142,13]].map(([x,y,r])=>`<circle class="tw" style="animation-delay:${(x%7)/3}s" cx="${x}" cy="${y}" r="${r}" fill="url(#st3)"/><circle cx="${x}" cy="${y}" r="3" fill="#fff"/>`).join('')}</g>
+<path d="M0 320 Q120 290 220 310 T400 300 V400 H0Z" fill="#0a0d26"/>
+<g fill="#0a0d26"><path d="M80 315 q20 -26 40 0z"/><rect x="78" y="312" width="44" height="18"/></g>
+<g transform="translate(270 288)" fill="#05071a"><path d="M0 22 q6 -16 26 -18 l6 -10 l4 6 q8 2 10 10 l-8 2 q-4 10 -14 10 l2 14 h-4 l-3 -12 h-12 l-2 12 h-4 l1 -14z"/><path d="M14 4 l-6 -14 l4 0 l6 12z"/></g>
+<text x="200" y="250" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-size="20" fill="#cfd8ff">жеті жұлдыз — бір шоқ</text>
+</svg>`,
+elen:`<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="sk4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1640"/><stop offset=".45" stop-color="#8a3a6a"/><stop offset=".72" stop-color="#ff8a5c"/><stop offset="1" stop-color="#ffd38a"/></linearGradient>
+<radialGradient id="sun4" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff2c8"/><stop offset=".5" stop-color="#ffcf7a"/><stop offset="1" stop-color="#ff9a62" stop-opacity="0"/></radialGradient></defs>
+<rect width="400" height="400" fill="url(#sk4)"/>
+<g fill="#fff" opacity=".7"><circle cx="70" cy="40" r="1.5"/><circle cx="140" cy="70" r="1"/><circle cx="300" cy="30" r="1.6"/><circle cx="350" cy="80" r="1.1"/></g>
+<g class="sunrise"><circle cx="200" cy="292" r="110" fill="url(#sun4)"/>
+<g stroke="#fff4d4" stroke-width="2" opacity=".55">${Array.from({length:9},(_,i)=>{const a=Math.PI+(i+1)*Math.PI/10;return `<line x1="${200+70*Math.cos(a)}" y1="${292+70*Math.sin(a)}" x2="${200+160*Math.cos(a)}" y2="${292+160*Math.sin(a)}"/>`}).join('')}</g></g>
+<path d="M0 290 Q100 270 200 288 T400 282 V400 H0Z" fill="#2a1220"/>
+<path d="M0 320 Q140 300 260 318 T400 312 V400 H0Z" fill="#1a0b14"/>
+<g fill="#1a0b14"><path d="M60 300 q24 -30 48 0z"/><rect x="58" y="298" width="52" height="18"/></g>
+<g fill="#120810">${[230,262,294].map((x,i)=>`<g transform="translate(${x} ${296-i*2})"><path d="M0 18 q5 -13 22 -15 l5 -8 l3 5 q7 2 8 8 l-6 2 q-3 8 -12 8 l2 12 h-3 l-3 -10 h-10 l-2 10 h-3 l1 -12z"/><rect x="10" y="-10" width="5" height="12"/><circle cx="12.5" cy="-13" r="3.5"/></g>`).join('')}</g>
+</svg>`,
+qus:`<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="sk5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf3e2"/><stop offset="1" stop-color="#e9dcbc"/></linearGradient></defs>
+<rect width="400" height="400" fill="url(#sk5)"/>
+<circle cx="200" cy="200" r="150" fill="#fff" opacity=".55"/>
+<g transform="translate(200 210)"><g class="flap">
+${Array.from({length:9},(_,i)=>{const a=-160+i*17;return `<path transform="rotate(${a})" d="M0 0 C 30 -18 120 -16 150 0 C 120 14 30 14 0 0Z" fill="${i%2?'#6f9a62':'#4f7a4a'}" opacity="${0.55+i*0.05}"/>`}).join('')}
+<circle r="30" fill="#c9a86b"/><circle r="22" fill="#f5ecd9"/>
+<path d="M-12 6 q12 -26 24 0" fill="#4f7a4a"/><circle cx="0" cy="-8" r="7" fill="#4f7a4a"/>
+</g></g>
+<path d="M60 340 Q200 300 340 340" stroke="#4f7a4a" stroke-width="2" fill="none" opacity=".5"/>
+<text x="200" y="372" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-size="22" fill="#4f7a4a">ана құшағы — құс қанаты</text>
+</svg>`
+};
+
+
+
+let __u=0;function art(id){const k='u'+(++__u);return ART[id].replace(/id="([^"]+)"/g,(m,a)=>`id="${a}${k}"`).replace(/url\(#([^)]+)\)/g,(m,a)=>`url(#${a}${k})`)}
+/* ---------- helpers ---------- */
+const KZ=[[46.5,48.5],[47.5,50.5],[49,51.5],[51.5,51.5],[54,51.2],[55.5,50.6],[58,50.8],[60,51.8],[61.5,52.2],[61,53.8],[62.5,54.3],[65,54.6],[68,55.3],[70.5,55.2],[73,54],[76,54.2],[77.8,53.3],[80,51],[83,51],[85.5,49.6],[87.2,49.1],[85.8,48.4],[85,47],[83,47],[82.5,45.3],[80.2,45],[80,42.2],[77,43],[74.3,43.2],[71,42.6],[69,41.4],[68,40.7],[66.5,41.5],[66,43],[64.5,43.6],[62,43.5],[61,44.4],[58.5,45.5],[56,45.3],[55.5,41.3],[53,42],[52.5,41.8],[52.7,43.5],[51.3,43.2],[50.8,44.6],[51.5,45.3],[53,45.3],[53,46.5],[49.2,46.4],[48,47.7]];
+const PX=(lo,la)=>[((lo-46)/41*600).toFixed(1),((55.8-la)/15.5*300).toFixed(1)];
+function mapSVG(points,acc,fg,routes=[]){
+  let s=`<svg viewBox="-10 -10 620 320" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat">
+  <polygon points="${KZ.map(p=>PX(...p).join(',')).join(' ')}" fill="${acc}" fill-opacity=".1" stroke="${acc}" stroke-width="1.5" stroke-opacity=".7"/>
+  <ellipse cx="${PX(48.5,44)[0]}" cy="${PX(48.5,44)[1]}" rx="34" ry="62" fill="#3a6ea5" fill-opacity=".25"/>
+  <text x="${PX(49.2,42.3)[0]}" y="${PX(49.2,42.3)[1]}" font-size="10" fill="${fg}" opacity=".55" text-anchor="middle">Каспий</text>`;
+  routes.forEach(r=>{s+=`<polyline points="${r.map(p=>PX(...p).join(',')).join(' ')}" fill="none" stroke="${acc}" stroke-width="2" stroke-dasharray="6 5" opacity=".8"/>`});
+  points.forEach(p=>{const[x,y]=PX(p[0],p[1]);const anc=p[4]||'start';const dx=anc==='end'?-12:12;
+    s+=`<circle cx="${x}" cy="${y}" r="14" fill="${acc}" fill-opacity=".25"/><circle cx="${x}" cy="${y}" r="7" fill="${acc}"/>
+    <text x="${+x+dx*1.3}" y="${+y-3}" font-size="19" font-weight="800" fill="${fg}" text-anchor="${anc}">${p[2]}</text>
+    <text x="${+x+dx*1.3}" y="${+y+17}" font-size="14" fill="${fg}" opacity=".8" text-anchor="${anc}">${p[3]}</text>`});
+  return s+`</svg>`;
+}
+function curveSVG(pts,acc,fg){ // pts: [label, value 0-100]
+  const W=900,H=300,L=95,R=95,T=34,B=86,n=pts.length,sx=(W-L-R)/(n-1);
+  const xy=pts.map((p,i)=>[L+i*sx,T+(100-p[1])/100*(H-T-B)]);
+  let d=`M${xy[0][0]},${xy[0][1]}`;for(let i=1;i<n;i++){const[x0,y0]=xy[i-1],[x1,y1]=xy[i];const cx=(x0+x1)/2;d+=` C${cx},${y0} ${cx},${y1} ${x1},${y1}`}
+  let s=`<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat">
+  <defs><linearGradient id="cg${acc.slice(1)}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${acc}" stop-opacity=".45"/><stop offset="1" stop-color="${acc}" stop-opacity="0"/></linearGradient></defs>
+  ${[0,25,50,75,100].map(v=>`<line x1="${L}" x2="${W-R}" y1="${T+(100-v)/100*(H-T-B)}" y2="${T+(100-v)/100*(H-T-B)}" stroke="${fg}" stroke-opacity=".08"/>`).join('')}
+  <text x="10" y="${T+6}" font-size="10" fill="${fg}" opacity=".6" transform="rotate(-90 14 ${T+60})">шиеленіс</text>
+  <path d="${d} L${xy[n-1][0]},${H-B} L${xy[0][0]},${H-B}Z" fill="url(#cg${acc.slice(1)})"/>
+  <path class="cline" pathLength="1" d="${d}" fill="none" stroke="${acc}" stroke-width="3.5"/>`;
+  xy.forEach(([x,y],i)=>{s+=`<circle cx="${x}" cy="${y}" r="7" fill="${acc}" stroke="${fg}" stroke-width="2"/>
+  <text x="${x}" y="${y-14}" text-anchor="middle" font-size="17" font-weight="900" fill="${acc}">${i+1}</text>
+  <foreignObject x="${x-sx/2+4}" y="${H-B+10}" width="${sx-8}" height="${B-8}"><div xmlns="http://www.w3.org/1999/xhtml" style="font:700 14px Montserrat;color:${fg};text-align:center;line-height:1.3">${pts[i][0]}</div></foreignObject>`});
+  return s+`</svg>`;
+}
+function netSVG(c,acc,fg){
+  const W=520,H=320,cx=260,cy=160,pos=[[92,52],[428,52],[92,268],[428,268],[260,300]];
+  let s=`<svg viewBox="0 0 ${W} ${H+10}" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat">`;
+  c.nodes.forEach((n,i)=>{const[x,y]=pos[i];s+=`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="${acc}" stroke-width="${n[2]||2}" opacity=".7"/>
+   <rect x="${(cx+x)/2-40}" y="${(cy+y)/2-10}" width="80" height="18" rx="9" fill="${acc}"/><text x="${(cx+x)/2}" y="${(cy+y)/2+3}" text-anchor="middle" font-size="9.5" font-weight="800" fill="#111">${n[3]||''}</text>`});
+  c.nodes.forEach((n,i)=>{const[x,y]=pos[i];s+=`<rect x="${x-80}" y="${y-26}" width="160" height="52" rx="14" fill="${acc}" fill-opacity=".14" stroke="${acc}" stroke-opacity=".6"/>
+   <text x="${x}" y="${y-3}" text-anchor="middle" font-size="16" font-weight="800" fill="${fg}">${n[0]}</text><text x="${x}" y="${y+15}" text-anchor="middle" font-size="12.5" fill="${fg}" opacity=".75">${n[1]}</text>`});
+  s+=`<circle cx="${cx}" cy="${cy}" r="58" fill="${acc}"/><circle cx="${cx}" cy="${cy}" r="67" fill="none" stroke="${acc}" stroke-opacity=".4" stroke-dasharray="4 4"/>
+  <text x="${cx}" y="${cy+2}" text-anchor="middle" font-size="17" font-weight="900" fill="#111">${c.center}</text><text x="${cx}" y="${cy+20}" text-anchor="middle" font-size="10.5" font-weight="600" fill="#111" opacity=".75">${c.cs}</text>`;
+  return s+`</svg>`;
+}
+function donutSVG(parts,acc,fg){ // [label,pct]
+  const R=70,C=2*Math.PI*R;let off=0;const shades=[1,.75,.55,.38,.25];
+  let s=`<svg viewBox="0 0 420 200" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat"><g transform="translate(100 100) rotate(-90)">`;
+  parts.forEach((p,i)=>{const L=C*p[1]/100;s+=`<circle r="${R}" fill="none" stroke="${acc}" stroke-opacity="${shades[i]}" stroke-width="34" stroke-dasharray="${L-2} ${C-L+2}" stroke-dashoffset="${-off}"/>`;off+=L});
+  s+=`</g><text x="100" y="96" text-anchor="middle" font-family="Cormorant Garamond" font-size="30" font-weight="700" fill="${fg}">100%</text><text x="100" y="116" text-anchor="middle" font-size="10" fill="${fg}" opacity=".7">тақырыптар</text>`;
+  parts.forEach((p,i)=>{s+=`<rect x="210" y="${30+i*30}" width="16" height="16" rx="4" fill="${acc}" fill-opacity="${shades[i]}"/><text x="234" y="${43+i*30}" font-size="13" fill="${fg}"><tspan font-weight="800">${p[1]}%</tspan>  ${p[0]}</text>`});
+  return s+`</svg>`;
+}
+function scaleSVG(levels,acc,fg,title){ // vertical depth/ladder
+  const H=70+levels.length*58;let s=`<svg viewBox="0 0 420 ${H}" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat">
+  <defs><linearGradient id="sc${acc.slice(1)}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${acc}" stop-opacity=".15"/><stop offset="1" stop-color="${acc}" stop-opacity=".9"/></linearGradient></defs>
+  <rect x="40" y="20" width="56" height="${levels.length*58+20}" rx="10" fill="url(#sc${acc.slice(1)})"/>`;
+  levels.forEach((l,i)=>{const y=40+i*58;s+=`<line x1="96" x2="128" y1="${y+10}" y2="${y+10}" stroke="${acc}" stroke-width="2"/>
+  <text x="68" y="${y+15}" text-anchor="middle" font-size="12" font-weight="900" fill="${i>levels.length/2?'#111':fg}">${l[0]}</text>
+  <text x="136" y="${y+8}" font-size="15" font-weight="800" fill="${fg}">${l[1]}</text><text x="136" y="${y+26}" font-size="11.5" fill="${fg}" opacity=".75">${l[2]}</text>`});
+  return s+`</svg>`;
+}
+
+
+/* ---------- HTML infographics (large) ---------- */
+function netHTML(c){const n=c.nodes,nd=x=>`<div class="nd"><em>${x[3]}</em><b>${x[0]}</b><span>${x[1]}</span></div>`;
+ return `<div class="net"><div class="col l">${nd(n[0])}${nd(n[2])}</div><div class="hub"><b>${c.center}</b><span>${c.cs}</span></div><div class="col r">${nd(n[1])}${nd(n[3])}</div></div>`}
+function donutHTML(parts,acc){const R=70,C=2*Math.PI*R;let off=0;let s=`<svg viewBox="0 0 200 200" style="width:240px;height:240px"><g transform="translate(100 100) rotate(-90)"><circle r="${R}" fill="none" stroke="currentColor" stroke-opacity=".08" stroke-width="36"/>`;
+ parts.forEach((p,i)=>{const L=C*p[1]/100;s+=`<circle r="${R}" fill="none" stroke="${acc}" stroke-opacity="${[1,.72,.5,.32][i]}" stroke-width="36" stroke-dasharray="${L-2} ${C-L+2}" stroke-dashoffset="${-off}"/>`;off+=L});
+ s+=`</g><text x="100" y="108" text-anchor="middle" font-family="Cormorant Garamond" font-size="34" font-weight="700" fill="${acc}">${parts[0][1]}%</text></svg>`;
+ return `<div class="dn">${s}<div class="lg">${parts.map((p,i)=>`<div><span>${p[0]}</span><em>${p[1]}%</em><u><s style="--w:${p[1]*2.5}%;opacity:${[1,.72,.5,.32][i]}"></s></u></div>`).join('')}</div></div>`}
+const EXTRA={
+ shynyrau:()=>`<div class="depth">${[['10 м','Шеберлік','еңбекқор, даладағы ең үздік құдықшы'],['20 м','Даңқ','ел мақтауы, атақ'],['30 м','Бәсеке','ауылға одан да дарынды шебер келеді'],['40 м','Қызғаныш','жұмыссыз қалады, іштей күйзеледі'],['50 м','Тәкаппарлық','«бұрын ешкім қазбаған тереңдік»'],['? м','Трагедия','құдық «Еңсеп өлген» атанады']].map((r,i)=>`<div class="dr" style="background:rgba(0,0,0,${0.08+i*0.11})"><div class="m">${r[0]}</div><div><b>${r[1]}</b><span>${r[2]}</span></div></div>`).join('')}</div>`,
+ anyz:()=>`<div class="worlds"><div class="wd" style="background:linear-gradient(180deg,rgba(63,193,181,.18),transparent)"><h5>☀ Жоғарғы әлем</h5><ul><li>Аспан, нұр</li><li>Сұлулық, өнер</li><li>Арман, махаббат</li><li>Шебер мен ханым әлемі</li></ul></div>
+  <svg viewBox="0 0 150 320" style="width:100%;height:100%"><path d="M55 310 L64 70 L86 70 L95 310Z" fill="#3fc1b5" class="glow"/><rect x="50" y="54" width="50" height="18" rx="3" fill="#e9c37a"/><path d="M62 54 Q75 20 88 54z" fill="#3fc1b5"/><line x1="75" y1="26" x2="75" y2="8" stroke="#e9c37a" stroke-width="3"/><line x1="0" x2="150" y1="190" y2="190" stroke="#e8f4f2" stroke-opacity=".4" stroke-dasharray="6 6"/></svg>
+  <div class="wd" style="background:linear-gradient(0deg,rgba(201,39,45,.18),transparent);align-self:end"><h5>🍎 Төменгі әлем</h5><ul><li>Қала, күйбең тіршілік</li><li>Билік, қорқыныш</li><li>Жағымпаз сарай</li><li>Құртты алма — алдамшы билік</li></ul></div></div>`,
+ urker:(a,f)=>mapSVG([[69,42.5,'Ордабасы','','end'],[65.5,48.6,'Бұланты',''],[74.5,44.6,'Аңырақай',''],[61.5,49.9,'Хан моласы','','end']],a,f,[[[69,42.5],[65.5,48.6],[74.5,44.6]]])+
+  `<div class="yrs"><div class="yr"><b>1726</b><strong>Ордабасы</strong><span>құрылтай, қол басшысы сайланды</span></div><div class="yr"><b>1728</b><strong>Бұланты</strong><span>жоңғар әскерін жеңу</span></div><div class="yr"><b>1729</b><strong>Аңырақай</strong><span>шешуші шайқас</span></div><div class="yr"><b>1748</b><strong>Хан моласы</strong><span>Абылқайыр жерленген жер</span></div></div><div class="note">Картадағы нүктелер шамамен көрсетілген</div>`,
+ elen:()=>`<div class="dawn"><i></i></div><div class="dawn-l"><div><b>Түн</b><span>белгісіздік</span></div><div><b>Ымырт</b><span>күдік пен үміт</span></div><div class="on"><b>Елең-алаң ↑</b><span>таң сәрі — роман осы сәтте</span></div><div><b>Таң</b><span>жаңа күн</span></div></div>`,
+ qus:()=>`<div class="lpath">${[['🖤','Жесірлік','жар майданда қаза табады'],['🌾','Еңбек','соғыс жылдарының жоқшылығы'],['📚','Тәрбие','жалғыз ұлын оқытады'],['🏙️','Көш','ұлының бақыты үшін қалаға'],['🕊️','Мұрат','ұлы — адам қатарында']].map(p=>`<div class="lp"><i>${p[0]}</i><b>${p[1]}</b><span>${p[2]}</span></div>`).join('')}</div>`
+};
+/* ================= ҚОСЫМША БӨЛІМДЕР ================= */
+function img(p){return (window.IMG&&window.IMG[p])||p}
+
+/* --- Кейіпкер сөйлейді (шығарма желісімен біз жазған монологтар) --- */
+const MONO={
+ shynyrau:['Еңсеп','Мен құдық қазғанда жерді емес, өзімді қазып жатқандай едім. Әр кетпен түскен сайын «даланың ең үздік құдықшысы» деген атым да тереңдей түсетін. Ауылға жаңа шебер келгенде жұрт маған бұрылып қарамай қойды. Сонда ішімде бір шыңырау ашылды — қызғаныштың шыңырауы. «Ешкім жетпеген тереңдікке жетемін» дедім. Енді түсінемін: мен іздеген су жер астында емес еді…'],
+ anyz:['Әмірші','Менің әр сөзім — жарлық, әр қадамым — аңыз болуы керек еді. Жорықтан оралғанда маған арналып мұнара тұрғызылыпты. Бірақ ол мұнарада менің даңқым емес, біреудің жүрегі тұр екен. Мен әлемді жеңдім, ал бір шебердің махаббатын жеңе алмадым. Аңыздың да ақыры болады екен…'],
+ urker:['Абылқайыр хан','Аспанға қараймын: Үркер шоғыры жеті жұлдыз болып бірге жарқырайды. Ал менің елім ше? Сыртта — жау, ішінде — алауыздық. Ордабасыда бір туның астына жиналдық, Аңырақайда жауды жеңдік. Енді ең ауыр шайқас алда — ел болашағы үшін дұрыс жолды таңдау. Хан болу — тақта отыру емес, бүкіл елдің жүгін көтеру.'],
+ elen:['Дала','Мен — Дала. Талай түнді өткіздім, талай таңды қарсы алдым. Хан шешім қабылдады — енді ел күдік пен үміттің арасында тұр. Біреулер «бұл — қараңғылықтың басы» дейді, біреулер «жаңа таңның белгісі» дейді. Мен білемін: ең қараңғы сәт — елең-алаң, таң атар алдында келеді. Тек оған дейін шыдау керек.'],
+ qus:['Ана','Балам, әкеңнің қаралы қағазы келген күні мен сенің көзіңше жылаған жоқпын. Жыласам, сен де жылар едің. Аштық та, суық та өтті — мен сені қанатымның астына жасырдым. Сен оқыдың, ер жеттің, қалаға кеттің. Мен де соңыңнан ердім — бақытың үшін. Тек туған ауылдың исі есімнен кетпейді… Сен ұшқан құс бол, мен — сенің қанатың болайын.']
+};
+
+/* --- Акциялар --- */
+const ACTS={
+ shynyrau:{goal:'Өзін-өзі тануға, қызғаныш пен бәсекенің салдары туралы ойлануға үйрету',steps:['«Шыңырау» повесін оқу немесе үзіндісін тыңдау','«Менің ішкі шыңырауым» тақырыбында 3 сөйлемдік эссе жазу','Эсселерді мектеп стендіне «тереңдік шкаласы» түрінде ілу'],prod:'Эсселер стенді',who:'7–11 сынып',time:'1 сабақ + 1 үзіліс'},
+ anyz:{goal:'Махаббат, өнер және билік туралы шығармашылық ой қозғау',steps:['Романдағы мұнара символын талқылау','Әр оқушы өз арманын мұнара қабаттары түрінде салады','Әр қабатқа бір құндылық жазып, көрме жасау'],prod:'«Мұнаралар» көрмесі',who:'5–11 сынып',time:'2 сабақ'},
+ urker:{goal:'Бірлік пен тарихи жадты сезіну',steps:['Сыныптан 7 оқушы — 7 жұлдыз таңдалады','Әрқайсысы романнан немесе тарихтан бір дерек айтады','Тақтада ортақ «Үркер» шоғыры құрылып, бірлік туралы қорытынды жасалады'],prod:'Сынып «Үркері»',who:'8–11 сынып',time:'1 сабақ'},
+ elen:{goal:'Шешім мен оның салдарын талдауға үйрету',steps:['«Үркер» мен «Елең-алаң» постерлерін қатар ілу','Топтар «шешім → салдар» сызбасын толтырады','«Менің елең-алаң сәтім» тақырыбында пікір алмасу'],prod:'«Шешім → салдар» диптихі',who:'9–11 сынып',time:'1 сабақ'},
+ qus:{goal:'Анаға құрмет, отбасы құндылығын дәріптеу',steps:['«Құс қанаты» повесін оқу','Әр оқушы анасына қолмен хат жазады','Хаттардан «қанат» тақтасы жасалып, Ана күні табыс етіледі'],prod:'«Анама хат» тақтасы',who:'5–11 сынып',time:'1 апта'}
+};
+
+/* --- Сөздік --- */
+const GLOSS=[
+ ['Шыңырау','өте терең құдық; ауыспалы мағынада — түпсіз тереңдік','shynyrau'],
+ ['Құдықшы','құдық қазатын шебер','shynyrau'],
+ ['Мұнара','биік, жіңішке құрылыс; мешіттің мұнарасы','anyz'],
+ ['Әмірші','билеуші, әмір беруші','anyz'],
+ ['Аңыз','ел аузында сақталған, шындық пен қиял араласқан әңгіме','anyz'],
+ ['Үркер','Торпақ шоқжұлдызындағы жарқын жұлдыздар шоғыры (Плеяда); қазақтар оған қарап маусым мен уақытты болжаған','urker'],
+ ['Құрылтай','маңызды мәселені шешу үшін жиналатын ел жиыны','urker'],
+ ['Сұлтан','хан әулетінен шыққан төре','urker'],
+ ['Би','дау шешетін, елге ақыл айтатын шешен, әділ адам','urker'],
+ ['Елең-алаң','таң сәрі, түн мен таңның арасындағы алакеуім','elen'],
+ ['Ымырт','күн батқаннан кейінгі немесе таң алдындағы алакеуім','elen'],
+ ['Кімешек','қазақ әйелдерінің ақ матадан тігілген бас киімі','qus'],
+ ['Жесір','күйеуі қайтыс болған әйел','qus'],
+ ['Түптұлға','көркем бейненің негізіне алынған нақты адам (прототип)','qus'],
+ ['Повесть (хикаят)','әңгімеден ұзақ, романнан қысқа прозалық шығарма',''],
+ ['Дилогия','бір-бірін жалғастыратын екі шығарма («Үркер» мен «Елең-алаң»)','elen']
+];
+
+/* --- Дереккөздер --- */
+const SRC=[
+ ['«Шыңырау» повесі туралы мақала — Абай атындағы ҚазҰПУ Хабаршысы','https://bulletin-philology.kaznpu.kz/index.php/ped/article/download/356/320/984'],
+ ['«Аңыздың ақыры» романы туралы — adebiportal.kz','https://adebiportal.kz/en/news/view/20418'],
+ ['Читая Кекилбаева — Казахстанская правда','https://kazpravda.kz/n/chitaya-kekilbaeva/'],
+ ['Созерцающий философ Степи — Казахстанская правда','https://kazpravda.kz/n/sozertsayushchiy-filosof-stepi/'],
+ ['Абулхаир хан. Тревожный век — ҚазҰУ Хабаршысы','https://bulletin-journalism.kaznu.kz/index.php/1-journal/article/download/470/457'],
+ ['ӘБІШ ӘЛЕМІ — «Ана тілі» газеті','https://anatili.kazgazeta.kz/news/54479'],
+ ['Кекілбаев кеңістігі — qazaqadebieti.kz','https://qazaqadebieti.kz/54566/kekilbaev-ke-istigi'],
+ ['Әбіш Кекілбаев шығармаларындағы әйелдер бейнесі — massaget.kz','https://massaget.kz/uy_tapsyirmasyi/absh-keklbaev-shyigarmalaryindagyi-ayelder-beynes-58956/'],
+ ['«Құс қанаты» кітабы (Жазушы, 1978) — LibAU каталогы','https://atyrau-edu.kz/fund/show/186a9451-6d50-42d6-aac7-cc4baae2e3b0'],
+ ['Abish Kekilbayev — Wikipedia (мұрағат)','https://ipfs.aleph.im/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/Abish_Kekilbayev.html'],
+ ['Ә. Кекілбаев: өмірі мен шығармашылығы — stud.kz','https://stud.kz/referat/show/113058'],
+ ['Kekilbayev romanları (түрік тілінде) — dergipark.org.tr','https://dergipark.org.tr/en/download/article-file/2063657']
+];
+
+/* --- «Қай кітап саған сай?» --- */
+const FIT=[
+ ['Сені ең көп не толғандырады?',['Өз мүмкіндігімді сынау','Махаббат пен өнер','Ел тағдыры','Өмірдегі бетбұрыс сәттер','Отбасы мен жақындарым']],
+ ['Қай көріністі таңдайсың?',['Терең құдық','Көгілдір мұнара','Жұлдызды аспан','Таң шапағы','Ұшып бара жатқан құс']],
+ ['Сен үшін ең маңызды қасиет?',['Еңбекқорлық','Шынайылық','Бірлік','Үміт','Мейірім']],
+ ['Қай кино жанры ұнайды?',['Психологиялық драма','Аңыз-ертегі','Тарихи эпопея','Тарихи драма','Отбасылық фильм']],
+ ['Демалыс күні не істейсің?',['Жаңа нәрсе үйренемін','Сурет саламын, музыка тыңдаймын','Тарихи кітап оқимын','Болашағымды жоспарлаймын','Отбасыма көмектесемін']]
+];
+let fitI=0,fitS=[0,0,0,0,0];
+function renderFit(){const box=document.getElementById('fit');if(!box)return;
+ if(fitI>=FIT.length){const w=fitS.indexOf(Math.max(...fitS)),b=BOOKS[w];
+  box.innerHTML=`<div class="fit-res"><img src="${img('covers/'+b.id+'.jpg')}" alt=""><div><div class="kicker">Саған сай кітап</div><h3>«${b.title}»</h3><p class="fit-sub">${b.sub}</p><p>${b.idea}</p>
+  <div class="fit-act"><a class="btn" href="#${b.id}">Кітап бетін ашу →</a><button class="btn ghost" onclick="fitI=0;fitS=[0,0,0,0,0];renderFit()">Қайта өту</button></div></div></div>`;return}
+ const[q,o]=FIT[fitI];const ord=o.map((t,i)=>[t,i]).sort(()=>Math.random()-.5);
+ box.innerHTML=`<div class="fit-prog">${FIT.map((_,i)=>`<i class="${i<=fitI?'on':''}"></i>`).join('')}</div><div class="qq">${q}</div><div class="fit-o">${ord.map(([t,i])=>`<button data-i="${i}">${t}</button>`).join('')}</div>`;
+ box.querySelectorAll('button[data-i]').forEach(bt=>bt.onclick=()=>{fitS[+bt.dataset.i]++;fitI++;renderFit()})}
+
+/* --- Қорғау сөзі (суфлер) --- */
+const SPEECH=[
+ 'Құрметті әділқазылар! Біздің ұранымыз — «Шыңыраудың тереңі — жер астында, Әбіш мұрасының тереңі — ұлт жадында». Әбіш Кекілбайұлы — Маңғыстаудың Оңды ауылында туған жазушы, аудармашы, мемлекет қайраткері. Біз оның он екі шығармасын он екі есік ретінде ұсынамыз: әрқайсысына — инфографика, 3D әлем және мектептік акция.',
+ '«Шыңырау» повесінде даланың үздік құдықшысы Еңсеп даңқын қайтару үшін ешкім жетпеген тереңдікке түсіп, сол құдықта қаза табады; құдық «Еңсеп өлген» атанады. Тереңдік шкаласы осы жолды көрсетеді: шеберлік, даңқ, бәсеке, қызғаныш, тәкаппарлық, трагедия. Түйіні: ең терең шыңырау — адамның өз жүрегінде.',
+ '«Аңыздың ақыры» алғаш «Махаббат мұнарасы» деген атпен жарияланған. Жас шебер махаббатын мұнараға айналдырады, ал Әмірші мұны теріс түсініп, оқиға қайғылы аяқталады. Мұнара — арман мен сұлулық, құртты алма — биліктің алдамшылығы. Роман «Бір ел — бір кітап» акциясында оқырман бағасын алған.',
+ '«Үркер» романы, 1981 жыл — Абылқайыр хан дәуірі: 1726 жылғы Ордабасы құрылтайы, 1728 жылғы Бұланты, 1729 жылғы Аңырақай. Жазушы романға материал жинап, Толыбай ауылына барған; бүгін онда «Хан моласы» кешені тұр. Үркер — жеті жұлдыз, бірліктің белгісі.',
+ '«Елең-алаң», 1984 жыл — «Үркердің» жалғасы. «Үркерде» шешім қабылданса, мұнда сол шешімнің салдары, күдік пен үміттің тартысы көрсетіледі. Атаудың өзі — таң алдындағы ымырт. Түйіні: ең қараңғы сәт — таң атар алдында.',
+ '«Құс қанаты» — ғұмырнамалық повесть: ана бейнесінің түптұлғасы — жазушының анасы Айсәуле. Жесір ана жалғыз ұлын соғыс жоқшылығынан аман алып шығып, адам қатарына қосады. Түйіні: баланың қанаты — ананың мейірімі. Акциямыз — «Анама хат».',
+ '«Алтын шуақ» — Әбіштің 1962 жылы, 23 жасында шыққан тұңғыш өлеңдер жинағы. Ол әдебиетке ақын болып келді, ал прозасындағы лиризм осы жырлардан бастау алады.',
+ '«Бір шөкім бұлт» хикаятында соғыс Аққаймақтан әкесін, анасын, сүйген жарын алады. Бірақ ол мойымай, еңбегімен өмірге жауап береді. Акциямыз — тыл ардагерлері туралы естелік жинау.',
+ '«Күй» повесі, 1967 жыл: тұтқын күйшінің өнері жаудың да жүрегін тербетеді, ал оны өлтірген Жөнейіт ар азабына түседі. Түйіні: қылыш денені жеңеді, күй жүректі жеңеді.',
+ '«Ханша-Дария хикаясы» — Шыңғыс ханның соңы туралы аңыз: әлемді жаулаған әміршіні Таңғұт ханшасының намысы жеңеді, өзен ханша атымен аталады.',
+ '«Бәйгеторы» — атбегілік өнеріне ескерткіш. Оқиға бәйгенің алдын бермеген торы аттың көзімен баяндалады. Ол — дарын мен бәсеке туралы ой.',
+ '«Бір шоқ жиде» — Тілеу ақсақал мен Күдерінің адал достығы, ата қоныс пен баба аманаты туралы. Жиде — тамырды ұмытпау белгісі. Акциямыз — «Менің шежірем».',
+ '«Шеткері үй», 1978 жыл: сұлу әрі ақылды Зуһра таңдаудағы жеңілтектіктің кесірінен қартайғанда жалғыз қалады. Түйіні: жалғыздықтан сұлулық емес, сыйластық сақтайды.',
+ 'Он екі шығарма — үш арна: адам жанының тереңі, ел тағдыры, ана мен туған жер. Насихат жолымыз: 3D сайт, QR-кодты постер, әр шығармаға мектептік акция және «Әбіш оқулары» апталығы. Мұра оқылғанда ғана тірі. Назарларыңызға рахмет!'
+];
+function renderExtras(){
+ const g=document.getElementById('gloss');if(g){g.innerHTML=GLOSS.map(([t,d,id])=>{const b=BOOKS.find(x=>x.id===id);return `<div class="gl"><b>${t}</b><span>${d}</span>${b?`<a href="#${b.id}" style="color:${b.color[0]}">«${b.title}»</a>`:''}</div>`}).join('')}
+ const s=document.getElementById('srcs');if(s)s.innerHTML=SRC.map((x,i)=>`<li><span>${i+1}</span><a href="${x[1]}" target="_blank" rel="noopener">${x[0]}</a></li>`).join('');
+ const a=document.getElementById('acts');if(a)a.innerHTML=BOOKS.map(b=>{const x=ACTS[b.id];return `<div class="act" style="--acc:${b.color[0]}">${COVERS.includes(b.id)?`<img src="${img('covers/'+b.id+'.jpg')}" alt="">`:`<div class="act-art">${art(b.id)}</div>`}<div class="act-in"><div class="act-tag">${b.tag}</div><div class="act-book">«${b.title}»</div><p class="act-goal">${x.goal}</p><ol>${x.steps.map(t=>`<li>${t}</li>`).join('')}</ol><div class="act-meta"><span>🎯 ${x.prod}</span><span>👥 ${x.who}</span><span>⏱ ${x.time}</span></div></div></div>`}).join('');
+ const sp=document.getElementById('speech');if(sp){const tl=PLAN.map(p=>p[0]);
+  sp.innerHTML=SPEECH.map((t,i)=>`<div class="sp"><div class="sp-h"><b>${tl[i]}</b><span>${PLAN[i][1]} сек</span></div><p>${t}</p></div>`).join('')}
+ renderFit()}
+
+/* ---------- data ---------- */
+const BOOKS=[
+{id:'shynyrau',n:'01',title:'Шыңырау',genre:'Психологиялық повесть',color:['#e3a24c','#3b2414'],
+ sub:'Құдықты тереңдеткен сайын адам өз жанының түбіне үңіледі.',
+ idea:'Талант — адамгершілік сынағы. Қызғаныш, даңққұмарлық пен тәкаппарлық ең шебер адамның өзін де тұңғиыққа тартады.',
+ nums:[['1982','«Шыңырау» повестер жинағы'],['1','басты кейіпкер — Еңсеп'],['5','сюжеттік кезең'],['∞','жан тереңі — шексіз']],
+ net:{center:'Еңсеп',cs:'құдықшы шебер',nodes:[['Жаңа шебер','бәсекелес',3,'қызғаныш'],['Ауыл','даңқ пен баға',2,'мақтау'],['Шыңырау','сынақ',4,'тәкаппарлық'],['Өз жаны','ішкі үн',2,'үнсіз дау']]},
+ curve:[['Ең үздік құдықшы',30],['Жаңа шебер келеді',55],['Жұмыссыз қалады',62],['Терең құдыққа кіріседі',85],['Қаза — «Еңсеп өлген»',100]],
+ extra:{t:'Шыңырау шкаласы: жан тереңдігі',svg:(a,f)=>scaleSVG([['10 м','Шеберлік','еңбекқор, үздік құдықшы'],['20 м','Даңқ','ел мақтауы, атақ'],['30 м','Бәсеке','одан да дарынды шебер келеді'],['40 м','Қызғаныш','жұмыссыз қалу, кек'],['50 м','Тәкаппарлық','«бұрын болмаған тереңдік»'],['? м','Трагедия','құдық «Еңсеп өлген» атанады']],a,f)},
+ donut:[['Талант пен еңбек',30],['Қызғаныш, бәсеке',30],['Даңққұмарлық',25],['Өлім мен мағына',15]],
+ syms:[['🕳️','Шыңырау','адам жанының тереңі мен бейсаналығы'],['⬇️','Тереңдік','жасырын ниет пен қараңғы ойлар'],['🪧','Құдық аты','талант тағдырының трагедиясы']],
+ vs:[['Дарын береді','Шеберлік, атақ, ел құрметі, еңбектің жемісі'],['Дарын сынайды','Қызғаныш, даңққұмарлық, тәкаппарлық, жалғыздық']],
+ now:['Бәсекеде «жеңу» мен «адам болып қалу» — екі бөлек нәрсе','Даңқ үшін емес, іс үшін еңбек ет','Біреудің табысы — сенің жеңілісің емес'],
+ dyk:['Повесть — Кекілбаев туындыларының ішіндегі ең танымалдарының бірі.','Зерттеушілер «шыңырауды» метафора деп атайды: құдық тереңдеген сайын кейіпкер өз жанына бойлайды.','Кейіпкер өлген соң құдықтың өзі оның атымен — «Еңсеп өлген» деп аталады.'],
+ tag:'#ӨзТереңіңе_Үңіл',promo:'Оқушылар «менің ішкі шыңырауым» тақырыбында 3 сөйлемдік эссе жазып, мектеп стендіне іледі.',
+ q:'Сен үшін «нағыз шебер» кім: ең мықтысы ма, әлде ең адалы ма?'},
+{id:'anyz',n:'02',title:'Аңыздың ақыры',genre:'Философиялық роман',color:['#3fc1b5','#0b2330'],
+ sub:'Билік мәңгі емес, мәңгі болатын — махаббат пен шеберлік.',
+ idea:'Өмір мен өлім, шындық пен жалған, махаббат пен билік, жақсылық пен жамандық туралы философиялық толғау. Шексіз биліктің адам жанын қалай мүгедек ететінін ашады.',
+ nums:[['4','жылдық жорықтан оралған Әмірші'],['1','мұнара — басты символ'],['2','әлем: жоғарғы мен төменгі'],['«Бір ел — бір кітап»','акциясында оқырман бағасы']],
+ net:{center:'Әмірші',cs:'шексіз билік иесі',nodes:[['Жас шебер','сәулетші',3,'қызғаныш'],['Ханым','Әміршінің жары',3,'махаббат'],['Сарай','қызметшілер',2,'қорқыныш'],['Мұнара','махаббат белгісі',2,'менмендік']]},
+ curve:[['Әмірші жорықтан оралады',35],['Ханымға арнап мұнара',50],['Шебердің махаббаты тасқа айналады',70],['Әмірші бәрін теріс түсінеді',92],['Аяусыз, қайғылы соңы',100]],
+ extra:{t:'Мұнара: екі әлем',svg:(a,f)=>`<svg viewBox="0 0 420 330" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat"><path d="M190 300 L198 60 L222 60 L230 300Z" fill="${a}"/><rect x="186" y="46" width="48" height="16" rx="3" fill="${a}"/><path d="M198 46 Q210 18 222 46z" fill="${a}"/><line x1="0" x2="420" y1="180" y2="180" stroke="${f}" stroke-opacity=".35" stroke-dasharray="6 6"/>
+ <text x="20" y="40" font-size="13" font-weight="900" fill="${a}">ЖОҒАРҒЫ ӘЛЕМ</text>${['аспан, нұр','сұлулық, өнер','арман, махаббат'].map((t,i)=>`<text x="20" y="${70+i*26}" font-size="13" fill="${f}">✦ ${t}</text>`).join('')}
+ <text x="270" y="210" font-size="13" font-weight="900" fill="${a}">ТӨМЕНГІ ӘЛЕМ</text>${['қала, күйбең','билік, қорқыныш','құртты алма — алдамшы'].map((t,i)=>`<text x="270" y="${240+i*26}" font-size="13" fill="${f}">✦ ${t}</text>`).join('')}
+ <circle cx="80" cy="260" r="26" fill="#c9272d"/><circle cx="72" cy="262" r="5" fill="#2a0e06"/><path d="M80 234 q4 -12 12 -14" stroke="${f}" stroke-width="3" fill="none"/></svg>`},
+ donut:[['Билік пен менмендік',35],['Махаббат',25],['Өнер, шеберлік',20],['Өмір мен өлім',20]],
+ syms:[['🕌','Мұнара','жоғарғы әлем: арман, сұлулық'],['🍎','Құртты алма','биліктің алдамшылығы'],['📜','Аңыз','атақтың өткіншілігі']],
+ vs:[['Әмірші','Әрбір сөзі мен ісі аңызға айналуын қалайды; бәрін билікпен өлшейді'],['Шебер','Махаббатын тасқа, мұнараға айналдырады; өнермен мәңгі қалады']],
+ now:['Билік адамды бақытты етпейді','Шынайы өнер — патшадан да ұзақ жасайды','Аңызды іс жасайды, жарлық емес'],
+ dyk:['Роман алғаш «Махаббат мұнарасы» деген атпен жарияланған.','Шығарма шығыс аңызына негізделген, «Дала балладалары» циклына енген.','Орысша атауы — «Конец легенды».'],
+ tag:'#МахаббатМұнарасы',promo:'«Мен салар мұнара» челленджі: оқушы арманын мұнара қабаттары түрінде салып, әр қабатқа бір құндылық жазады.',
+ q:'Әміршіні кім жеңді: уақыт па, махаббат па, әлде өз нәпсісі ме?'},
+{id:'urker',n:'03',title:'Үркер',genre:'Тарихи роман · 1981',color:['#a8b8ff','#0c1030'],
+ sub:'Шоқ жұлдыз шашыраса — жоғалады, бірге болса — жол көрсетеді.',
+ idea:'Ел тағдыры қыл үстінде тұрған XVIII ғасырдағы Абылқайыр хан дәуірі. Елбасының жауапкершілігі мен халық бірлігі — ұлттың аман қалу шарты.',
+ nums:[['1981','жарық көрген жылы'],['XVIII','ғасыр оқиғалары'],['7','жұлдыз — Үркер шоғыры'],['1693–1748','Абылқайыр ханның ғұмыры']],
+ net:{center:'Абылқайыр',cs:'Кіші жүз ханы',nodes:[['Халық','ел тағдыры',3,'жауапкершілік'],['Жоңғар','сыртқы қауіп',3,'соғыс'],['Ресей','көрші империя',2,'келіссөз'],['Сұлтан, билер','ішкі тартыс',2,'бақталастық']]},
+ curve:[['Ел ауыр сынақ алдында',45],['Жоңғарға қарсы күрес',75],['Ел болашағына жол іздеу',60],['Көрші империямен келіссөз',85],['Ішкі тартыс, бірлік сынағы',95]],
+ extra:{t:'Абылқайыр дәуірі картасы',svg:(a,f)=>mapSVG([[69,42.5,'Ордабасы','1726 — құрылтай','end'],[65.5,48.6,'Бұланты','1728 — жоңғарды жеңу'],[74.5,44.6,'Аңырақай','1729 — шешуші шайқас'],[61.5,49.9,'Хан моласы','Абылқайыр жерленген жер','end']],a,f,[[[69,42.5],[65.5,48.6],[74.5,44.2]]])+`<div class="note">Нүктелер шамамен көрсетілген</div>`},
+ donut:[['Ел бірлігі',30],['Билік жауапкершілігі',25],['Соғыс пен бейбітшілік',25],['Тарихи таңдау',20]],
+ syms:[['✨','Үркер','жеті жұлдыз — бірлік, бағдар'],['🐎','Дала','кеңістік, еркіндік'],['⚖️','Шешім','хан жүгінің ауырлығы']],
+ vs:[['Бірлік','Шоқ жұлдыздай бір болған ел жауға төтеп береді'],['Алауыздық','Сұлтан мен билердің бақталастығы елді әлсіретеді']],
+ now:['Тарихты білмей — болашақты болжау қиын','Бірлік — ең күшті қорған','Көшбасшы шешімі — көп тағдырдың жүгі'],
+ dyk:['Орысша атауы — «Плеяды — созвездие надежды» («Үркер — үміт шоғыры»).','Жазушы романға материал жинап, Ақтөбе өңіріндегі Толыбай ауылына барған.','Ақсақалдар көрсеткен жерде бүгін «Хан моласы» тарихи кешені тұр.'],
+ tag:'#ҮркердейБіргеміз',promo:'Сыныптың 7 оқушысы — 7 жұлдыз: әрқайсысы романнан бір дәйек айтып, тақтада ортақ «Үркер» шоғын құрайды.',
+ q:'Бүгінгі қоғамды «Үркер» шоғы сияқты не біріктіре алады?'},
+{id:'elen',n:'04',title:'Елең-алаң',genre:'Тарихи роман · 1984',color:['#ff9a62','#2a1220'],
+ sub:'Таң алдындағы ымырт — қараңғылық та, үміт те қатар тұрған шақ.',
+ idea:'«Үркерден» басталған тарихи толғаудың жалғасы. Ел тағдыры шешілер өтпелі кезеңдегі үміт пен күдік, адал мен арамның тартысы.',
+ nums:[['1984','жарық көрген жылы'],['2','кітап: «Үркер» + «Елең-алаң»'],['XVIII','ғасыр, Абылқайыр дәуірі'],['1','атау мәні — таң сәрі']],
+ net:{center:'Абылқайыр',cs:'хан және тұлға',nodes:[['Ел','күдік пен үміт',3,'сенім'],['Империя','ықпал',2,'саясат'],['Сұлтандар','бақталастық',3,'тартыс'],['Ұрпақ','болашақ',2,'аманат']]},
+ curve:[['«Үркердегі» шешімнің салдары',50],['Ел ішінде күдік күшейеді',70],['Хан мен ел тағдыры тоғысады',85],['Тұлғаның ішкі драмасы',95],['Жаңа таң алдындағы сынақ',75]],
+ extra:{t:'Түн → Ымырт → Таң: атаудың шкаласы',svg:(a,f)=>`<svg viewBox="0 0 420 210" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat"><defs><linearGradient id="dawnbar"><stop offset="0" stop-color="#140c2a"/><stop offset=".5" stop-color="#8a3a6a"/><stop offset=".8" stop-color="#ff8a5c"/><stop offset="1" stop-color="#ffd38a"/></linearGradient></defs>
+ <rect x="10" y="40" width="400" height="40" rx="20" fill="url(#dawnbar)"/>${[['Түн',30,'белгісіздік'],['Ымырт',160,'күдік пен үміт'],['Елең-алаң',280,'таң сәрі'],['Таң',395,'жаңа күн']].map(([t,x,s])=>`<line x1="${x}" x2="${x}" y1="84" y2="104" stroke="${f}" stroke-opacity=".5"/><text x="${x}" y="124" text-anchor="middle" font-size="13.5" font-weight="800" fill="${f}">${t}</text><text x="${x}" y="142" text-anchor="middle" font-size="10.5" fill="${f}" opacity=".75">${s}</text>`).join('')}
+ <path d="M280 40 L280 26 M272 32 L280 22 L288 32" stroke="${a}" stroke-width="3" fill="none"/><text x="210" y="190" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-size="20" fill="${a}">Роман оқиғасы — дәл осы «елең-алаң» сәтте</text></svg>`},
+ donut:[['Өтпелі кезең',30],['Үміт пен күдік',25],['Хан тұлғасы',25],['Ел болашағы',20]],
+ syms:[['🌅','Елең-алаң','өтпелі кезең, жаңа таңның басы'],['🌗','Ымырт','күдік пен үміттің қатар тұруы'],['🧭','Жол','ел таңдайтын бағыт']],
+ vs:[['«Үркер» (1981)','Шешім: ел болашағы үшін жол іздеу, бірлікке шақыру'],['«Елең-алаң» (1984)','Салдар: шешімнің сынағы, күдік пен үміттің тартысы']],
+ now:['Әр өтпелі кезеңнің артында — жаңа таң','Тарихи тұлғаны күрделі адам ретінде тану','Бүгінгі таңдауымыз — ертеңгі тарих'],
+ dyk:['Жазушы Абылқайыр хан дәуіріне бірнеше кітап арнаған.','Түрік тіліндегі атауы «Şafak Vakti» — «Таң сәрі» дегенді білдіреді.','«Үркер» мен «Елең-алаң» қатар оқылатын тарихи диптих.'],
+ tag:'#ЖаңаТаңАлдында',promo:'«Үркер» мен «Елең-алаң» диптихі: екі постерді қатар іліп, «шешім → салдар» сызбасын оқушылар өздері толтырады.',
+ q:'Сенің өміріңдегі «елең-алаң» шақ — қандай таңдау алдында тұрдың?'},
+{id:'qus',n:'05',title:'Құс қанаты',genre:'Ғұмырнамалық повесть',color:['#4f7a4a','#f5ecd9'],
+ sub:'Ана мейірімі — баланы өмірге ұшыратар қанат.',
+ idea:'Күйеуі майданда қаза тапқан, жалғыз ұлын аман-есен адам қатарына қосуды аналық мұрат тұтқан қайсар ананың бейнесі. Прототипі — жазушының анасы Айсәуле.',
+ nums:[['1975','«Құс қанаты» кітабы'],['4+6','кітапта: 4 повесть, 6 әңгіме'],['1','жалғыз ұл — ана үміті'],['0','кейіпкер аты аталмайды']],
+ net:{center:'Қарт ана',cs:'қайсар, мейірімді',nodes:[['Жалғыз ұл','үміт',4,'аналық мұрат'],['Майдандағы жар','қаза тапқан',2,'сағыныш'],['Ауыл','туған жер',2,'тамыр'],['Қала','ұлының бақыты',3,'құрбандық']]},
+ curve:[['Жар майданда қаза табады',80],['Соғыс жылдарының жоқшылығы',90],['Ұлын оқытып, жеткізеді',60],['Ұлы үшін қалаға көшеді',70],['Арман орындалды, сағыныш қалды',45]],
+ extra:{t:'Ана ғұмырының жолы',svg:(a,f)=>`<svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat"><path d="M30 260 C 120 260 90 160 190 160 S 280 60 390 50" fill="none" stroke="${a}" stroke-width="10" stroke-linecap="round" stroke-opacity=".25"/><path d="M30 260 C 120 260 90 160 190 160 S 280 60 390 50" fill="none" stroke="${a}" stroke-width="3" stroke-dasharray="2 8" stroke-linecap="round"/>
+ ${[[30,260,'Жесірлік','жалғыз қалу'],[105,236,'Еңбек','соғыс жылдары'],[190,160,'Тәрбие','ұлын оқыту'],[290,92,'Көш','қалаға'],[390,50,'Мұрат','ұлы — адам қатарында']].map(([x,y,t,s],i)=>`<circle cx="${x}" cy="${y}" r="13" fill="${a}"/><text x="${x}" y="${y+4}" text-anchor="middle" font-size="11" font-weight="900" fill="#fff">${i+1}</text><text x="${x}" y="${y+(i%2?-38:32)}" text-anchor="middle" font-size="12.5" font-weight="800" fill="${f}">${t}</text><text x="${x}" y="${y+(i%2?-24:46)}" text-anchor="middle" font-size="10.5" fill="${f}" opacity=".75">${s}</text>`).join('')}
+ <text x="380" y="20" font-size="22" text-anchor="end">🕊️</text></svg>`},
+ donut:[['Ана мейірімі',35],['Соғыс ауыртпалығы',25],['Туған жер',20],['Отбасы татулығы',20]],
+ syms:[['🪶','Құс қанаты','ана қамқорлығы, ұшуға күш'],['🏡','Туған үй','тамыр, жад'],['🌱','Ұл','ұрпаққа деген үміт']],
+ vs:[['Ана берді','Жастығын, күш-жігерін, бар өмірін ұлының тәрбиесіне арнады'],['Ұрпақ қайтарады','Құрмет, алғыс, туған жерге адалдық — ана еңбегінің жемісі']],
+ now:['Ананың еңбегін бағалау — адамдықтың басы','Отбасы татулығы — ұлт берекесі','Туған жерді ұмытпа'],
+ dyk:['Повесть — ғұмырнамалық: ана бейнесінің түптұлғасы — жазушының өз анасы Айсәуле.','Шығармада кейіпкерлердің аты-жөні аталмайды — бұл кез келген ананың бейнесі.','Повесть соғыс жылдары жеңіс үшін еңбек етіп, өмірін ұрпағына арнаған аналарға құрмет.'],
+ tag:'#АнамаХат',promo:'«Анама хат» акциясы: повесті оқыған соң әр оқушы анасына қолмен хат жазып, «қанат» тақтасына іледі.',
+ q:'Сенің «құс қанатың» кім? Оған соңғы рет қашан алғыс айттың?'}
+];
+
+
+const STORY={shynyrau:['⛏️','🧔','🚶','🕳️','🪦'],anyz:['🐎','🕌','💞','⚔️','🍂'],urker:['🏜️','⚔️','🧭','🤝','✨'],elen:['🌙','🌫️','👑','💭','🌅'],qus:['✉️','🌾','📚','🏙️','🕊️']};
+const PULL={shynyrau:'Ең терең шыңырау — жер астында емес, адамның өз жүрегінде.',anyz:'Әміршінің жарлығы ұмытылады, шебердің мұнарасы қалады.',urker:'Шоқ жұлдыз сияқты: бірге болсаң — жол көрсетесің, шашырасаң — жоғаласың.',elen:'Ең қараңғы сәт — таң атар алдында.',qus:'Баланың қанаты — ананың мейірімі.'};
+/* ================= ЖАҢА 7 ШЫҒАРМА ================= */
+const COVERS=['shynyrau','anyz','urker','elen','qus'];
+const HORSE=`<path d="M0 22 q6 -16 26 -18 l6 -10 l4 6 q8 2 10 10 l-8 2 q-4 10 -14 10 l2 14 h-4 l-3 -12 h-12 l-2 12 h-4 l1 -14z"/>`;
+Object.assign(ART,{
+alt:`<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="a1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2706"/><stop offset=".6" stop-color="#c98a1c"/><stop offset="1" stop-color="#f6d27a"/></linearGradient><radialGradient id="a2"><stop offset="0" stop-color="#fff6d0"/><stop offset=".5" stop-color="#ffd25e"/><stop offset="1" stop-color="#ffb52e" stop-opacity="0"/></radialGradient></defs>
+<rect width="400" height="400" fill="url(#a1)"/><g stroke="#fff1b8" stroke-width="3" opacity=".55">${Array.from({length:13},(_,i)=>{const a=Math.PI+(i+1)*Math.PI/14;return `<line x1="${200+60*Math.cos(a)}" y1="${290+60*Math.sin(a)}" x2="${200+260*Math.cos(a)}" y2="${290+260*Math.sin(a)}"/>`}).join('')}</g>
+<circle cx="200" cy="290" r="120" fill="url(#a2)"/><path d="M0 300 Q120 280 200 296 T400 290 V400 H0Z" fill="#4a3208"/><path d="M0 330 Q160 312 260 328 T400 322 V400 H0Z" fill="#2e1f05"/>
+<g transform="translate(250 120) rotate(30)"><path d="M0 0 C 20 -60 60 -100 70 -110 C 60 -70 40 -20 6 6 Z" fill="#fff6d8"/><line x1="0" y1="0" x2="58" y2="-96" stroke="#c98a1c" stroke-width="2"/><line x1="0" y1="0" x2="-8" y2="22" stroke="#2e1f05" stroke-width="4"/></g></svg>`,
+bult:`<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="b1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5d8fbf"/><stop offset="1" stop-color="#dfe9f2"/></linearGradient></defs>
+<rect width="400" height="400" fill="url(#b1)"/><g fill="#3d4f66" opacity=".92"><circle cx="160" cy="120" r="40"/><circle cx="205" cy="100" r="50"/><circle cx="250" cy="122" r="38"/><rect x="130" y="118" width="150" height="40" rx="20"/></g>
+<g stroke="#3d4f66" stroke-width="3" opacity=".5">${[150,180,210,240].map(x=>`<line x1="${x}" y1="165" x2="${x-10}" y2="200"/>`).join('')}</g>
+<path d="M0 300 Q100 285 200 298 T400 292 V400 H0Z" fill="#9c8a5a"/><path d="M0 330 Q160 315 260 330 T400 324 V400 H0Z" fill="#7a6a40"/>
+<g fill="#2d2a22" transform="translate(150 286)">${HORSE}<rect x="10" y="-12" width="6" height="14"/><circle cx="13" cy="-16" r="4"/></g></svg>`,
+kui:`<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="k1" cx=".5" cy=".4" r=".8"><stop offset="0" stop-color="#5a3018"/><stop offset="1" stop-color="#160a05"/></radialGradient><linearGradient id="k2" x1="0" x2="1"><stop offset="0" stop-color="#8a4f25"/><stop offset=".5" stop-color="#c98a55"/><stop offset="1" stop-color="#8a4f25"/></linearGradient></defs>
+<rect width="400" height="400" fill="url(#k1)"/><g transform="rotate(-35 200 200)"><ellipse cx="200" cy="285" rx="58" ry="78" fill="url(#k2)"/><rect x="192" y="60" width="16" height="200" rx="5" fill="#6a3a1a"/><rect x="186" y="50" width="28" height="22" rx="5" fill="#4a2810"/>
+<line x1="197" y1="70" x2="197" y2="335" stroke="#f3e2c0" stroke-width="1.5"/><line x1="203" y1="70" x2="203" y2="335" stroke="#f3e2c0" stroke-width="1.5"/>${[100,130,160,190,220].map(y=>`<line x1="191" y1="${y}" x2="209" y2="${y}" stroke="#2a1508" stroke-width="2"/>`).join('')}</g>
+<g fill="#f3c999" font-size="40" font-family="serif">${[[70,90,'♪'],[310,80,'♫'],[330,200,'♪'],[60,250,'♫'],[120,40,'♩']].map(([x,y,t])=>`<text x="${x}" y="${y}" opacity=".8">${t}</text>`).join('')}</g></svg>`,
+hansha:`<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="h1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a0712"/><stop offset=".6" stop-color="#7a1a2e"/><stop offset="1" stop-color="#d9566a"/></linearGradient></defs>
+<rect width="400" height="400" fill="url(#h1)"/><path d="M0 300 C 80 270 140 330 220 300 S 340 280 400 300 V340 C 320 320 260 360 180 335 S 60 330 0 345Z" fill="#6ec1d6" opacity=".8"/>
+<path d="M0 345 C 60 330 120 360 200 340 S 330 330 400 340 V400 H0Z" fill="#1a0510"/>
+<g transform="translate(200 150)"><path d="M-60 30 L-60 -20 L-30 10 L0 -35 L30 10 L60 -20 L60 30 Z" fill="#f0c45a" stroke="#8a5a10" stroke-width="3"/><rect x="-62" y="28" width="124" height="16" rx="3" fill="#d9a83a"/>${[-40,0,40].map(x=>`<circle cx="${x}" cy="36" r="5" fill="#e05a6b"/>`).join('')}</g>
+<g transform="translate(300 260)"><circle r="20" fill="none" stroke="#f0c45a" stroke-width="7"/><circle cy="-22" r="10" fill="#b0122e" stroke="#f0c45a" stroke-width="3"/></g></svg>`,
+baige:`<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8c27a"/><stop offset="1" stop-color="#fff0cf"/></linearGradient></defs>
+<rect width="400" height="400" fill="url(#g1)"/><circle cx="320" cy="90" r="34" fill="#fff7e0"/><path d="M0 280 Q120 255 220 275 T400 268 V400 H0Z" fill="#8a9a52"/><path d="M0 320 Q160 300 260 318 T400 312 V400 H0Z" fill="#5d6e34"/>
+<g fill="#3a2410" transform="translate(130 210) scale(3.2)">${HORSE}</g><g stroke="#d9b98a" stroke-width="3" opacity=".7"><line x1="40" y1="250" x2="110" y2="250"/><line x1="60" y1="262" x2="115" y2="262"/><line x1="30" y1="238" x2="100" y2="238"/></g>
+<g transform="translate(330 210)"><line x1="0" y1="0" x2="0" y2="80" stroke="#3a2410" stroke-width="4"/><path d="M0 0 h40 v26 h-40z" fill="#fff"/><path d="M0 0 h10 v13 h-10z M20 0 h10 v13 h-10z M10 13 h10 v13 h-10z M30 13 h10 v13 h-10z" fill="#222"/></g></svg>`,
+jide:`<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="j1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8dcc4"/><stop offset="1" stop-color="#f3eedc"/></linearGradient></defs>
+<rect width="400" height="400" fill="url(#j1)"/><path d="M0 300 Q120 285 220 300 T400 295 V400 H0Z" fill="#b8a77a"/>
+<path d="M200 300 C 196 250 188 220 170 190 M200 300 C 204 250 216 214 240 186 M200 260 C 200 230 200 200 202 170" stroke="#5a4a32" stroke-width="10" fill="none" stroke-linecap="round"/>
+<g fill="#9fb58a" opacity=".95">${Array.from({length:46},(_,i)=>{const a=i*2.4,r=30+(i*7)%70;return `<ellipse cx="${200+Math.cos(a)*r*1.25}" cy="${160+Math.sin(a)*r*.75}" rx="12" ry="5" transform="rotate(${(i*37)%180} ${200+Math.cos(a)*r*1.25} ${160+Math.sin(a)*r*.75})" fill="${i%3?'#a9bf96':'#c9d6b8'}"/>`}).join('')}</g>
+<g fill="#d9822b">${[[180,170],[226,150],[250,190],[160,140],[210,120]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="5"/>`).join('')}</g>
+<g fill="#8a7a58">${[70,110,320].map(x=>`<path d="M${x-18} 312 q18 -22 36 0z"/>`).join('')}</g></svg>`,
+shetkeri:`<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="s1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a1430"/><stop offset=".7" stop-color="#6a4a8a"/><stop offset="1" stop-color="#c9a0dc"/></linearGradient></defs>
+<rect width="400" height="400" fill="url(#s1)"/><circle cx="90" cy="80" r="26" fill="#f3e6ff"/><circle cx="102" cy="74" r="24" fill="#2a2045"/>
+<g fill="#2a2045" opacity=".7">${[20,60,95,130].map((x,i)=>`<rect x="${x}" y="${190-i*12}" width="30" height="${120+i*12}"/>`).join('')}</g>
+<path d="M0 310 Q160 290 400 300 V400 H0Z" fill="#140f24"/><g transform="translate(250 230)"><path d="M-50 0 L0 -40 L50 0Z" fill="#7a4a3a"/><rect x="-42" y="0" width="84" height="66" fill="#3a2a40"/><rect x="-12" y="12" width="24" height="22" fill="#ffd27a"/><rect x="18" y="30" width="16" height="36" fill="#1a1426"/></g>
+<g fill="#140f24" transform="translate(320 296)"><path d="M0 0 q4 -12 16 -12 l4 -6 l4 4 l-2 6 q6 2 6 8 h-28z"/></g></svg>`
+});
+function stepsHTML(st){return `<div class="lpath" style="grid-template-columns:repeat(${st.length},1fr)">${st.map(p=>`<div class="lp"><i>${p[0]}</i><b>${p[1]}</b><span>${p[2]}</span></div>`).join('')}</div>`}
+function rowsHTML(rs){return `<div class="depth">${rs.map((r,i)=>`<div class="dr" style="background:rgba(0,0,0,${0.08+i*0.1})"><div class="m">${r[0]}</div><div><b>${r[1]}</b><span>${r[2]}</span></div></div>`).join('')}</div>`}
+function twoHTML(l,r){return `<div class="worlds" style="grid-template-columns:1fr 1fr"><div class="wd" style="background:rgba(0,0,0,.18)"><h5>${l[0]}</h5><ul>${l[1].map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="wd" style="background:color-mix(in srgb,var(--acc) 14%,transparent)"><h5>${r[0]}</h5><ul>${r[1].map(x=>`<li>${x}</li>`).join('')}</ul></div></div>`}
+Object.assign(EXTRA,{
+ alt:()=>stepsHTML([['☀️','1962','«Алтын шуақ» — жыр'],['☁️','1965','«Бір шөкім бұлт»'],['🎵','1967','«Күй» повесі'],['👑','1970','«Ханша-Дария хикаясы» жазылды'],['✨','1981–1984','«Үркер», «Елең-алаң»']]),
+ bult:()=>twoHTML(['⚔️ Соғыс алғаны',['Әкесі — майданда','Анасы — қайғыдан','Сүйген жары — соғыста']],['🌾 Аққаймақ тапқаны',['Еңбек пен адалдық','Отбасы — Тайбағар','Ұлы — Ермекжан','Ел құрметі']]),
+ kui:()=>rowsHTML([['⛓️','Тұтқын','күйші жау қолына түседі'],['🎵','Күй','өнер жаудың да жүрегін тербетеді'],['😔','Өкініш','Жөнейіт күйшіні аяйды'],['🗡️','Қатыгездік','күйші жауыздықпен өлтіріледі'],['🌑','Ар азабы','Жөнейіт күйшіні көз алдынан кетіре алмайды']]),
+ hansha:()=>stepsHTML([['🏰','Бұқара','шаһар қиратылады'],['💍','Лағыл жүзік','қайсар әйелдің саусағынан'],['🐎','Таңғұт','жаңа жорық'],['🌊','Топан су','өзен бөгеліп, астана құлайды'],['👑','Ханша','жесір қалған сұлу'],['☠️','Ажал','улы жүзік — жаулаушының соңы']]),
+ baige:()=>stepsHTML([['🐴','Үйір','тұлпар үйірінен ажырайды'],['🤲','Сейіс','баптап, бәйгеге дайындайды'],['🏁','Бәйге','алдына ат салмайды'],['⚡','Бәсеке','көктеңбіл атпен тартыс'],['💧','Көз жасы','тұлпардың мұңы']]),
+ jide:()=>rowsHTML([['🪦','Бабалар','ата қоныстағы зират'],['👴','Тілеу','аманатты сақтаушы ақсақал'],['🤝','Күдері','адал дос, құрдас'],['👦','Тұяқ','аманатты алушы ұрпақ'],['🌿','Жиде','тамырды ұмытпау белгісі']]),
+ shetkeri:()=>`<div class="yrs" style="grid-template-columns:repeat(3,1fr)"><div class="yr"><b>1</b><strong>Бетіндегі айбаты</strong><span>көрінетін қасиет</span></div><div class="yr"><b>2</b><strong>Қолындағы қайраты</strong><span>көрінетін қасиет</span></div><div class="yr"><b>3</b><strong>Қалтасындағы дәулеті</strong><span>көрінетін қасиет</span></div></div>
+ <div class="idea" style="margin-top:16px"><b>Ана өсиеті</b>Анасы Зуһраға ер адамның көзге көрінбейтін екі, көрінетін үш қасиеті бар екенін айтады: көрінбейтінінде қателессең оқасы жоқ, ал көрініп тұрғанында қателеспе дейді.</div>`
+});
+BOOKS.push(
+{id:'alt',n:'06',title:'Алтын шуақ',genre:'Өлеңдер жинағы · 1962',color:['#f2c14e','#2a1d05'],heat:[1,0,1,0,0,1,3],
+ sub:'Әбіштің әдебиетке алғашқы қадамы — алтын шуақтай жарқын жыр.',
+ idea:'Жазушының тұңғыш кітабы — 23 жасында жарық көрген өлеңдер жинағы. Кекілбаев әдебиетке ақын болып келді, кейін прозаға ауысты; прозасындағы лиризмнің бастауы — осы жырлар.',
+ nums:[['1962','жарық көрген жылы'],['23','жасында шыққан тұңғыш кітабы'],['1','алғашқы жинағы'],['1965','келесі кітабы — «Бір шөкім бұлт»']],
+ net:{center:'Жас ақын',cs:'Әбіш',nodes:[['Маңғыстау','туған өлке',3,'тамыр'],['Арман','геолог болу',2,'алғашқы арман'],['Сөз өнері','жыр',3,'шабыт'],['Оқырман','ел',2,'үн қосу']]},
+ curveT:'Ақын жолы: шығармашылық өрлеу',
+ curve:[['Маңғыстауда туды (1939)',20],['Алғашқы арманы — геолог',35],['Университет, әдебиетке бет',55],['«Алтын шуақ» (1962)',90],['«Бір шөкім бұлт» (1965)',75]],
+ extra:{t:'Әбіштің шығармашылық жолы'},
+ donut:[['Туған жер',30],['Жастық, арман',30],['Табиғат',20],['Сөз құдіреті',20]],
+ syms:[['☀️','Шуақ','жастық пен үміт нұры'],['✍️','Қалам','сөз өнеріне алғашқы қадам'],['🌾','Дала','туған өлке, тамыр']],
+ vs:[['Ақын Әбіш','Лирикалық жыр, сезім, туған жер сұлулығы'],['Жазушы Әбіш','Философиялық проза — оның лиризмі жырдан бастау алады']],
+ now:['Әр ұлы жол алғашқы қадамнан басталады','Арманың өзгерсе де, ізденісің тоқтамасын','Өз үніңді табу үшін көп оқы, көп жаз'],
+ dyk:['«Алтын шуақ» жарық көргенде Әбіш 23 жаста болған.','Бала кезінде ол жазушы емес, геолог болуды армандаған.','Келесі кітабы «Бір шөкім бұлт» 1965 жылы шықты.'],
+ tag:'#АлтынШуақ',promo:'Оқушылар «Менің алғашқы өлеңім» байқауын өткізіп, үздік жырларды «Алтын шуақ» альманағына жинайды.',
+ q:'Сенің «алтын шуағың» — қандай арманың?'},
+{id:'bult',n:'07',title:'Бір шөкім бұлт',genre:'Хикаят · кітап 1965',color:['#9ec5e8','#142235'],heat:[2,0,2,2,1,3,2],
+ sub:'Соғыс бұлты басылса да, жүректе бір шөкім бұлт қалады.',
+ idea:'Соғыс әкесінен, анасынан, сүйген жарынан айырған Аққаймақ тағдырға мойымай, еңбегімен, адалдығымен өмірге жауап береді. Шығарма — соғыс зобалаңы мен әйел қайсарлығы туралы.',
+ nums:[['1965','осы аттас кітабы жарық көрді'],['3','соғыс алған жақыны'],['1','басты кейіпкер — Аққаймақ'],['1','ұлы — Ермекжан']],
+ net:{center:'Аққаймақ',cs:'қайсар әйел',nodes:[['Тайбағар','мүгедек жары',3,'шыдам'],['Ермекжан','ұлы',3,'үміт'],['Жылқышы шал','ауыл қариясы',2,'құрмет'],['Соғыс','алған жақындары',3,'қасірет']]},
+ curve:[['Соғыс әкесін алады',70],['Ана қайғыдан көз жұмады',85],['Сүйген жары соғыста',95],['Мүгедек жарға жар болады',70],['Еңбекпен өмірге оралу',50]],
+ extra:{t:'Соғыс алды — өмір берді'},
+ donut:[['Соғыс қасіреті',35],['Әйел қайсарлығы',30],['Ауыл тіршілігі',20],['Үміт',15]],
+ syms:[['☁️','Бір шөкім бұлт','жүректегі өшпес мұң'],['🐎','Жол','тағдыр сапары'],['👦','Бала','өмірдің жалғасы']],
+ vs:[['Соғыс','Жақындарын алды, жүрегіне мұң қалдырды'],['Аққаймақ','Мойымады — еңбегімен, мейірімімен өмірге жауап берді']],
+ now:['Соғыстың зардабы ұрпақтан ұрпаққа жетеді','Қиындыққа мойымау — нағыз ерлік','Ауыл әйелінің еңбегі — ел тірегі'],
+ dyk:['Аққаймақтың басынан соғыс үш жақынын алып кетеді.','Шығарма аға-жеңгелерге арналған ескерткіш ретінде де қабылданады.','«Бір шөкім бұлт» атты кітап 1965 жылы жарық көрген.'],
+ tag:'#ТылдағыАналар',promo:'Оқушылар отбасынан соғыс және тыл ардагерлері туралы естелік жинап, «Бір шөкім бұлт» альбомын жасайды.',
+ q:'Сенің отбасыңда соғыс туралы қандай естелік сақталған?'},
+{id:'kui',n:'08',title:'Күй',genre:'Повесть · 1967',color:['#d98c5f','#24130c'],heat:[3,2,0,2,1,0,2],
+ sub:'Қылыш жеңе алмаған жүректі күй жеңеді.',
+ idea:'Қазақ пен түркімен арасындағы жаугершілік заманда тұтқынға түскен күйшінің тағдыры. Өнер жаудың да жүрегін тербетеді; күйшіні қатыгездікпен өлтірген Жөнейіт ар азабына түседі.',
+ nums:[['1967','жарық көрген жылы'],['1','тұтқын күйші'],['2','бауырлас ел: қазақ пен түркімен'],['«Абыл күйші аруағына»','авторлық арнау']],
+ net:{center:'Күйші',cs:'тұтқын өнерпаз',nodes:[['Жөнейіт','түркімен басшысы',4,'тұтқын ету'],['Домбыра','күй',3,'жан сыры'],['Туған ел','сағыныш',2,'аңсау'],['Түркімен елі','жау әрі бауыр',2,'тартыс']]},
+ curve:[['Жаугершілік заман',45],['Күйші тұтқынға түседі',65],['Күй жаудың жүрегін тербетеді',75],['Күйші қатыгездікпен өлтіріледі',100],['Жөнейіттің ар азабы',85]],
+ extra:{t:'Күйдің құдіреті'},
+ donut:[['Өнер құдіреті',35],['Жаугершілік',25],['Ар-ождан',25],['Бауырлас елдер',15]],
+ syms:[['🎵','Күй','өлмейтін рух'],['⛓️','Тұтқын','еріксіз жан'],['💀','Бас сүйек','ар азабының елесі']],
+ vs:[['Қылыш','Денені жеңеді, бірақ ар азабын қалдырады'],['Күй','Жаудың да жүрегін жаулайды, ұрпаққа жетеді']],
+ now:['Өнер — шекара білмейтін тіл','Қатыгездіктің жазасы — ар азабы','Бауырлас халықтар татулығы — құндылық'],
+ dyk:['Повесть «Абыл күйші аруағына ескерткіш» деген арнаумен басталады.','Жазушы жамандықты ұлтқа телімейді: «түркімен жаман, қазақ жақсы» деп бөлмейді.','Повесть желісімен Қ. Қуанышбаев атындағы театр «Күй» драмасын қойды.'],
+ tag:'#КүйМәңгілік',promo:'«Күй сағаты»: оқушылар бір күйдің тарихын зерттеп, сыныпта домбырамен орындайды немесе жазбасын тыңдатады.',
+ q:'Сөз жетпеген жерде күй не айта алады?'},
+{id:'hansha',n:'09',title:'Ханша-Дария хикаясы',genre:'Хикаят · 1970 жылы жазылған',color:['#e05a6b','#1f0a14'],heat:[2,3,2,3,0,0,0],
+ sub:'Әлемді жаулаған әміршіні бір әйелдің намысы жеңді.',
+ idea:'Шыңғыс ханның өмірінің соңы туралы аңызға құрылған хикаят. Ішкі мазмұны — махаббат пен қатыгездік, зұлымдық пен мейірім тартысы; идеясы — жауыздықты әшкерелеп, адамдықты ардақтау.',
+ nums:[['1970','жазылған жылы'],['30','жасында жазды'],['1','Таңғұт ханшасы — басты тұлға'],['1','өзен — Ханша-Дария']],
+ net:{center:'Шыңғыс хан',cs:'әлемді жаулаушы',nodes:[['Таңғұт ханшасы','намысты әйел',4,'кек'],['Шидүрге','Таңғұт билеушісі',3,'соғыс'],['Касар мерген','ескі досы',2,'серік'],['Ханша-Дария','өзен',2,'аңыз']]},
+ curve:[['Бұқара, лағыл жүзік',45],['Таңғұтқа жорық',65],['Топан су, астана құлайды',85],['Ханшаға ынтығу',90],['Улы жүзік — әміршінің ажалы',100]],
+ extra:{t:'Аңыздың жолы'},
+ donut:[['Билік пен қатыгездік',35],['Әйел намысы',30],['Махаббат пен құмарлық',20],['Аңыз бен тарих',15]],
+ syms:[['💍','Улы жүзік','әлсіздің жауабы'],['🌊','Дария','мәңгі ағатын жад'],['🗡️','Қанжар','қатыгездік белгісі']],
+ vs:[['Шыңғыс хан','Қылышпен жарты әлемді бағындырды, бірақ құмарлығын жеңе алмады'],['Таңғұт ханшасы','Қаруы жоқ, бірақ намысы бар — жаулаушыны жеңді']],
+ now:['Қатыгездік ертелі-кеш өз жазасын табады','Әйел намысы — ел намысы','Тарихты адамгершілік өлшемімен бағала'],
+ dyk:['Хикаят бір өзеннің атынан басталады: оны «Хатын гол» — «Ханша-Дария» дейді.','Шығарманы автор 1970 жылы, 30 жасында жазған.','Хикаят желісімен Ақтөбеде сахналық қойылым жасалған.'],
+ tag:'#ХаншаНамысы',promo:'«Тарих сотында»: оқушылар Шыңғыс хан мен Таңғұт ханшасының әрекетін пікірсайыс түрінде талдайды.',
+ q:'Жарты әлемді жаулаған әміршіні не жеңді?'},
+{id:'baige',n:'10',title:'Бәйгеторы',genre:'Повесть · атбегілік өнеріне арналған',color:['#e0b25a','#1a2414'],heat:[3,0,1,0,0,0,2],
+ sub:'Бәйгенің алдын бермеген тұлпардың мұңы.',
+ idea:'Қазақтың атбегілік өнеріне арналған повесть. Оқиға бәйгенің алдын бермеген торы аттың көзімен баяндалады: тұлпар «ойланады», «еске түсіреді». Бұл — тек жылқының тағдыры емес.',
+ nums:[['1','басты кейіпкер — торы ат'],['2','ұлттық өнер: күйшілік пен атбегілік'],['🏆','бәйгенің алдын бермеген'],['1','бәсекелес — көктеңбіл ат']],
+ net:{center:'Бәйгеторы',cs:'тұлпар',nodes:[['Сейіс','баптаушы',3,'қамқорлық'],['Бәйге бала','шабандоз',2,'сенім'],['Көктеңбіл ат','бәсекелес',4,'бақталастық'],['Үйір','туған табын',2,'сағыныш']]},
+ curve:[['Үйірден ажырау',50],['Сейістің баптауы',40],['Бәйгеде озу',70],['Бәсеке мен тартыс',85],['Аянышты соңы',100]],
+ extra:{t:'Бәйге жолы'},
+ donut:[['Атбегілік өнері',30],['Тұлпар тағдыры',30],['Бәсеке',25],['Адам мен жануар',15]],
+ syms:[['🐎','Тұлпар','дарын мен жүйріктік'],['🏁','Бәйге төбе','сынақ алаңы'],['💧','Көз жасы','мұң мен әділетсіздік']],
+ vs:[['Бәйгеторы','Барын салып шабады, алдына ат салмайды'],['Көктеңбіл ат','Бәсекелес — тұлпарды ақыры құртқан күш']],
+ now:['Жануарды аялау — адамгершіліктің белгісі','Ұлттық өнер — атбегілікті ұмытпа','Дарынды қызғаныштан қорға'],
+ dyk:['Повесть торы аттың өз көзімен — оның ойы мен естелігі арқылы баяндалады.','Шығарма «қазақтың атбегілік өнеріне арналған ескерткіш» деп бағаланады.','Зерттеушілер күйшілік пен атбегілікті эстетикасы ең жоғары екі өнер дейді.'],
+ tag:'#ТұлпарТағдыры',promo:'Оқушылар «Қазақтың атақты тұлпарлары» картасын жасап, ат баптау дәстүрі туралы атбегімен кездесу өткізеді.',
+ q:'Тұлпар сөйлей алса, бізге не айтар еді?'},
+{id:'jide',n:'11',title:'Бір шоқ жиде',genre:'Повесть',color:['#b5c99a','#1c2216'],heat:[2,0,0,1,1,2,3],
+ sub:'Ата қоныстағы бір шоқ жиде — ұрпақты тамырына байлайтын жіп.',
+ idea:'Ата-баба зиратын, ата қонысты қадірлеген Тілеу ақсақал мен оның досы Күдері арасындағы шынайы сыйластық пен адал достық. Повесть ұрпаққа аманат, ұлттық тәрбие туралы.',
+ nums:[['1','шоқ жиде — басты символ'],['2','дос қария: Тілеу мен Күдері'],['1','жас айырмасы, бірақ құрдас'],['1','аманат — Тұяққа']],
+ net:{center:'Тілеу',cs:'ақсақал',nodes:[['Күдері','досы, құрдасы',3,'достық'],['Тұяқ','бауыр басқан бала',3,'аманат'],['Ата қоныс','туған жер',2,'тамыр'],['Ата зираты','бабалар',3,'тағзым']]},
+ curve:[['Ата зираты басында',40],['Тілеу мен Күдерінің достығы',45],['Тұяққа баба аманатын үйрету',60],['Тұяқ туған жерден алыстайды',80],['Өткенін ұмыта алмайды',70]],
+ extra:{t:'Тамыр мен жапырақ'},
+ donut:[['Ата-баба аманаты',35],['Достық',25],['Туған жер',25],['Ұлттық тәрбие',15]],
+ syms:[['🌿','Жиде','тамыр мен жад'],['🪦','Төмпек','бабалар мекені'],['🤝','Достық','адалдық пен қимастық']],
+ vs:[['Тілеу','Ата қонысты қадірлеп, аманатты сақтап отырады'],['Тұяқ','Туған жерден алыстаса да, өткенін ұмыта алмайды']],
+ now:['Ата-баба аманатын сақта','Адал достық — ұлы байлық','Қайда жүрсең де тамырыңды ұмытпа'],
+ dyk:['Повесть Иван Буниннің жер бетінде өмір сүрген әр адам есте қалуға лайық деген ойымен ашылады.','Тілеу мен Күдерінің арасы бір жас, бірақ олар бірін-бірі құрдас тұтады.','Тілеу ақсақал Тұяққа баба басына барып, дұға оқуды аманаттайды.'],
+ tag:'#АтаҚоныс',promo:'«Менің шежірем»: оқушылар жеті атасын жазып, ата қонысы туралы әңгіме жинап, шежіре ағашын жасайды.',
+ q:'Сенің «бір шоқ жидең» — сені тамырыңа байлайтын не?'},
+{id:'shetkeri',n:'12',title:'Шеткері үй',genre:'Повесть · 1978',color:['#c9a0dc','#1a1426'],heat:[3,0,3,0,0,2,1],
+ sub:'Қала шетіндегі жалғыз үй — жалғыз қалған жүректің мекені.',
+ idea:'Сұлу әрі ақылды Зуһра жеңілтектіктің кесірінен қартайғанда жалғыздық зардабын тартады. Повесть ер мен әйел арасындағы сыйластық пен махаббат, таңдау мен оның салдары туралы.',
+ nums:[['1978','жарық көрген жылы'],['3','ер адамның көрінетін қасиеті'],['1','басты кейіпкер — Зуһра'],['1','шеткері үй — жалғыздық белгісі']],
+ net:{center:'Зуһра',cs:'сұлу әрі ақылды',nodes:[['Анасы','ақыл айтушы',3,'өсиет'],['Жәнібек','марқұм жары',2,'тағдыр'],['Ғашық жігіттер','талапкерлер',2,'таңдау'],['Қабаған ит','жалғыз серігі',2,'жалғыздық']]},
+ curve:[['Сұлулығы мен ақылы',35],['Анасының өсиеті',40],['Жеңілтек таңдаулар',65],['Жалғыз қалады',85],['Шеткері үйдегі соңғы күн',100]],
+ extra:{t:'Ана өсиеті: ер адамның көрінетін үш қасиеті'},
+ donut:[['Таңдау мен салдар',30],['Жалғыздық',30],['Махаббат пен сыйластық',25],['Ана өсиеті',15]],
+ syms:[['🏠','Шеткері үй','оқшау қалған өмір'],['🪞','Айна','өткен сұлулық'],['🐕','Қабаған ит','жалғыз серік']],
+ vs:[['Сұлулық пен ақыл','Тағдыр Зуһраға бәрін берді'],['Жеңілтектік','Таңдаудағы қателік — қартайғандағы жалғыздық']],
+ now:['Жастықтағы таңдау — қартайғандағы тағдыр','Сыйластық — отбасының іргетасы','Ата-ана ақылын тыңда'],
+ dyk:['Анасы Зуһраға ер адамның көзге көрінбейтін екі, көрінетін үш қасиеті бар дейді.','Повесть 1978 жылы жарық көрген.','Үй қаланың тау жақ шетінде тұр — шатырын тот басқан қарағай үй.'],
+ tag:'#ДұрысТаңдау',promo:'«Ана өсиеті» жобасы: оқушылар әжелері мен аналарынан өмірлік ақыл жинап, «Өсиет кітабын» құрастырады.',
+ q:'Жалғыздықтан не құтқарады: сұлулық па, әлде сыйластық па?'}
+);
+Object.assign(STORY,{alt:['👶','⛏️','🎓','☀️','☁️'],bult:['⚔️','🖤','💌','💍','🌾'],kui:['⚔️','⛓️','🎵','🗡️','🌑'],hansha:['🏰','🐎','🌊','👑','☠️'],baige:['🐴','🤲','🏁','⚡','💧'],jide:['🪦','🤝','📿','🚗','🌿'],shetkeri:['💃','👵','💔','🐕','🏠']});
+Object.assign(PULL,{alt:'Ұлы жол бір қадамнан, ұлы шығарма бір жырдан басталады.',bult:'Соғыс бұлты кеткенмен, жүрекке түскен көлеңкесі кетпейді.',kui:'Қылыш денені жеңеді, күй жүректі жеңеді.',hansha:'Жарты әлемді жаулаған қылыш бір әйелдің намысына төтеп бере алмады.',baige:'Тұлпардың да жүрегі бар — оны жеңіс те, әділетсіздік те жаралайды.',jide:'Тамырын ұмытқан ағаш жапырақ жаймайды.',shetkeri:'Сұлулық солады, ал сыйластық қана жалғыздықтан сақтайды.'});
+Object.assign(MONO,{
+ alt:['Жас ақын','Маңғыстаудың шуақты даласында өстім. Бала кезімде жердің сырын ашатын геолог болсам деп армандадым. Бірақ мені жердің емес, сөздің тереңі тартты. Жиырма үш жасымда тұңғыш кітабым шықты — оны «Алтын шуақ» деп атадым. Әр жырым — туған жерімнен алған бір уыс нұр.'],
+ bult:['Аққаймақ','Соғыс менен әкемді, анамды, сүйген жігітімді алды. Аспан ашық болса да, көкірегімде бір шөкім бұлт қалып қойды. Бірақ мен мойымадым. Тайбағарға жар болдым, ұлым Ермекжанды өсірдім, ауылмен бірге еңбек еттім. Өмірге шағым айтпадым — өмірге еңбегіммен жауап бердім.'],
+ kui:['Тұтқын күйші','Қолымды байлады, тілімді тыйды — бірақ күйімді байлай алмады. Домбыраны қолыма берген сәтте мен тұтқын емес едім: туған даламның желі, анамның әлдиі, елімнің мұңы — бәрі шертіліп шықты. Жаудың да көзі жасаурады. Мені өлтірер, бірақ күйім өлмейді.'],
+ hansha:['Таңғұт ханшасы','Ол менің елімді суға батырды, жарымды өлтірді, енді мені олжа көрді. Менде қылыш та, әскер де жоқ. Бірақ менде намыс бар. Әлемнің жартысын жаулаған әмірші мені жеңе алмайды. Ал менің атымды дария мәңгі ағызып жүреді.'],
+ baige:['Бәйгеторы','Мен сөйлей алмаймын, бірақ бәрін сеземін: сейістің алақанының жылуын, бәйге баланың тақымының дірілін, бәйге төбедегі айқайды. Мен алдыма ат салмадым. Бірақ жеңіс біреулердің жүрегіне қызғаныш болып қадалады екен. Менің көз жасымды кім түсінер?'],
+ jide:['Тілеу ақсақал','Балам Тұяқ, мына бір шоқ жиде бабаларымыздың басында өсіп тұр. Мен де бір күні осы төмпектің қасынан орын табармын. Сонда сен келіп, дұға оқып жүр. Қайда жүрсең де, мына жиденің кермек иісін ұмытпа — ол сенің тамырың.'],
+ shetkeri:['Зуһра','Айнаға қараймын: маңдайым сол баяғыдай жазық, қасым керік. Бір кезде талай жігіт есігімнің алдын торыды. Анам «таңдауда қателеспе» деп еді. Мен тыңдамадым. Енді қала шетіндегі мына үйде жалғыз отырмын — серігім тек қабаған ит. Әттең, уақытты кері бұра алсам…']
+});
+Object.assign(ACTS,{
+ alt:{goal:'Оқушыларды поэзияға, өз ойын жырмен айтуға баулу',steps:['Әбіштің жастық шағы мен алғашқы кітабымен танысу','«Менің алғашқы өлеңім» байқауына жыр жазу','Үздік өлеңдерден «Алтын шуақ» альманағын құрастыру'],prod:'Сынып альманағы',who:'5–11 сынып',time:'2 апта'},
+ bult:{goal:'Соғыс және тыл ардагерлерінің ерлігін ұрпаққа жеткізу',steps:['«Бір шөкім бұлт» хикаятын оқу','Отбасынан соғыс жылдары туралы естелік жинау','Естеліктерден «Бір шөкім бұлт» альбомын құрастыру'],prod:'Естелік альбомы',who:'6–11 сынып',time:'1 апта'},
+ kui:{goal:'Күй өнерін дәріптеу, өнердің адамгершілік күшін ұғындыру',steps:['«Күй» повесін оқып талқылау','Бір халық күйінің тарихын зерттеу','Күй тыңдап, әсерін сурет не эссемен беру'],prod:'«Күй сағаты» кеші',who:'6–11 сынып',time:'1 сабақ'},
+ hansha:{goal:'Тарихи аңызды адамгершілік тұрғыдан бағалауға үйрету',steps:['Хикаятты және Шыңғыс хан туралы деректерді оқу','Екі топқа бөлініп «Тарих сотында» пікірсайысын өткізу','«Билік пе, намыс па?» тақырыбында эссе жазу'],prod:'Пікірсайыс',who:'9–11 сынып',time:'1 сабақ'},
+ baige:{goal:'Ұлттық атбегілік өнері мен жануарға мейірімді дәріптеу',steps:['«Бәйгеторы» повесін оқу','Атақты қазақ тұлпарлары туралы дерек жинау','«Тұлпарлар картасын» жасап, атбегімен кездесу өткізу'],prod:'«Тұлпарлар картасы»',who:'5–9 сынып',time:'1 апта'},
+ jide:{goal:'Ата-баба аманатын, шежірені құрметтеуге тәрбиелеу',steps:['«Бір шоқ жиде» повесін оқу','Отбасынан жеті ата шежіресін жинау','«Шежіре ағашы» көрмесін жасау'],prod:'Шежіре ағашы',who:'5–9 сынып',time:'1 апта'},
+ shetkeri:{goal:'Өмірлік таңдау мен ата-ана ақылының мәнін түсіндіру',steps:['«Шеткері үй» повесін оқып талқылау','Әжелер мен аналардан өмірлік өсиет жинау','«Өсиет кітабын» құрастырып, кітапханаға тарту ету'],prod:'«Өсиет кітабы»',who:'8–11 сынып',time:'1 апта'}
+});
+const FX2={alt:['242,193,78','rise',80],bult:['158,197,232','drift',70],kui:['217,140,95','rise',60],hansha:['224,90,107','drift',60],baige:['224,178,90','drift',90],jide:['181,201,154','feather',14],shetkeri:['201,160,220','rise',50]};
+const EMO3D={alt:['☀️',['✍️','📜','🌾','⭐'],'#2a1d05','242,193,78'],bult:['☁️',['🌧️','🐎','🌾','👦'],'#142235','158,197,232'],kui:['🎵',['🎶','⛓️','🐎','🏜️'],'#24130c','217,140,95'],hansha:['👑',['💍','🌊','🗡️','🏰'],'#1f0a14','224,90,107'],baige:['🐎',['🏆','🏁','💨','🌾'],'#1a2414','224,178,90'],jide:['🌳',['🌿','🍂','🤝','🪦'],'#1c2216','181,201,154'],shetkeri:['🏠',['🌙','🐕','🪞','🍂'],'#1a1426','201,160,220']};
+GLOSS.push(['Атбегі','жылқы баптайтын, тұлпарды танитын шебер','baige'],['Сейіс','бәйге атын баптаушы','baige'],['Күйші','домбырамен күй шығаратын, тартатын өнерпаз','kui'],['Жиде','күміс жапырақты, тәтті-қышқыл жемісті бұта ағаш','jide'],['Аманат','сеніп тапсырылған дүние, өсиет','jide'],['Хикаят','повесть жанрының қазақша атауы','hansha']);
+SRC.push(['Әбіш Кекілбаевты жұрты қалай бағалады? — Tengrinews','https://tengrinews.kz/books/sirkin-ai-osyndai-qazaq-kobirek-bolsa-eken-abis-kekilbaevty-385873/'],['Бүгін – Әбіш Кекілбайұлының туған күні — inbusiness.kz','https://www.inbusiness.kz/kz/last/bugin-abish-kekilbajulynyn-tugan-kuni'],['Ә. Кекілбаев. Бір шөкім бұлт — massaget.kz','https://massaget.kz/uy_tapsyirmasyi/a-keklbaev-br-shokm-bult-37990/'],['Әбіш Кекілбаев хикаялары (Ханша-дария, Бәйгеторы) — massaget.kz','https://massaget.kz/debiet/absh-keklbaev-hikayalaryi-66862/'],['«Ханша-Дария хикаясы» — ҚазҰУ Хабаршысы','https://ojs.egi.kz/BULLETIN/article/download/627/273/3143'],['Әбіш шығармаларындағы мифо-поэтикалық сарын — adebiportal.kz','https://adebiportal.kz/kz/news/view/abis-sygarmalaryndagy-mifo-poetikalyq-saryn__24184'],['«Күй» спектаклі — Казахстанская правда','https://kazpravda.kz/n/melodii-kyuya-spektakl-po-motivam-povesti-abisha-kekilbaeva-pokazali-v-astane/'],['Кекілбаев библиографиясы — Тараз университеті','http://lib.dulaty.kz/kaz/images/Kekilbaev.pdf'],['«Шеткері үй» — kitap.kz','https://kitap.kz/books/shetkeri-uj'],['Әбіш Кекілбаев — el.kz','https://el.kz/content-1451_1809/'],['«Бәйгеторы» — kitap.kz','https://kitap.kz/books/bajgetory'],['Бәйгеторының көз жасы — Egemen Qazaqstan','https://egemen.kz/article/239414-baygetorynynh-koz-dgasy'],['«Бір шоқ жиде» повесіндегі ұлттық тәрбие — ust.kz','https://ust.kz/word/akekilbaevtyng_bir_soq_jide_povesindegi_ulttyq_tarbie_kozderi-306408.html']);
+
+/* ---------- render ---------- */
+const shelf=document.getElementById('shelf'),wrapP=document.getElementById('posters'),nav=document.getElementById('navlinks');
+BOOKS.forEach(b=>{
+  const light=b.id==='qus',fg=light?'#2e2a20':'#ffffff',a=b.color[0];
+  shelf.insertAdjacentHTML('beforeend',`<a class="spine" href="#${b.id}" style="background:linear-gradient(160deg,${b.color[1]},${light?'#e4d6b4':'#000'});color:${fg}"><div><div class="n" style="color:${a}">КІТАП ${b.n}</div><h3>${b.title}</h3><div class="g">${b.genre}</div></div>${art(b.id)}<div class="go" style="color:${a}">Инфографиканы ашу →</div></a>`);
+  nav.insertAdjacentHTML('beforeend',`<a href="#${b.id}">${b.title}</a>`);
+  const hb=light?'radial-gradient(1200px 700px at 75% 30%,#fffaf0,#efe2c4)':`radial-gradient(1200px 700px at 75% 30%,${a}33,transparent 60%),linear-gradient(160deg,${b.color[1]},#05070f)`;
+  document.getElementById('heroes').insertAdjacentHTML('beforeend',`<section class="bhero" data-for="${b.id}" style="--hb:${light?'#f5ecd9':b.color[1]};background:${hb};--hf:${fg};--ha:${a}"><canvas></canvas>
+   <div class="bh-in"><div><div class="bh-who"><img class="bh-av" src="abish.jpg" alt=""><div class="bh-k">Әбіш Кекілбайұлы · ${b.genre}</div></div><div class="bh-t">${(()=>{let k=0;return b.title.split(' ').map(w=>`<b style="white-space:nowrap;font-weight:inherit">${[...w].map(c=>`<span style="animation-delay:${(k++)*0.05}s">${c}</span>`).join('')}</b>`).join(' ')})()}</div>
+   <div class="bh-s">${b.sub}</div><div class="bh-chips">${b.nums.slice(0,3).map(n=>`<span>${n[0]} · ${n[1]}</span>`).join('')}</div>
+   <div class="bh-go"><a href="#${b.id}" onclick="document.getElementById('${b.id}').scrollIntoView({behavior:'smooth'});return false">Шығарма әлеміне ену ↓</a></div></div>
+   <div class="bh-art"></div></div><div class="scroll-cue">төмен айналдыр<i></i></div></section>`);
+  wrapP.insertAdjacentHTML('beforeend',`
+<article class="poster" id="${b.id}"><div class="frame"></div><div class="p-in">
+  <div class="p-top">
+    <div><div class="p-tag"><i></i>Инфографика ${b.n} · ${b.genre}</div><div class="p-title">${b.title}</div><div class="p-sub">${b.sub}</div>
+      <div class="idea"><b>Негізгі идея</b>${b.idea}</div></div>
+    <div class="slot" data-slot="${b.id}">${COVERS.includes(b.id)?`<img src="${img('covers/'+b.id+'.jpg')}" alt="«${b.title}» мұқабасы">`:art(b.id)}<button class="rm">✕</button><label class="up">🖼 Сурет қою<input type="file" accept="image/*"></label></div>
+  </div>
+  <div class="nums rv">${b.nums.map(n=>`<div class="num"><b style="${n[0].length>6?'font-size:24px;line-height:1.15':''}">${n[0]}</b><span>${n[1]}</span></div>`).join('')}</div>
+  <div class="box rv" style="margin-top:16px"><h4>Сюжет кадрлары</h4><div class="story">${b.curve.map((c,i)=>`<div class="frame-c"><div class="no">0${i+1}</div><div class="em">${STORY[b.id][i]}</div><p>${c[0]}</p></div>`).join('')}</div></div>
+  <div class="pull rv"><p>${PULL[b.id]}</p><small>Шығарманың түйіні</small></div>
+  <div class="mono rv"><div class="who"><i>${b.syms[0][0]}</i><b>${MONO[b.id][0]}</b></div><div><div class="kicker" style="color:var(--acc)">Кейіпкер сөйлейді</div><p>«${MONO[b.id][1]}»</p><small>Шығарма желісі бойынша жазылған монолог (түпнұсқа мәтін емес)</small></div></div>
+  <div class="g2">
+    <div class="box wide big rv"><h4>Кейіпкерлер желісі</h4>${netHTML(b.net)}</div>
+    <div class="box wide big rv"><h4>${b.extra.t}</h4>${EXTRA[b.id](a,fg)}</div>
+    <div class="box wide big rv"><h4>${b.curveT||'Сюжет графигі: шиеленістің өсуі'}</h4>${curveSVG(b.curve,a,fg)}</div>
+    <div class="box wide big rv"><h4>Тақырыптық салмақ</h4>${donutHTML(b.donut,a)}<div class="note">Пайыздар — талдау бойынша берілген баға</div></div>
+    <div class="box wide rv"><h4>Символдар</h4><div class="syms">${b.syms.map(s=>`<div class="sym"><div class="ic">${s[0]}</div><b>${s[1]}</b><span>${s[2]}</span></div>`).join('')}</div></div>
+    <div class="box wide rv"><h4>Қарама-қарсылық</h4><div class="vs"><div class="side"><b>${b.vs[0][0]}</b><span>${b.vs[0][1]}</span></div><div class="mid">⇄</div><div class="side"><b>${b.vs[1][0]}</b><span>${b.vs[1][1]}</span></div></div></div>
+    <div class="box rv"><h4>Білесің бе?</h4><div class="dyk">${b.dyk.map((d,i)=>`<div><i>${i+1}</i><span>${d}</span></div>`).join('')}</div></div>
+    <div class="box rv"><h4>Бүгінгі оқырманға</h4><ul class="list">${b.now.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+  </div>
+  <div class="promo rv"><div class="tag">${b.tag}</div><p><b>Насихат идеясы:</b> ${b.promo}</p></div>
+  <div class="qline">«${b.q}»</div>
+  <div class="p-foot"><span>Әбіш Кекілбайұлы · «${b.title}»</span><span>Әбіш мұрасының тереңі — ұлт жадында</span></div>
+</div></article>`);
+});
+
+
+
+
+/* ================= 3D: сөре + кітап көріністері ================= */
+let HAS3D=false;function detect3D(){try{if(!window.THREE)return false;const c=document.createElement('canvas');return !!(c.getContext('webgl')||c.getContext('experimental-webgl'))}catch(e){return false}}
+const DPR=Math.min(window.devicePixelRatio||1,1.5);
+function glowTex(rgb,soft){const c=document.createElement('canvas');c.width=c.height=128;const g=c.getContext('2d');const r=g.createRadialGradient(64,64,0,64,64,64);
+ r.addColorStop(0,`rgba(${rgb},1)`);r.addColorStop(soft||.25,`rgba(${rgb},.55)`);r.addColorStop(1,`rgba(${rgb},0)`);g.fillStyle=r;g.fillRect(0,0,128,128);return new THREE.CanvasTexture(c)}
+function sprite(tex,size,op){const m=new THREE.Sprite(new THREE.SpriteMaterial({map:tex,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending,opacity:op??1}));m.scale.set(size,size,1);return m}
+function svgImg(svg){return new Promise(res=>{const i=new Image();i.onload=()=>res(i);i.onerror=()=>res(null);i.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg.replace('<svg ','<svg width="600" height="600" '))})}
+function hexRgb(h){h=h.replace('#','');return [0,2,4].map(i=>parseInt(h.substr(i,2),16)).join(',')}
+function dragRot(host,st){let d=false,lx=0;host.addEventListener('pointerdown',e=>{d=true;lx=e.clientX;st.auto=false});
+ addEventListener('pointerup',()=>{d=false;setTimeout(()=>st.auto=true,2500)});
+ host.addEventListener('pointermove',e=>{const r=host.getBoundingClientRect();st.mx=((e.clientX-r.left)/r.width-.5)*2;st.my=((e.clientY-r.top)/r.height-.5)*2;if(d){st.ry+=(e.clientX-lx)*0.01;lx=e.clientX}})}
+
+/* ---------- 1) 3D КІТАП СӨРЕСІ ---------- */
+let shelfRun=0,shelfReady=false,shelfCtx=null;
+async function buildShelf(){
+ const host=document.getElementById('shelf3d');if(!HAS3D||!host)return false;
+ try{await Promise.race([document.fonts.ready,new Promise(r=>setTimeout(r,800))])}catch(e){}
+ const COV={};await Promise.all(BOOKS.filter(b=>COVERS.includes(b.id)).map(b=>new Promise(r=>{const i=new Image();i.onload=()=>{COV[b.id]=i;r()};i.onerror=r;i.src=img('covers/sm/'+b.id+'.jpg')})));
+ const W=()=>host.clientWidth,H=()=>host.clientHeight;
+ const ren=new THREE.WebGLRenderer({antialias:true,alpha:true});ren.setPixelRatio(DPR);ren.setSize(W(),H());ren.outputEncoding=THREE.sRGBEncoding;ren.shadowMap.enabled=true;host.prepend(ren.domElement);
+ const sc=new THREE.Scene();const cam=new THREE.PerspectiveCamera(32,W()/H(),.1,100);
+ sc.add(new THREE.AmbientLight(0xfff1d6,.55));
+ const key=new THREE.SpotLight(0xffd9a0,1.4,40,.6,.6);key.position.set(3,12,10);key.castShadow=true;key.shadow.mapSize.set(512,512);sc.add(key);
+ const rim=new THREE.PointLight(0x6f8cff,.6,30);rim.position.set(-6,2,-3);sc.add(rim);
+ // ағаш текстурасы
+ const wc=document.createElement('canvas');wc.width=512;wc.height=128;const wg=wc.getContext('2d');wg.fillStyle='#5a3a1e';wg.fillRect(0,0,512,128);
+ for(let i=0;i<60;i++){wg.strokeStyle=`rgba(${30+Math.random()*40},${15+Math.random()*20},5,${.25+Math.random()*.3})`;wg.lineWidth=1+Math.random()*2;wg.beginPath();const y=Math.random()*128;wg.moveTo(0,y);for(let x=0;x<=512;x+=32)wg.lineTo(x,y+Math.sin(x/40+i)*3);wg.stroke()}
+ const wood=new THREE.MeshStandardMaterial({map:new THREE.CanvasTexture(wc),roughness:.7});
+ [.4,-3.6].forEach(y=>{const board=new THREE.Mesh(new THREE.BoxGeometry(9.2,.28,2.8),wood);board.position.y=y;board.receiveShadow=true;sc.add(board)});
+ const back=new THREE.Mesh(new THREE.BoxGeometry(9.2,8.8,.15),new THREE.MeshStandardMaterial({color:0x1a1410,roughness:.9}));back.position.set(0,0,-1.4);back.receiveShadow=true;sc.add(back);
+ [-4.7,4.7].forEach(x=>{const s=new THREE.Mesh(new THREE.BoxGeometry(.22,8.8,2.8),wood);s.position.set(x,0,0);sc.add(s)});
+ const top=new THREE.Mesh(new THREE.BoxGeometry(9.6,.3,2.9),wood);top.position.y=4.4;sc.add(top);
+ // кітаптар
+ const books=[];const hs=[3.1,3.3,3.0,3.2,2.9,3.15,2.95,3.25,3.05,3.3,2.9,3.1];
+ for(let i=0;i<BOOKS.length;i++){const b=BOOKS[i],light=b.id==='qus';
+  const bg=light?'#e9dcbc':b.color[1],tx=light?'#2e2a20':b.color[0];
+  // арқасы
+  const sp=document.createElement('canvas');sp.width=256;sp.height=1024;const g=sp.getContext('2d');
+  const gr=g.createLinearGradient(0,0,256,0);gr.addColorStop(0,'rgba(0,0,0,.35)');gr.addColorStop(.25,'rgba(255,255,255,.08)');gr.addColorStop(1,'rgba(0,0,0,.3)');
+  g.fillStyle=bg;g.fillRect(0,0,256,1024);g.fillStyle=gr;g.fillRect(0,0,256,1024);
+  g.fillStyle=b.color[0];[60,84,940,964].forEach(y=>g.fillRect(20,y,216,8));
+  g.save();g.translate(128,512);g.rotate(-Math.PI/2);g.fillStyle=tx;g.textAlign='center';g.textBaseline='middle';
+  let fs=96;g.font=`700 ${fs}px "Cormorant Garamond", serif`;while(g.measureText(b.title).width>760&&fs>40){fs-=4;g.font=`700 ${fs}px "Cormorant Garamond", serif`}
+  g.fillText(b.title,0,0);g.restore();
+  g.fillStyle=tx;g.font='800 30px Montserrat, sans-serif';g.textAlign='center';g.fillText(b.n,128,150);g.font='600 22px Montserrat, sans-serif';g.globalAlpha=.8;g.fillText('ӘБІШ',128,880);g.fillText('КЕКІЛБАЙҰЛЫ',128,908);g.globalAlpha=1;
+  // мұқабасы
+  const cv=document.createElement('canvas');cv.width=768;cv.height=1024;const c2=cv.getContext('2d');c2.fillStyle=bg;c2.fillRect(0,0,768,1024);
+  const cim=COV[b.id];
+  if(cim){c2.drawImage(cim,0,128,768,768);c2.fillStyle=b.color[0];c2.fillRect(0,116,768,8);c2.fillRect(0,900,768,8);c2.fillStyle=tx;c2.textAlign='center';c2.font='700 30px Montserrat, sans-serif';c2.fillText('ӘБІШ КЕКІЛБАЙҰЛЫ',384,76);c2.font='700 40px "Cormorant Garamond", serif';c2.fillText('— '+b.n+' —',384,975)}
+  else{const im=await svgImg(ART[b.id]);if(im)c2.drawImage(im,84,150,600,600);
+  c2.strokeStyle=b.color[0];c2.lineWidth=6;c2.strokeRect(36,36,696,952);c2.fillStyle=tx;c2.textAlign='center';
+  let cf=84;c2.font=`700 ${cf}px "Cormorant Garamond", serif`;while(c2.measureText(b.title).width>640){cf-=4;c2.font=`700 ${cf}px "Cormorant Garamond", serif`}
+  c2.fillText(b.title,384,860);c2.font='700 26px Montserrat, sans-serif';c2.fillText('ӘБІШ КЕКІЛБАЙҰЛЫ',384,105)}
+  const page=new THREE.MeshStandardMaterial({color:0xf3ead2,roughness:.9});
+  const spineT=new THREE.CanvasTexture(sp),coverT=new THREE.CanvasTexture(cv);[spineT,coverT].forEach(t=>t.encoding=THREE.sRGBEncoding);
+  const mats=[new THREE.MeshStandardMaterial({map:coverT,roughness:.55}),new THREE.MeshStandardMaterial({color:bg,roughness:.6}),page,page,new THREE.MeshStandardMaterial({map:spineT,roughness:.5}),page];
+  const h=hs[i],m=new THREE.Mesh(new THREE.BoxGeometry(.78,h,2.3),mats);m.castShadow=true;
+  const row=i<6?0:1,col=i%6,x=-3.6+col*1.44,by=row?-3.46:.54;m.position.set(x,by+h/2,0);m.userData={i,base:m.position.clone(),hov:0,id:b.id};
+  sc.add(m);books.push(m)}
+ // шаң бөлшектері
+ const pg=new THREE.BufferGeometry(),pn=180,pp=new Float32Array(pn*3);for(let i=0;i<pn;i++){pp[i*3]=(Math.random()-.5)*12;pp[i*3+1]=Math.random()*9-4.5;pp[i*3+2]=Math.random()*5-1}
+ pg.setAttribute('position',new THREE.BufferAttribute(pp,3));const dust=new THREE.Points(pg,new THREE.PointsMaterial({color:0xf3d48b,size:.035,transparent:true,opacity:.7}));sc.add(dust);
+ const ray=new THREE.Raycaster(),mouse=new THREE.Vector2(-9,-9),tip=document.getElementById('shelfTip');let hover=null,flying=null,st={mx:0,my:0};
+ host.addEventListener('pointermove',e=>{const r=host.getBoundingClientRect();mouse.x=((e.clientX-r.left)/r.width)*2-1;mouse.y=-((e.clientY-r.top)/r.height)*2+1;st.mx=mouse.x;st.my=mouse.y;
+  tip.style.left=(e.clientX-r.left)+'px';tip.style.top=(e.clientY-r.top-20)+'px'});
+ host.addEventListener('pointerleave',()=>{mouse.set(-9,-9)});
+ host.addEventListener('click',()=>{if(!hover||flying)return;flying={m:hover,t0:performance.now()}});
+ function resize(){ren.setSize(W(),H());cam.aspect=W()/H();cam.updateProjectionMatrix();cam.position.set(0,.3,cam.aspect<1.1?30:19.5)}
+ addEventListener('resize',resize);resize();
+ shelfCtx={start(){const run=++shelfRun;const loop=now=>{if(run!==shelfRun)return;
+   ray.setFromCamera(mouse,cam);const hit=ray.intersectObjects(books)[0];const nh=hit?hit.object:null;
+   if(nh!==hover){hover=nh;host.style.cursor=hover?'pointer':'default';if(hover){const b=BOOKS[hover.userData.i];tip.innerHTML=`<b>${b.title}</b><span>${b.genre} · ашу үшін бас</span>`;tip.classList.add('on')}else tip.classList.remove('on')}
+   books.forEach(m=>{const u=m.userData;u.hov+=((m===hover?1:0)-u.hov)*.12;if(flying&&flying.m===m)return;
+    m.position.z=u.base.z+u.hov*1.1;m.position.y=u.base.y+u.hov*.25;m.rotation.y=-u.hov*.35});
+   if(flying){const p=Math.min(1,(now-flying.t0)/650),e=1-Math.pow(1-p,3),m=flying.m,u=m.userData;
+    m.position.set(u.base.x*(1-e),u.base.y*(1-e)+e*.3,u.base.z+e*6.5);m.rotation.set(0,-e*Math.PI/2,0);
+    if(p>=1){const id=u.id;flying=null;location.hash=id;setTimeout(()=>{m.position.copy(u.base);m.rotation.set(0,0,0)},400)}}
+   dust.rotation.y+=.0008;const a=dust.geometry.attributes.position;for(let i=0;i<pn;i++){a.array[i*3+1]+=.003;if(a.array[i*3+1]>4.5)a.array[i*3+1]=-4.5}a.needsUpdate=true;
+   cam.position.x+=(st.mx*1.2-cam.position.x)*.04;cam.position.y+=(.3+st.my*.6-cam.position.y)*.04;cam.lookAt(0,0,0);
+   ren.render(sc,cam);requestAnimationFrame(loop)};requestAnimationFrame(loop)},stop(){shelfRun++}};
+ return true}
+
+/* ---------- 2) КІТАП ІШІНДЕГІ 3D КӨРІНІСТЕР ---------- */
+let bkRen=null,bkRun=0;
+function getBkRen(){if(bkRen!==null)return bkRen;try{bkRen=new THREE.WebGLRenderer({antialias:true,alpha:false});bkRen.setPixelRatio(DPR);bkRen.outputEncoding=THREE.sRGBEncoding}catch(e){bkRen=false}return bkRen}
+const SCENES={
+shynyrau(){const sc=new THREE.Scene();sc.background=new THREE.Color(0x0d0805);sc.fog=new THREE.Fog(0x0d0805,4,26);
+ const cam=new THREE.PerspectiveCamera(70,1,.05,200);
+ const tc=document.createElement('canvas');tc.width=tc.height=512;const g=tc.getContext('2d');g.fillStyle='#1e130b';g.fillRect(0,0,512,512);
+ for(let y=0;y<512;y+=64)for(let x=(y/64%2)*40;x<560;x+=90){const sh=60+Math.random()*60;g.fillStyle=`rgb(${sh+30},${sh+5},${sh-20})`;g.beginPath();g.roundRect?g.roundRect(x-40,y+4,84,56,14):g.rect(x-40,y+4,84,56);g.fill();
+  g.fillStyle='rgba(0,0,0,.25)';g.fillRect(x-40,y+44,84,16)}
+ const tex=new THREE.CanvasTexture(tc);tex.wrapS=tex.wrapT=THREE.RepeatWrapping;tex.repeat.set(6,36);tex.encoding=THREE.sRGBEncoding;
+ const well=new THREE.Mesh(new THREE.CylinderGeometry(2,2,90,40,1,true),new THREE.MeshStandardMaterial({map:tex,side:THREE.BackSide,roughness:.95}));well.position.y=-45;sc.add(well);
+ const sky=new THREE.Mesh(new THREE.CircleGeometry(2,40),new THREE.MeshBasicMaterial({color:0xffc36e}));sky.rotation.x=Math.PI/2;sky.position.y=.2;sc.add(sky);
+ const skyGlow=sprite(glowTex('255,200,120',.3),9,.9);skyGlow.position.y=.5;sc.add(skyGlow);
+ const top=new THREE.PointLight(0xffc27a,2.2,40,1.6);top.position.y=-1;sc.add(top);
+ const lamp=new THREE.PointLight(0xe3a24c,.9,7,2);sc.add(lamp);sc.add(new THREE.AmbientLight(0x3a2414,.6));
+ const rope=new THREE.Mesh(new THREE.CylinderGeometry(.025,.025,90,6),new THREE.MeshStandardMaterial({color:0xc9a06a}));rope.position.set(1.5,-45,-.9);sc.add(rope);
+ const dg=new THREE.BufferGeometry(),n=500,p=new Float32Array(n*3);for(let i=0;i<n;i++){const a=Math.random()*6.28,r=Math.random()*1.8;p[i*3]=Math.cos(a)*r;p[i*3+1]=-Math.random()*90;p[i*3+2]=Math.sin(a)*r}
+ dg.setAttribute('position',new THREE.BufferAttribute(p,3));const dust=new THREE.Points(dg,new THREE.PointsMaterial({color:0xffd9a0,size:.03,transparent:true,opacity:.8}));sc.add(dust);
+ const LV=[[0,'Шеберлік'],[10,'Даңқ'],[20,'Бәсеке'],[30,'Қызғаныш'],[42,'Тәкаппарлық'],[54,'Трагедия']];
+ return{sc,cam,hud:'<div class="hud-depth"><b>0 м</b><span>Шеберлік</span></div>',hint:'Жан тереңіне түсіп барамыз…',update(t,st,host){const d=(t*1.6)%62;
+  cam.position.set(Math.sin(t*.3)*.4,-d-1,Math.cos(t*.3)*.4);lamp.position.copy(cam.position);
+  cam.lookAt(st.mx*1.5,-d+6-st.my*3,st.my*.5);dust.rotation.y=t*.05;
+  const h=host.querySelector('.hud-depth');if(h){h.querySelector('b').textContent='−'+Math.round(d)+' м';h.querySelector('span').textContent=[...LV].reverse().find(l=>d>=l[0])[1]}}}},
+anyz(){const sc=new THREE.Scene();sc.background=new THREE.Color(0x0b2330);sc.fog=new THREE.Fog(0x0b2330,18,60);
+ const cam=new THREE.PerspectiveCamera(38,1,.1,200);
+ sc.add(new THREE.HemisphereLight(0x8fe8e0,0x3d2a17,.7));const dl=new THREE.DirectionalLight(0xffe2a8,1.1);dl.position.set(-6,10,8);sc.add(dl);
+ const tc=document.createElement('canvas');tc.width=tc.height=256;const g=tc.getContext('2d');const gr=g.createLinearGradient(0,0,256,0);gr.addColorStop(0,'#16707a');gr.addColorStop(.5,'#3fd0c4');gr.addColorStop(1,'#16707a');
+ g.fillStyle=gr;g.fillRect(0,0,256,256);g.strokeStyle='rgba(255,255,255,.35)';g.lineWidth=3;for(let i=-256;i<512;i+=32){g.beginPath();g.moveTo(i,0);g.lineTo(i+256,256);g.stroke();g.beginPath();g.moveTo(i,256);g.lineTo(i+256,0);g.stroke()}
+ g.fillStyle='#e9c37a';g.fillRect(0,0,256,14);const tt=new THREE.CanvasTexture(tc);tt.wrapS=tt.wrapT=THREE.RepeatWrapping;tt.repeat.set(4,6);tt.encoding=THREE.sRGBEncoding;
+ const gold=new THREE.MeshStandardMaterial({color:0xe9c37a,metalness:.6,roughness:.35}),tile=new THREE.MeshStandardMaterial({map:tt,roughness:.4,emissive:0x0a3a3a,emissiveIntensity:.4});
+ const grp=new THREE.Group();sc.add(grp);
+ const add=(geo,mat,y)=>{const m=new THREE.Mesh(geo,mat);m.position.y=y;grp.add(m);return m};
+ add(new THREE.CylinderGeometry(1.4,1.55,.8,8),new THREE.MeshStandardMaterial({color:0xc9a46a,roughness:.8}),.4);
+ const shaft=add(new THREE.CylinderGeometry(.62,.95,7,32),tile,4.3);
+ [2.2,4,5.8].forEach(y=>add(new THREE.TorusGeometry(.8-(y-2)*.04,.06,8,40),gold,y).rotation.x=Math.PI/2);
+ add(new THREE.CylinderGeometry(1.05,.7,.35,32),gold,7.95);add(new THREE.CylinderGeometry(.55,.55,.9,24),tile,8.55);
+ const dome=add(new THREE.SphereGeometry(.6,32,16,0,6.28,0,Math.PI/2),tile,9);add(new THREE.CylinderGeometry(.03,.03,.9,8),gold,9.95);add(new THREE.SphereGeometry(.09,12,12),gold,10.4);
+ const halo=sprite(glowTex('95,224,208',.2),7,.35);halo.position.y=5;grp.add(halo);
+ const ground=new THREE.Mesh(new THREE.CircleGeometry(30,48),new THREE.MeshStandardMaterial({color:0x6b4a26,roughness:1}));ground.rotation.x=-Math.PI/2;sc.add(ground);
+ const moon=new THREE.Mesh(new THREE.SphereGeometry(1.2,32,16),new THREE.MeshBasicMaterial({color:0xf6dfa0}));moon.position.set(7,11,-14);sc.add(moon);const mg=sprite(glowTex('246,223,160'),9,.7);mg.position.copy(moon.position);sc.add(mg);
+ const apple=new THREE.Group();const ap=new THREE.Mesh(new THREE.SphereGeometry(.55,32,24),new THREE.MeshStandardMaterial({color:0xc9272d,roughness:.35}));apple.add(ap);
+ const hole=new THREE.Mesh(new THREE.CircleGeometry(.11,16),new THREE.MeshBasicMaterial({color:0x2a0e06}));hole.position.set(.2,.05,.51);hole.lookAt(.4,.1,1.5);apple.add(hole);
+ const stem=new THREE.Mesh(new THREE.CylinderGeometry(.03,.03,.35,6),new THREE.MeshStandardMaterial({color:0x3b2a12}));stem.position.y=.6;apple.add(stem);apple.position.set(3,2,2);sc.add(apple);
+ const sg=new THREE.BufferGeometry(),n=600,p=new Float32Array(n*3);for(let i=0;i<n;i++){p[i*3]=(Math.random()-.5)*90;p[i*3+1]=8+Math.random()*30;p[i*3+2]=-20-Math.random()*20}sg.setAttribute('position',new THREE.BufferAttribute(p,3));
+ sc.add(new THREE.Points(sg,new THREE.PointsMaterial({color:0xffffff,size:.12,transparent:true,opacity:.8})));
+ return{sc,cam,hint:'🖱 Мұнараны сүйреп айналдыр',update(t,st){if(st.auto)st.ry+=.004;grp.rotation.y=st.ry;halo.material.opacity=.25+.2*Math.sin(t*1.5);
+  apple.position.y=2+Math.sin(t*1.2)*.25;apple.rotation.y=t*.6;cam.position.set(st.mx*2,5+st.my*-1.5,15);cam.lookAt(0,4.6,0)}}},
+urker(){const sc=new THREE.Scene();sc.background=new THREE.Color(0x05071a);const cam=new THREE.PerspectiveCamera(50,1,.1,400);
+ const grp=new THREE.Group();sc.add(grp);
+ const sg=new THREE.BufferGeometry(),n=3500,p=new Float32Array(n*3);for(let i=0;i<n;i++){const v=new THREE.Vector3().randomDirection?new THREE.Vector3().randomDirection():new THREE.Vector3(Math.random()-.5,Math.random()-.5,Math.random()-.5).normalize();v.multiplyScalar(60+Math.random()*80);p.set([v.x,v.y,v.z],i*3)}
+ sg.setAttribute('position',new THREE.BufferAttribute(p,3));grp.add(new THREE.Points(sg,new THREE.PointsMaterial({color:0xcfd8ff,size:.35,transparent:true,opacity:.85})));
+ const neb=sprite(glowTex('90,110,255',.1),60,.25);neb.position.z=-30;grp.add(neb);
+ const P=[[150,120],[196,98],[244,116],[262,160],[222,186],[172,176],[205,142]].map(([x,y],i)=>new THREE.Vector3((x-205)/14,-(y-142)/14,(i%3-1)*1.2));
+ const gt=glowTex('200,215,255',.18),stars=P.map((v,i)=>{const s=sprite(gt,i===1?3:2.2);s.position.copy(v);grp.add(s);const c=sprite(glowTex('255,255,255',.5),.9);c.position.copy(v);grp.add(c);return s});
+ const L=[[0,1],[1,2],[2,3],[3,4],[4,5],[5,0],[0,4],[1,5]];const lg=new THREE.BufferGeometry().setFromPoints(L.flatMap(([a,b])=>[P[a],P[b]]));
+ const lines=new THREE.LineSegments(lg,new THREE.LineBasicMaterial({color:0xa8b8ff,transparent:true,opacity:.45}));grp.add(lines);
+ return{sc,cam,hint:'🖱 Аспанды сүйреп айналдыр · жеті жұлдыз — бір шоқ',update(t,st){if(st.auto)st.ry+=.0015;grp.rotation.y=st.ry+st.mx*.2;grp.rotation.x=st.my*.15;
+  stars.forEach((s,i)=>{const k=1+.18*Math.sin(t*2+i*1.3);s.scale.set((i===1?3:2.2)*k,(i===1?3:2.2)*k,1)});lines.material.opacity=.3+.2*Math.sin(t);
+  cam.position.set(0,0,16+Math.sin(t*.2)*1.5);cam.lookAt(0,0,0)}}},
+elen(){const sc=new THREE.Scene();const bg=new THREE.Color();sc.background=bg;sc.fog=new THREE.Fog(0x2a1220,20,110);
+ const cam=new THREE.PerspectiveCamera(50,1,.1,400);cam.position.set(0,3.2,22);
+ const geo=new THREE.PlaneGeometry(240,240,120,120);geo.rotateX(-Math.PI/2);const a=geo.attributes.position;
+ for(let i=0;i<a.count;i++){const x=a.getX(i),z=a.getZ(i);a.setY(i,Math.sin(x*.08)*1.4+Math.cos(z*.06)*1.6+Math.sin((x+z)*.15)*.5)}geo.computeVertexNormals();
+ const land=new THREE.Mesh(geo,new THREE.MeshStandardMaterial({color:0x3a1a2c,roughness:1,flatShading:true}));land.position.y=-2.5;sc.add(land);
+ const sun=new THREE.Mesh(new THREE.SphereGeometry(10,40,20),new THREE.MeshBasicMaterial({color:0xffd58a,fog:false}));sun.position.set(0,0,-100);sc.add(sun);
+ const sg=sprite(glowTex('255,170,100',.15),70,.9);sg.material.fog=false;sc.add(sg);
+ const dl=new THREE.DirectionalLight(0xff9a62,1.3);sc.add(dl);sc.add(new THREE.HemisphereLight(0x8a3a6a,0x1a0b14,.6));
+ const yurt=new THREE.Group();const ym=new THREE.MeshStandardMaterial({color:0x1a0b14});const yc=new THREE.Mesh(new THREE.CylinderGeometry(2,2,1.6,24),ym);yc.position.y=.8;yurt.add(yc);
+ const yr=new THREE.Mesh(new THREE.ConeGeometry(2.1,1.3,24),ym);yr.position.y=2.25;yurt.add(yr);yurt.position.set(-9,-.4,-12);sc.add(yurt);
+ const c0=new THREE.Color(0x140c2a),c1=new THREE.Color(0x8a3a6a),c2=new THREE.Color(0xff9a62);
+ return{sc,cam,hint:'Түн → ымырт → елең-алаң → таң',update(t,st){const k=(Math.sin(t*.25-1.57)+1)/2;const y=-10+k*26;
+  sun.position.y=y;sg.position.set(0,y,-100);dl.position.set(0,y+4,-60);dl.intensity=.4+k*1.2;
+  if(k<.5)bg.copy(c0).lerp(c1,k*2);else bg.copy(c1).lerp(c2,(k-.5)*2);sc.fog.color.copy(bg).multiplyScalar(.7);
+  cam.position.x=st.mx*3;cam.position.y=3.2-st.my*1;cam.lookAt(0,3,-60)}}},
+qus(){const sc=new THREE.Scene();sc.background=new THREE.Color(0xf5ecd9);sc.fog=new THREE.Fog(0xf5ecd9,14,40);
+ const cam=new THREE.PerspectiveCamera(45,1,.1,100);cam.position.set(0,1,14);
+ sc.add(new THREE.HemisphereLight(0xffffff,0xc9b88f,.9));const dl=new THREE.DirectionalLight(0xfff3d6,.8);dl.position.set(4,8,6);sc.add(dl);
+ const white=new THREE.MeshStandardMaterial({color:0xffffff,roughness:.6,side:THREE.DoubleSide});
+ const bird=new THREE.Group();const body=new THREE.Mesh(new THREE.SphereGeometry(.6,24,16),white);body.scale.set(1,.7,1.9);bird.add(body);
+ const head=new THREE.Mesh(new THREE.SphereGeometry(.36,20,14),white);head.position.set(0,.3,1.15);bird.add(head);
+ const beak=new THREE.Mesh(new THREE.ConeGeometry(.1,.35,12),new THREE.MeshStandardMaterial({color:0xe3a24c}));beak.rotation.x=Math.PI/2;beak.position.set(0,.27,1.6);bird.add(beak);
+ const ws=new THREE.Shape();ws.moveTo(0,0);ws.bezierCurveTo(1.2,.9,3.2,.8,4.2,.1);ws.bezierCurveTo(3.4,-.2,2.8,-.5,2.2,-.4);ws.bezierCurveTo(1.6,-.8,.6,-.7,0,-.5);
+ const wg=new THREE.ShapeGeometry(ws);const mk=s=>{const p=new THREE.Group();const w=new THREE.Mesh(wg,white);w.rotation.x=-Math.PI/2;w.scale.x=s;p.add(w);bird.add(p);return p};
+ const wl=mk(-1),wr=mk(1);const tail=new THREE.Mesh(new THREE.ConeGeometry(.5,1,3),white);tail.rotation.x=-Math.PI/2;tail.position.z=-1.4;tail.scale.y=.2;bird.add(tail);bird.scale.setScalar(1.5);sc.add(bird);
+ const fc=document.createElement('canvas');fc.width=64;fc.height=256;const g=fc.getContext('2d');g.fillStyle='rgba(79,122,74,.85)';g.beginPath();g.ellipse(32,120,22,110,0,0,6.28);g.fill();g.strokeStyle='#e9dcbc';g.lineWidth=3;g.beginPath();g.moveTo(32,10);g.lineTo(32,250);g.stroke();
+ const ft=new THREE.CanvasTexture(fc),fm=new THREE.MeshBasicMaterial({map:ft,transparent:true,side:THREE.DoubleSide,depthWrite:false});
+ const F=Array.from({length:36},()=>{const m=new THREE.Mesh(new THREE.PlaneGeometry(.35,1.3),fm);m.position.set((Math.random()-.5)*22,Math.random()*16-6,(Math.random()-.5)*10);m.userData={s:.01+Math.random()*.02,r:Math.random()*6};sc.add(m);return m});
+ const sun=sprite(glowTex('255,230,170',.3),10,.55);sun.position.set(5,6,-12);sc.add(sun);
+ return{sc,cam,hint:'Ана мейірімі — құс қанаты',update(t,st){const f=Math.sin(t*4);wl.rotation.z=f*.6;wr.rotation.z=-f*.6;
+  bird.position.set(Math.sin(t*.4)*3.5,1.5+Math.sin(t*.8)*.6+f*.08,Math.cos(t*.4)*1.5);bird.rotation.y=Math.cos(t*.4)*.6+Math.PI*0.05;bird.rotation.z=-Math.cos(t*.4)*.2;
+  F.forEach(m=>{const u=m.userData;m.position.y-=u.s;m.position.x+=Math.sin(t+u.r)*.01;m.rotation.set(Math.sin(t+u.r),t*.5+u.r,Math.cos(t*.7+u.r)*.6);if(m.position.y<-7)m.position.y=9});
+  cam.position.x=st.mx*1.5;cam.position.y=6-st.my;cam.lookAt(0,1.2,0)}}}
+};
+
+function emojiTex(ch,size){size=size||256;const c=document.createElement('canvas');c.width=c.height=size;const g=c.getContext('2d');g.textAlign='center';g.textBaseline='middle';g.font=`${size*.78}px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif`;g.fillText(ch,size/2,size/2+size*.04);const t=new THREE.CanvasTexture(c);t.encoding=THREE.sRGBEncoding;return t}
+function emojiScene(cfg){const[center,orb,bgc,rgb]=cfg;const sc=new THREE.Scene();sc.background=new THREE.Color(bgc);sc.fog=new THREE.Fog(bgc,18,60);
+ const cam=new THREE.PerspectiveCamera(45,1,.1,200);cam.position.set(0,0,14);
+ const halo=sprite(glowTex(rgb,.2),14,.6);sc.add(halo);const ring=sprite(glowTex(rgb,.05),22,.25);sc.add(ring);
+ const main=new THREE.Sprite(new THREE.SpriteMaterial({map:emojiTex(center,512),transparent:true}));main.scale.set(6,6,1);sc.add(main);
+ const O=orb.map((ch,i)=>{const s=new THREE.Sprite(new THREE.SpriteMaterial({map:emojiTex(ch),transparent:true}));s.scale.set(1.9,1.9,1);s.userData={a:i/orb.length*6.283,r:5.2+(i%2)*.8,y:(i%2?1:-1)*.8};sc.add(s);return s});
+ const pg=new THREE.BufferGeometry(),n=500,p=new Float32Array(n*3);for(let i=0;i<n;i++){p[i*3]=(Math.random()-.5)*40;p[i*3+1]=(Math.random()-.5)*26;p[i*3+2]=-Math.random()*30}
+ pg.setAttribute('position',new THREE.BufferAttribute(p,3));const pts=new THREE.Points(pg,new THREE.PointsMaterial({color:new THREE.Color(`rgb(${rgb})`),size:.12,transparent:true,opacity:.8}));sc.add(pts);
+ return{sc,cam,hint:'🖱 Сүйреп айналдыр',update(t,st){if(st.auto)st.ry+=.006;
+  O.forEach(s=>{const u=s.userData,a=u.a+st.ry;s.position.set(Math.cos(a)*u.r,u.y+Math.sin(t*1.3+u.a)*.4,Math.sin(a)*u.r*.6)});
+  main.position.y=Math.sin(t*1.2)*.3;const k=1+.04*Math.sin(t*2);main.scale.set(6*k,6*k,1);halo.material.opacity=.45+.2*Math.sin(t*1.5);
+  pts.rotation.z=t*.02;cam.position.x=st.mx*2;cam.position.y=-st.my*1.5;cam.lookAt(0,0,0)}}}
+function start3D(host,id){bkRun++;const ren=HAS3D&&getBkRen();if(!ren)return false;const run=bkRun;
+ const S=(SCENES[id]||(()=>emojiScene(EMO3D[id])))();host.innerHTML='';host.appendChild(ren.domElement);
+ host.insertAdjacentHTML('beforeend',(S.hud||'')+`<div class="hud-hint">${S.hint}</div>`);
+ const st={mx:0,my:0,ry:0,auto:true};dragRot(host,st);
+ const fit=()=>{const w=host.clientWidth,h=host.clientHeight;if(!w)return;ren.setSize(w,h,false);ren.domElement.style.width='100%';ren.domElement.style.height='100%';S.cam.aspect=w/h;S.cam.updateProjectionMatrix()};fit();
+ const ro=new ResizeObserver(fit);ro.observe(host);const t0=performance.now();
+ (function loop(now){if(run!==bkRun){ro.disconnect();return}S.update(Math.max(0,(now-t0)/1000),st,host);ren.render(S.sc,S.cam);requestAnimationFrame(loop)})(t0);return true}
+function stop3D(){bkRun++}
+
+
+function setHeroArt(x,h,mode){const art=x.querySelector('.bh-art');const slot=document.querySelector(`.slot[data-slot="${h}"]`);const hasImg=!!slot&&COVERS.includes(h);
+ mode=mode||'3d';let ok=false;if(mode==='3d')ok=start3D(art,h);if(!ok){stop3D();art.innerHTML=slotHTML(h);mode='img'}
+ if(hasImg&&HAS3D){art.insertAdjacentHTML('beforeend',`<div class="artsw"><button data-m="3d" class="${mode==='3d'?'on':''}">3D</button><button data-m="img" class="${mode==='img'?'on':''}">Мұқаба</button></div>`);
+  art.querySelectorAll('.artsw button').forEach(bt=>bt.onclick=e=>{e.stopPropagation();setHeroArt(x,h,bt.dataset.m)})}}
+/* ---------- reveal, count-up, particles ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+function countUp(el){const t=el.dataset.v||el.textContent;el.dataset.v=t;if(!/^\d+$/.test(t))return;const n=+t,st=n>1000?n-60:0,d=1400,t0=performance.now();
+ (function f(now){const p=Math.min(1,(now-t0)/d);el.textContent=Math.round(st+(n-st)*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(t0)}
+const FX={shynyrau:['227,170,90','drift',90],anyz:['243,212,139','rise',70],urker:['210,222,255','twinkle',170],elen:['255,180,120','rise',80],qus:['79,122,74','feather',16]};
+let fxRun=0;
+function startFX(cv,id){const run=++fxRun;if(!cv)return;const ctx=cv.getContext('2d');const [col,mode,N]=FX[id]||FX2[id];
+ const fit=()=>{cv.width=cv.offsetWidth*devicePixelRatio;cv.height=cv.offsetHeight*devicePixelRatio};fit();
+ const W=()=>cv.width,H=()=>cv.height,R=Math.random;
+ const P=Array.from({length:N},()=>({x:R()*W(),y:R()*H(),r:(mode==='feather'?10+R()*10:0.6+R()*2.2)*devicePixelRatio,v:0.2+R()*0.8,a:R()*6.28,s:R()}));
+ (function loop(){if(run!==fxRun)return;if(cv.width!==cv.offsetWidth*devicePixelRatio)fit();ctx.clearRect(0,0,W(),H());
+  P.forEach(p=>{p.a+=0.02;
+   if(mode==='drift'){p.x+=p.v*1.6*devicePixelRatio;p.y+=Math.sin(p.a)*0.4;if(p.x>W())p.x=-5}
+   if(mode==='rise'){p.y-=p.v*0.9*devicePixelRatio;p.x+=Math.sin(p.a)*0.5;if(p.y<-5){p.y=H()+5;p.x=R()*W()}}
+   if(mode==='feather'){p.y+=p.v*0.7*devicePixelRatio;p.x+=Math.sin(p.a)*1.2;if(p.y>H()+30){p.y=-30;p.x=R()*W()}}
+   const al=mode==='twinkle'?0.25+0.75*Math.abs(Math.sin(p.a*1.5+p.s*9)):0.35+0.4*p.s;
+   if(mode==='feather'){ctx.save();ctx.translate(p.x,p.y);ctx.rotate(Math.sin(p.a)*0.6);ctx.fillStyle=`rgba(${col},${al*0.55})`;ctx.beginPath();ctx.ellipse(0,0,p.r*0.32,p.r,0,0,6.28);ctx.fill();
+     ctx.strokeStyle=`rgba(${col},${al})`;ctx.lineWidth=1.2;ctx.beginPath();ctx.moveTo(0,-p.r);ctx.lineTo(0,p.r*1.3);ctx.stroke();ctx.restore();return}
+   ctx.fillStyle=`rgba(${col},${al})`;ctx.shadowColor=`rgba(${col},.9)`;ctx.shadowBlur=mode==='drift'?0:8*devicePixelRatio;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.28);ctx.fill()});
+  requestAnimationFrame(loop)})()}
+/* ---------- router: әр кітап — жеке бет ---------- */
+BOOKS.forEach((b,i)=>{const el=document.getElementById(b.id);const p=BOOKS[(i+4)%5],n=BOOKS[(i+1)%5];
+ el.insertAdjacentHTML('afterend',`<div class="pnav" data-for="${b.id}" style="display:none"><a class="btn ghost" href="#${p.id}">← ${p.title}</a><a class="btn ghost" href="#top">⌂ Кітап сөресі</a><a class="btn" href="#${n.id}">${n.title} →</a></div>`)});
+function route(){const h=location.hash.slice(1);const isBook=BOOKS.some(b=>b.id===h);
+ document.body.classList.toggle('book',isBook);
+ document.querySelectorAll('.poster').forEach(p=>p.classList.toggle('active',p.id===h));
+ document.querySelectorAll('.pnav').forEach(p=>p.style.display=p.dataset.for===h?'flex':'none');
+ document.querySelectorAll('.bhero').forEach(x=>{const on=x.dataset.for===h;x.classList.toggle('active',on);if(on){setHeroArt(x,h);
+   x.querySelectorAll('.bh-t span,.bh-s,.bh-chips,.bh-go,.bh-art').forEach(e=>{e.style.animationName='none';e.offsetHeight;e.style.animationName=''});startFX(x.querySelector('canvas'),h)}});
+ if(!isBook){startFX(null);stop3D()}if(shelfCtx){isBook?shelfCtx.stop():shelfCtx.start()}
+ setTimeout(()=>{document.querySelectorAll('.poster.active .rv').forEach(e=>{e.classList.remove('in');io.observe(e)});document.querySelectorAll('.poster.active .num b').forEach(countUp)},50);
+ document.querySelectorAll('#navlinks a').forEach(a=>a.style.background=a.getAttribute('href')==='#'+h?'rgba(216,169,74,.18)':'');
+ const b=BOOKS.find(x=>x.id===h);document.title=b?`«${b.title}» — Әбіш әлемі`:'Әбіш әлемі: 12 шығарма';
+ if(isBook||h==='top'||!h)window.scrollTo(0,0);else{const el=document.getElementById(h);if(el)setTimeout(()=>el.scrollIntoView({behavior:'smooth'}),60)}}
+nav.insertAdjacentHTML('beforeend',`<a href="#tujyrymdama">Тұжырымдама</a><a href="#test">Тест</a><a href="#aksiyalar">Акциялар</a><a href="#sozdik">Сөздік</a><a href="#qorgau">Қорғау</a>`);
+window.addEventListener('hashchange',route);route();
+(function load3D(){const go=()=>{const after=()=>{HAS3D=detect3D();if(!HAS3D)return;const h3=document.getElementById('shelf3d');h3.style.display='block';
+  buildShelf().then(ok=>{if(!ok){h3.style.display='none';return}document.getElementById('shelf').style.display='none';requestAnimationFrame(()=>h3.style.opacity=1);if(!document.body.classList.contains('book'))shelfCtx.start()}).catch(()=>{h3.style.display='none'});
+  const h=location.hash.slice(1),x=document.querySelector(`.bhero[data-for="${h}"]`);if(x)setHeroArt(x,h)};
+ if(window.THREE){after();return}const sc=document.createElement('script');sc.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';sc.async=true;sc.onload=after;document.head.appendChild(sc)};(document.readyState==='complete')?go():addEventListener('load',go)})();
+
+/* bio map */
+document.getElementById('bioMap').innerHTML=mapSVG([[52.2,44.2,'Оңды ауылы','1939 — туған жері'],[71.4,51.2,'Астана','2015 — өмірінің соңы','end'],[61.5,49.9,'Толыбай','«Үркер» ізімен','end'],[76.9,43.3,'Алматы','университет, «Қазақфильм»','end']],'#d8a94a','#f7efdc');
+
+/* heat map */
+(function(){const th=['Адам жаны','Билік','Махаббат','Тарих','Ел бірлігі','Ана, отбасы','Туған жер'];
+const M={'Шыңырау':[3,1,0,0,0,0,1],'Аңыздың ақыры':[3,3,3,1,0,0,0],'Үркер':[1,3,0,3,3,0,2],'Елең-алаң':[2,3,0,3,3,0,2],'Құс қанаты':[2,0,2,1,0,3,3]};BOOKS.forEach(b=>{if(b.heat)M[b.title]=b.heat});
+const cw=96,ch=40,L=200;let s=`<svg viewBox="0 0 ${L+th.length*cw} ${50+Object.keys(M).length*ch+30}" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat" style="width:100%;height:auto">`;
+th.forEach((t,i)=>s+=`<text x="${L+i*cw+cw/2}" y="30" text-anchor="middle" font-size="12" font-weight="700" fill="#f3d48b">${t}</text>`);
+Object.entries(M).forEach(([k,v],r)=>{s+=`<text x="${L-12}" y="${50+r*ch+25}" text-anchor="end" font-size="14" font-weight="700" fill="#f7efdc">${k}</text>`;
+v.forEach((x,c)=>s+=`<rect x="${L+c*cw+3}" y="${50+r*ch+3}" width="${cw-6}" height="${ch-6}" rx="8" fill="#d8a94a" fill-opacity="${[0.05,0.3,0.6,0.95][x]}"/><text x="${L+c*cw+cw/2}" y="${50+r*ch+25}" text-anchor="middle" font-size="12" font-weight="800" fill="${x>1?'#1a1306':'#f7efdc'}">${['—','●','●●','●●●'][x]}</text>`)});
+s+=`<text x="${L}" y="${50+Object.keys(M).length*ch+22}" font-size="11" fill="#8c96ab">●●● — басты тақырып · ●● — маңызды · ● — қосалқы</text></svg>`;
+document.getElementById('heat').innerHTML=s})();
+
+/* ---------- image slots (saved in this browser) ---------- */
+let db=null;
+function idb(){return new Promise(res=>{try{const r=indexedDB.open('abish-img',1);r.onupgradeneeded=()=>r.result.createObjectStore('img');r.onsuccess=()=>{db=r.result;res(db)};r.onerror=()=>res(null)}catch(e){res(null)}})}
+function put(k,v){try{if(!db)return;const t=db.transaction('img','readwrite');v?t.objectStore('img').put(v,k):t.objectStore('img').delete(k)}catch(e){}}
+const defaults={};
+function setSlot(el,url){const key=el.dataset.slot;if(!defaults[key])defaults[key]=el.querySelector('svg,img').outerHTML;
+  const cur=el.querySelector('svg,img');const img=document.createElement('img');img.src=url;img.alt='';cur.replaceWith(img);el.classList.add('has')}
+function resetSlot(el){const key=el.dataset.slot;const cur=el.querySelector('svg,img');cur.outerHTML=defaults[key];el.classList.remove('has');put(key,null)}
+document.querySelectorAll('.slot').forEach(el=>{
+  defaults[el.dataset.slot]=el.querySelector('svg,img').outerHTML;
+  el.querySelector('input').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{setSlot(el,r.result);put(el.dataset.slot,r.result)};r.readAsDataURL(f)});
+  el.querySelector('.rm').addEventListener('click',()=>resetSlot(el));
+});
+idb().then(d=>{if(!d)return;document.querySelectorAll('.slot').forEach(el=>{try{const q=d.transaction('img').objectStore('img').get(el.dataset.slot);q.onsuccess=()=>{if(q.result)setSlot(el,q.result)}}catch(e){}})});
+function slotHTML(id){if(id==='qr')return '<img src="'+img('qr/main.png')+'" alt="" style="object-fit:contain;background:#fff;padding:4%;max-width:70%;max-height:70%;border-radius:20px">';if(id==='portrait')return '<img src="abish.jpg" alt="" style="object-fit:contain">';const el=document.querySelector(`.slot[data-slot="${id}"]`);if(!el)return '';const k='s'+(++__u);return el.querySelector('svg,img').outerHTML.replace(/id="([^"]+)"/g,(m,a)=>`id="${a}${k}"`).replace(/url\(#([^)]+)\)/g,(m,a)=>`url(#${a}${k})`)}
+
+/* ---------- plan ---------- */
+const PLAN=[['Кіріспе: жазушы, ұран',30,'#f3d48b'],...BOOKS.map((b,i)=>[b.title,i<5?40:22,b.color[0]]),['Қорытынды',36,'#d8a94a']];
+const total=PLAN.reduce((a,p)=>a+p[1],0);const fmt=s=>`${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;
+document.getElementById('bar').innerHTML=PLAN.map(p=>`<div style="flex:${p[1]};background:${p[2]}">${p[1]}с</div>`).join('');
+let acc=0;document.getElementById('plist').innerHTML=PLAN.map(p=>{const a=acc;acc+=p[1];return `<li><span>${p[0]}</span><b>${fmt(a)}–${fmt(acc)}</b></li>`}).join('')+`<li style="background:rgba(216,169,74,.15)"><span><b style="color:#fff">Барлығы</b> (≤ 7 минут)</span><b>${fmt(total)}</b></li>`;
+
+/* ---------- slideshow ---------- */
+const gv=(id,v)=>getComputedStyle(document.getElementById(id)).getPropertyValue(v).trim();
+function slides(){return[
+ {k:'«Әбіш шығармашылығын насихаттау»',h:'Он екі есік — бір шыңырау',i:'Шыңыраудың тереңі — жер астында, Әбіш мұрасының тереңі — ұлт жадында.',li:['Әбіш Кекілбайұлы (1939–2015) — жазушы, аудармашы, мемлекет қайраткері','Маңғыстау, Оңды ауылының түлегі','Біздің идея: әр кітапқа — жеке инфографика'],t:'#ӘбішӘлемі',img:'portrait',bg:'#0d1526',fg:'#f7efdc',acc:'#d8a94a'},
+ ...BOOKS.map(b=>({k:`Кітап ${b.n} · ${b.genre}`,h:b.title,i:b.sub,li:[b.nums[0][0]+' — '+b.nums[0][1],b.syms.map(s=>s[1]).join(' · '),...b.now.slice(0,2)],t:b.tag,img:b.id,bg:gv(b.id,'--bg'),fg:gv(b.id,'--fg'),acc:b.color[0]})),
+ {k:'Қорытынды',h:'Мұра — оқылғанда тірі',i:'Үш арна: адам жаны · ел тағдыры · ана мен туған жер.',li:['12 шығарма — 12 инфографика, 12 акция','Әр кітапқа — 3D әлем мен кейіпкер монологы','Ұсыныс: мектепте «Әбіш оқулары» апталығы'],t:'Назарларыңызға рахмет!',img:'qr',bg:'#0d1526',fg:'#f7efdc',acc:'#d8a94a'}]}
+let SL=[],cur=0,sec=0,tick=null,paused=false;
+function renderSlide(){const s=SL[cur],el=document.getElementById('slide');el.style.setProperty('--bg',s.bg);el.style.setProperty('--fg',s.fg);el.style.setProperty('--acc',s.acc);
+ el.innerHTML=`<div class="sl-l"><div class="sl-k">${s.k}</div><h2>${s.h}</h2><div class="sl-i">${s.i}</div><ul>${s.li.map(x=>`<li>${x}</li>`).join('')}</ul><div class="sl-t">${s.t}</div></div><div class="sl-r">${slotHTML(s.img)}</div>`;
+ document.getElementById('snotes').textContent=SPEECH[cur]||'';document.getElementById('sprog').style.width=((cur+1)/SL.length*100)+'%';document.getElementById('scount').textContent=`${cur+1} / ${SL.length} · жоспар: ${PLAN[cur][1]}с`}
+function go(d){cur=Math.max(0,Math.min(SL.length-1,cur+d));renderSlide()}
+function updTimer(){const t=document.getElementById('timer');t.textContent=fmt(sec)+' / 07:00';t.className='timer'+(sec>=420?' over':sec>=360?' warn':'')}
+function openShow(){SL=slides();cur=0;sec=0;paused=false;document.getElementById('pauseBtn').textContent='❚❚ Тоқтату';document.getElementById('show').classList.add('on');renderSlide();updTimer();clearInterval(tick);tick=setInterval(()=>{if(!paused){sec++;updTimer()}},1000);try{document.documentElement.requestFullscreen().catch(()=>{})}catch(e){}}
+function closeShow(){document.getElementById('show').classList.remove('on');clearInterval(tick);try{document.fullscreenElement&&document.exitFullscreen().catch(()=>{})}catch(e){}}
+function togglePause(){paused=!paused;document.getElementById('pauseBtn').textContent=paused?'▶ Жалғастыру':'❚❚ Тоқтату'}
+document.addEventListener('keydown',e=>{if(!document.getElementById('show').classList.contains('on'))return;if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();go(1)}if(e.key==='ArrowLeft')go(-1);if(e.key==='Escape')closeShow();if(e.key==='n'||e.key==='т')document.getElementById('show').classList.toggle('notes')});
+
+/* ---------- quiz ---------- */
+const QUIZ=[['Әбіш Кекілбайұлы қай ауылда дүниеге келген?',['Оңды (Маңғыстау)','Толыбай (Ақтөбе)','Ордабасы','Аңырақай'],0],
+['«Шыңырау» повесінің басты кейіпкері кім?',['Еңсеп','Абылқайыр','Әмірші','Тілеу'],0],
+['«Аңыздың ақыры» алғаш қандай атпен жарияланды?',['«Махаббат мұнарасы»','«Дала балладасы»','«Күй»','«Ақ мұнара»'],0],
+['«Үркер» романы қай жылы жарық көрді?',['1981','1975','1984','1999'],0],
+['Аңырақай шайқасы қай жылы болды?',['1729','1726','1748','1731'],0],
+['«Елең-алаң» сөзінің мағынасы қандай?',['Таң сәріндегі ымырт','Түнгі дауыл','Күзгі көш','Көктемгі жаңбыр'],0],
+['«Құс қанаты» повесіндегі ананың түптұлғасы кім?',['Жазушының анасы Айсәуле','Абылқайырдың жары','Аңыз кейіпкері','Белгісіз әйел'],0],
+['Кекілбаев қай шығарманы қазақ тіліне аударған?',['«Соғыс және бейбітшілік»','«Дон Кихот»','«Гамлет»','«Фауст»'],0]];
+let qi=0,score=0;const shuffle=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(v=>v[1]);
+function renderQ(){const box=document.getElementById('quiz');
+ if(qi>=QUIZ.length){box.innerHTML=`<div class="qq">Нәтиже: ${score} / ${QUIZ.length}</div><p style="color:#c7cfdf">${score>=7?'Керемет! Сен — Әбіш әлемінің білгірісің.':'Инфографикаларды тағы бір қарап шық та, қайта байқап көр!'}</p><div class="qmeta"><span></span><button class="btn" onclick="qi=0;score=0;renderQ()">Қайта бастау</button></div>`;return}
+ const[q,opts,ok]=QUIZ[qi];box.innerHTML=`<div class="qq">${q}</div><div class="qo">${shuffle(opts.map((o,i)=>[o,i])).map(([o,i])=>`<button data-i="${i}">${o}</button>`).join('')}</div><div class="qmeta"><span>Сұрақ ${qi+1} / ${QUIZ.length}</span><span>Ұпай: ${score}</span></div>`;
+ box.querySelectorAll('.qo button').forEach(btn=>btn.onclick=()=>{const i=+btn.dataset.i;box.querySelectorAll('.qo button').forEach(b=>{b.disabled=true;if(+b.dataset.i===ok)b.classList.add('ok')});if(i===ok)score++;else btn.classList.add('no');setTimeout(()=>{qi++;renderQ()},1100)})}
+renderQ();
+try{renderExtras()}catch(e){console.error(e)}
+</script>
+</body>
+</html>
