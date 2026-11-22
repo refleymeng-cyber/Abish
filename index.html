@@ -458,6 +458,7 @@ details.spd summary{cursor:pointer;font-weight:800;color:var(--gold2);font-size:
 .slcal span{display:block;font-size:clamp(8px,.72vw,11px);opacity:.85;line-height:1.25;margin-top:2px}
 .slide .sl-r .slcal img{width:3.6vw;height:3.6vw;object-fit:cover;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.4)}
 .slcal p{margin:0;min-width:0}
+.slqr{display:flex;align-items:center;gap:1.2vw;margin-top:.5vh}.slide .slqr img{width:clamp(80px,9vw,130px);height:auto;aspect-ratio:1;background:#fff;padding:5px;border-radius:10px;flex:none}.slqr .sl-t{font-size:clamp(14px,1.5vw,22px);opacity:1}.slqr small{display:block;font-size:clamp(10px,.9vw,13px);opacity:.75;margin-top:4px;line-height:1.35}
 </style>
 </head>
 <body>
@@ -1484,10 +1485,10 @@ const gv=(id,v)=>getComputedStyle(document.getElementById(id)).getPropertyValue(
 function slides(){return[
  {k:'«Әбіш шығармашылығын насихаттау»',h:'Он екі есік — бір шыңырау',i:'Шыңыраудың тереңі — жер астында, Әбіш мұрасының тереңі — ұлт жадында.',li:['Әбіш Кекілбайұлы (1939–2015) — жазушы, аудармашы, мемлекет қайраткері','Маңғыстау, Оңды ауылының түлегі','Біздің идея: әр кітапқа — жеке инфографика'],t:'#ӘбішӘлемі',img:'portrait',bg:'#0d1526',fg:'#f7efdc',acc:'#d8a94a'},
  ...BOOKS.map(b=>({k:`Кітап ${b.n} · ${b.genre}`,h:b.title,i:b.sub,li:[b.nums[0][0]+' — '+b.nums[0][1],b.syms.map(s=>s[1]).join(' · '),...b.now.slice(0,2)],t:b.tag,img:b.id,bg:gv(b.id,'--bg'),fg:gv(b.id,'--fg'),acc:b.color[0]})),
- {k:'Қорытынды',h:'Мұра — оқылғанда тірі',i:'Үш арна: адам жаны · ел тағдыры · ана мен туған жер.',li:['12 ай — 12 кітап — 12 ұлттық құндылық','Әр айда бала бір кітап оқып, бір тапсырма орындайды','Ұсыныс: мектепте «Әбіш оқулары» апталығы'],t:'Назарларыңызға рахмет!',img:'cal',bg:'#0d1526',fg:'#f7efdc',acc:'#d8a94a'}]}
+ {k:'Қорытынды',h:'Мұра — оқылғанда тірі',i:'Үш арна: адам жаны · ел тағдыры · ана мен туған жер.',li:['12 ай — 12 кітап — 12 ұлттық құндылық','Әр айда бала бір кітап оқып, бір тапсырма орындайды','Ұсыныс: мектепте «Әбіш оқулары» апталығы'],t:'Назарларыңызға рахмет!',img:'cal',qr:1,bg:'#0d1526',fg:'#f7efdc',acc:'#d8a94a'}]}
 let SL=[],cur=0,sec=0,tick=null,paused=false;
 function renderSlide(){const s=SL[cur],el=document.getElementById('slide');el.style.setProperty('--bg',s.bg);el.style.setProperty('--fg',s.fg);el.style.setProperty('--acc',s.acc);
- el.innerHTML=`<div class="sl-l"><div class="sl-k">${s.k}</div><h2>${s.h}</h2><div class="sl-i">${s.i}</div><ul>${s.li.map(x=>`<li>${x}</li>`).join('')}</ul><div class="sl-t">${s.t}</div></div><div class="sl-r">${slotHTML(s.img)}</div>`;
+ el.innerHTML=`<div class="sl-l"><div class="sl-k">${s.k}</div><h2>${s.h}</h2><div class="sl-i">${s.i}</div><ul>${s.li.map(x=>`<li>${x}</li>`).join('')}</ul>${s.qr?`<div class="slqr"><img src="${img('qr/main.png')}" alt="QR"><div><div class="sl-t">${s.t}</div><small>Сайтты ашу үшін сканерлеңіз<br>refleymeng-cyber.github.io/Abish</small></div></div>`:`<div class="sl-t">${s.t}</div>`}</div><div class="sl-r">${slotHTML(s.img)}</div>`;
  document.getElementById('snotes').textContent=SPEECH[cur]||'';document.getElementById('sprog').style.width=((cur+1)/SL.length*100)+'%';document.getElementById('scount').textContent=`${cur+1} / ${SL.length} · жоспар: ${PLAN[cur][1]}с`}
 function go(d){cur=Math.max(0,Math.min(SL.length-1,cur+d));renderSlide()}
 function updTimer(){const t=document.getElementById('timer');t.textContent=fmt(sec)+' / 07:00';t.className='timer'+(sec>=420?' over':sec>=360?' warn':'')}
